@@ -17,9 +17,9 @@
   },
   "title": "Alex's blog",
   "gitalk": {
-    "repo": "github.com/aforian/gatsby-starter-calpa-blog/settings",
-    "admin": ["alex"],
-    "owner": "alex",
+    "repo": "gatsby-starter-calpa-blog",
+    "admin": ["aforian"],
+    "owner": "aforian",
     "clientID": "a8a8bf889d4a6fa825e8",
     "clientSecret": "54cec43b1de8ff4ee6a6d5fd43116deeaae1f259",
     "pagerDirection": "first",
