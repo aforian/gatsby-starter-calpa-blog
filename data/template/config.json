@@ -1,7 +1,7 @@
 {
   "url": "https://aforian.me",
   "meta": {
-    "favicon": "https://i.imgur.com/PO9Y4fT.jpg",
+    "favicon": "https://alexian.me/favicons/android-chrome-192x192.png",
     "keyword": "alexian, blog, JavaScript",
     "description": "Alex Ian 的 Blog",
     "theme_color": "#33a579",
@@ -34,7 +34,7 @@
   ],
   "iconUrl": "https://avatars3.githubusercontent.com/u/20759116?s=300&v=4",
   "wordings": ["GatsbyJS, ReactJS"],
-  "gaTrackId": "UA-84737574-3",
+  "gaTrackId": "UA-100845203-2",
   "navbarList": [
     {
       "href": "/guestbook/",
@@ -63,7 +63,7 @@
     }
   ],
   "zhihuUsername": "piao-xue-wu-ying",
-  "githubUsername": "calpa",
+  "githubUsername": "aforian",
   "maxPostsInPage": 10,
-  "facebook": "calpablog"
+  "facebook": "alexianblog"
 }
