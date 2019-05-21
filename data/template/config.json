@@ -1,5 +1,5 @@
 {
-  "url": "https://aforian.me",
+  "url": "https://alexian.me",
   "meta": {
     "favicon": "https://alexian.me/favicons/android-chrome-192x192.png",
     "keyword": "alexian, blog, JavaScript",
@@ -28,7 +28,7 @@
   "License": "by",
   "friends": [
     {
-      "href": "https://aforian.me",
+      "href": "https://alexian.me",
       "title": "Alex's Blog"
     }
   ],
