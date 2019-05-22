@@ -75,12 +75,12 @@ class BlogPost extends Component {
           <div className="m-message" style={bgWhite}>
             如果你覺得我的文章對你有幫助的話，希望可以推薦和交流一下。歡迎
             <ExternalLink
-              href="https://github.com/calpa/gatsby-starter-calpa-blog"
+              href="https://github.com/aforian/gatsby-starter-calpa-blog"
               title="關注和 Star 本博客"
             />
             或者
             <ExternalLink
-              href="https://github.com/calpa/"
+              href="https://github.com/aforian/"
               title="關注我的 Github"
             />
             。

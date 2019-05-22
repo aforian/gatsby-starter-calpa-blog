@@ -6,6 +6,8 @@ import {
   faZhihu,
   faFacebookF,
   faFacebook,
+  faMedium,
+  faMediumM
 } from '@fortawesome/free-brands-svg-icons';
 
 const installFontAwesome = () => {
@@ -18,6 +20,8 @@ const installFontAwesome = () => {
     faZhihu,
     faFacebookF,
     faFacebook,
+    faMedium,
+    faMediumM,
   );
 };
 

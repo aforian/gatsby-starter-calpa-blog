@@ -33,8 +33,8 @@ const Navbar = () => (
           gotoPage('/');
         }}
       >
-        <span className="brand-logo">Calpa</span>
-        &apos;s Blog
+{/*         <span className="brand-logo">Calpa</span> */}
+        Alex Ian&apos;s Blog
       </button>
       <button
         className="navbar-toggler"
@@ -44,21 +44,21 @@ const Navbar = () => (
       >
         <FontAwesomeIcon icon={faBars} />
       </button>
-      <GithubCorner url="https://github.com/calpa/gatsby-starter-calpa-blog" />
+      <GithubCorner url="https://github.com/aforian/" />
       <div
         className="collapse navbar-collapse flex-row-reverse"
         id="navbarSupportedContent"
       >
-        <ul className="navbar-nav mr-2">
-          {navbarList.map(item => (
-            <NavItem
-              url={item.href}
-              name={item.title}
-              list={item.list}
-              key={item.href}
-            />
-          ))}
-        </ul>
+{/*         <ul className="navbar-nav mr-2"> */}
+{/*           {navbarList.map(item => ( */}
+{/*             <NavItem */}
+{/*               url={item.href} */}
+{/*               name={item.title} */}
+{/*               list={item.list} */}
+{/*               key={item.href} */}
+{/*             /> */}
+{/*           ))} */}
+{/*         </ul> */}
       </div>
     </div>
   </nav>

@@ -29,7 +29,7 @@ const Header = ({
           <div className="m-left">
             {authorImage && (
               <img
-                src={parseImgur(authorImage, 'small-square')}
+                src={authorImage}
                 className="author-image"
                 alt={authorName}
               />

@@ -1,9 +1,9 @@
 module.exports = {
   pathPrefix: '/',
   siteMetadata: {
-    title: 'Calpa&apos;s Blog',
-    description: 'Front End Technical Blog - Calpa',
-    siteUrl: 'https://calpa.me',
+    title: 'Alex Ian&apos;s Blog',
+    description: 'Alex Ian&apos;s Blog ',
+    siteUrl: 'https://alexian.me',
     author: 'Calpa',
   },
   plugins: [

@@ -26,7 +26,7 @@ $open-sans: "Open Sans", sans-serif; // clear-fix mixin
     @media (min-width: 576px) {
       min-height: 15rem;
     }
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     min-height: 5.7rem;
     position: relative;

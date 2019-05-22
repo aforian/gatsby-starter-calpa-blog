@@ -9,6 +9,7 @@ module.exports = ({ actions, graphql }) => {
       allMarkdownRemark(
         limit: 1000
         sort: { order: DESC, fields: frontmatter___date }
+        filter: { frontmatter: { publish: { eq: true } } }
       ) {
         edges {
           node {
@@ -22,6 +23,7 @@ module.exports = ({ actions, graphql }) => {
               slug
               id
               title
+              publish
               url: slug
               date
               tags

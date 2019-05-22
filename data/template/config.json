@@ -15,7 +15,7 @@
     "title": "過去三十日數據",
     "description": "過去三十日數據"
   },
-  "title": "Alex's blog",
+  "title": "AlexIan's blog",
   "gitalk": {
     "repo": "gatsby-starter-calpa-blog",
     "admin": ["aforian"],
@@ -33,20 +33,12 @@
     }
   ],
   "iconUrl": "https://avatars3.githubusercontent.com/u/20759116?s=300&v=4",
-  "wordings": ["GatsbyJS, ReactJS"],
+  "wordings": ["ReactJS, VueJS", "畫畫/寫作/前端開發"],
   "gaTrackId": "UA-100845203-2",
   "navbarList": [
     {
-      "href": "/guestbook/",
-      "title": "留言簿"
-    },
-    {
-      "href": "/tags/",
-      "title": "Tags"
-    },
-    {
-      "href": "/2018/05/01/about-calpa-liu/",
-      "title": "關於作者"
+      "href": "https://medium.com/@alexian853",
+      "title": "Medium"
     }
   ],
   "redirectors": [
