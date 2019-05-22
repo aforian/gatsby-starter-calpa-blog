@@ -33,7 +33,7 @@ const Navbar = () => (
           gotoPage('/');
         }}
       >
-{/*         <span className="brand-logo">Calpa</span> */}
+        {/*         <span className="brand-logo">Calpa</span> */}
         Alex Ian&apos;s Blog
       </button>
       <button
@@ -49,16 +49,16 @@ const Navbar = () => (
         className="collapse navbar-collapse flex-row-reverse"
         id="navbarSupportedContent"
       >
-{/*         <ul className="navbar-nav mr-2"> */}
-{/*           {navbarList.map(item => ( */}
-{/*             <NavItem */}
-{/*               url={item.href} */}
-{/*               name={item.title} */}
-{/*               list={item.list} */}
-{/*               key={item.href} */}
-{/*             /> */}
-{/*           ))} */}
-{/*         </ul> */}
+        {/*         <ul className="navbar-nav mr-2"> */}
+        {/*           {navbarList.map(item => ( */}
+        {/*             <NavItem */}
+        {/*               url={item.href} */}
+        {/*               name={item.title} */}
+        {/*               list={item.list} */}
+        {/*               key={item.href} */}
+        {/*             /> */}
+        {/*           ))} */}
+        {/*         </ul> */}
       </div>
     </div>
   </nav>

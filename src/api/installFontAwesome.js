@@ -7,7 +7,7 @@ import {
   faFacebookF,
   faFacebook,
   faMedium,
-  faMediumM
+  faMediumM,
 } from '@fortawesome/free-brands-svg-icons';
 
 const installFontAwesome = () => {

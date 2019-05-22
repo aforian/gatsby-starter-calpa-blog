@@ -40,19 +40,19 @@ const Sidebar = ({ totalCount, latestPosts }) => (
         <h4>Alex Ian</h4>
       </Link>
       {
-        wordings.map((wording,wid) => <p key={wid} className="mb-1">{wording}</p>)
+        wordings.map((wording, wid) => <p key={wid} className="mb-1">{wording}</p>)
       }
-{/*       <p className="mb-1">{wordings[0]}</p> */}
-{/*       <p className="mb-3">{wordings[1]}</p> */}
+      {/*       <p className="mb-1">{wordings[0]}</p> */}
+      {/*       <p className="mb-3">{wordings[1]}</p> */}
       <Icon
-        href={`https://medium.com/@alexian853`}
+        href="https://medium.com/@alexian853"
         icon={['fab', 'medium-m']}
       />
       <Icon
         href={`https://github.com/${githubUsername}`}
         icon={['fab', 'github']}
       />
-{/*       <Icon href={`mailto:${email}`} icon={['far', 'envelope']} /> */}
+      {/*       <Icon href={`mailto:${email}`} icon={['far', 'envelope']} /> */}
       {facebook
         && <Icon href={`https://www.facebook.com/${facebook}/`} icon={['fab', 'facebook']} />
       }

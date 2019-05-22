@@ -21,6 +21,24 @@ $open-sans: "Open Sans", sans-serif; // clear-fix mixin
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
   }
 
+  .data {
+    transform: translateY(0);
+    transition: transform 0.3s;
+
+    .content {
+      padding: 1em;
+      position: relative;
+      z-index: 1;
+
+      // Tags, Date
+      .stats {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
   .wrapper {
     background-position: center;
     @media (min-width: 576px) {
@@ -40,24 +58,6 @@ $open-sans: "Open Sans", sans-serif; // clear-fix mixin
       .data {
         transform: translateY(-1em);
         transition: transform 0.3s;
-      }
-    }
-  }
-
-  .data {
-    transform: translateY(0);
-    transition: transform 0.3s;
-
-    .content {
-      padding: 1em;
-      position: relative;
-      z-index: 1;
-
-      // Tags, Date
-      .stats {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
       }
     }
   }
