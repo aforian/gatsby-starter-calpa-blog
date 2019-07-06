@@ -68,7 +68,16 @@ Card.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.string),
 };
 
-CardHeader.propTypes = Card.propTypes;
+// CardHeader.propTypes = Card.propTypes;
+CardHeader.propTypes = {
+  // title: PropTypes.string.isRequired,
+  date: PropTypes.string,
+  url: PropTypes.string.isRequired,
+  headerImage: PropTypes.string,
+  headerBackgroundColor: PropTypes.string,
+  // description: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string),
+};
 
 Card.defaultProps = {
   headerImage: '',
