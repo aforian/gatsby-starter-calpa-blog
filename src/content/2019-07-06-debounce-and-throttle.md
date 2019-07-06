@@ -5,7 +5,7 @@ title: Debounce & Throttle - 那些前端開發應該要知道的小事(一)
 slug: /2019/07/06/debounce&throttle
 date: 2019-07-06T12:00:00Z
 description: 當開發的應用功能和架構越來越大、越來越複雜的情況下，降低瀏覽網站所消耗的效能就成為開發者的義務，而Debounce和Throttle概念便是降低互動事件頻繁觸發的解答。
-headerImage: https://i.imgur.com/b4YSjR4.jpg
+headerImage: https://i.imgur.com/1lJ7XQW.gif
 publish: true
 tags:
   - 那些前端開發應該要知道的小事
