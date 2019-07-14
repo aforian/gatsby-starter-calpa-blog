@@ -32,8 +32,10 @@ const blocks = document.querySelectorAll('.block');
 function handleClick(e){
   console.log(`data-id: ${this.dataset.id}`)
 }
-block1.addEventListener('click', handleClick, {
-  capture: true,
+blocks.forEach(block => {
+  block.addEventListener('click', handleClick, {
+    capture: true,
+  })
 })
 ```
 
@@ -59,10 +61,12 @@ JS:
 const blocks = document.querySelectorAll('.block');
 
 function handleClick(e){
-  console.log(`this event only trigger once, data-id: ${this.dataset.id}`)
+ console.log(`this event only trigger once, data-id: ${this.dataset.id}`)
 }
-block1.addEventListener('click', handleClick, {
-  once: true,
+blocks.forEach(block => {
+  block.addEventListener('click', handleClick, {
+   capture: true,
+  })
 })
 ```
 
