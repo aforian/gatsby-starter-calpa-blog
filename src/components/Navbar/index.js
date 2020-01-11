@@ -5,12 +5,12 @@ import ReactGA from 'react-ga';
 
 import GithubCorner from '../GithubCorner';
 
-import NavItem from './NavItem';
+// import NavItem from './NavItem';
 import { gotoPage } from '../../api/url';
 import './index.scss';
-import { config } from '../../../data';
+// import { config } from '../../../data';
 
-const { navbarList = [] } = config;
+// const { navbarList = [] } = config;
 
 const NavbarClass = [
   'navbar',
@@ -33,7 +33,6 @@ const Navbar = () => (
           gotoPage('/');
         }}
       >
-        {/*         <span className="brand-logo">Calpa</span> */}
         Alex Ian&apos;s Blog
       </button>
       <button
