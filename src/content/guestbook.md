@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-id: https://alexian.me/guestbook/
+id: https://alex-ian.me/guestbook/
 title: 留言簿
 slug: /guestbook
 date: 2019-01-11T16:32:00Z

@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     title: 'Alex Ian&apos;s Blog',
     description: 'Alex Ian&apos;s Blog ',
-    siteUrl: 'https://alexian.me',
+    siteUrl: 'https://alex-ian.me',
     author: 'Alex Ian',
   },
   plugins: [
