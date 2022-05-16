@@ -1,5 +1,12 @@
 {
-  "url": "https://alex-ian.me",
+  "carouselItems": [
+    {
+      "src": "https://i.imgur.com/gw91CuI.jpg",
+      "target": "/stats/"
+    }
+  ],
+  "License": "by",
+  "maxPostsInPage": 10,
   "meta": {
     "favicon": "https://alex-ian.me/favicons/android-chrome-192x192.png",
     "keyword": "alexian, blog, JavaScript",
@@ -7,55 +14,53 @@
     "theme_color": "#33a579",
     "google_site_verification": "PqBxbkZVOntH4ADgZ8VxfiFDG3RBK-WrEf4iauFn63o"
   },
+  "facebook": "alexianblog",
   "name": "alexian",
-  "about": "/2019/05/21/about-alexian/",
-  "email": "aelxian853@gmail.com",
-  "stats": {
-    "image": "https://i.imgur.com/VjBWiSt.png",
-    "title": "過去三十日數據",
-    "description": "過去三十日數據"
-  },
-  "title": "AlexIan's blog",
+  "gaTrackId": "UA-100845203-2",
+  "about": "/2019/05/22/about-alexian",
   "gitalk": {
     "repo": "gatsby-starter-calpa-blog",
-    "admin": ["aforian"],
+    "admin": [
+      "aforian"
+    ],
     "owner": "aforian",
     "clientID": "a8a8bf889d4a6fa825e8",
     "clientSecret": "54cec43b1de8ff4ee6a6d5fd43116deeaae1f259",
     "pagerDirection": "first",
     "distractionFreeMode": true
   },
-  "License": "by",
-  "friends": [
-    {
-      "href": "https://alex-ian.me",
-      "title": "Alex's Blog"
-    }
-  ],
-  "iconUrl": "https://avatars3.githubusercontent.com/u/20759116?s=300&v=4",
-  "wordings": ["ReactJS, VueJS", "畫畫/寫作/前端開發"],
-  "gaTrackId": "UA-100845203-2",
   "navbarList": [
     {
       "href": "https://medium.com/@alexian853",
       "title": "Medium"
     }
   ],
+  "url": "https://alex-ian.me",
+  "gaOptimizeId": "GTM-5L832KF",
   "redirectors": [
     {
       "toPath": "/2018/05/22/about-alexian/",
       "fromPath": "/about/"
     }
   ],
-  "gaOptimizeId": "GTM-5L832KF",
-  "carouselItems": [
+  "friends": [
     {
-      "src": "https://i.imgur.com/gw91CuI.jpg",
-      "target": "/stats/"
+      "href": "https://alexian.me",
+      "title": "Alex's Blog"
     }
   ],
-  "zhihuUsername": "piao-xue-wu-ying",
+  "iconUrl": "https://avatars3.githubusercontent.com/u/20759116?s=300&v=4",
+  "title": "AlexIan's blog",
   "githubUsername": "aforian",
-  "maxPostsInPage": 10,
-  "facebook": "alexianblog"
+  "wordings": [
+    "ReactJS, VueJS",
+    "畫畫/寫作/前端開發"
+  ],
+  "email": "aelxian853@gmail.com",
+  "zhihuUsername": "piao-xue-wu-ying",
+  "stats": {
+    "image": "https://i.imgur.com/VjBWiSt.png",
+    "title": "過去三十日數據",
+    "description": "過去三十日數據"
+  }
 }
