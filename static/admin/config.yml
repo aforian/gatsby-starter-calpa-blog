@@ -1,7 +1,8 @@
 backend:
   name: git-gateway
   # Branch to update (optional; defaults to master)
-  branch: master
+  # branch: master
+  branch: cms/2019-05-22-about
 
 publish_mode: editorial_workflow
 media_folder: static/assets
