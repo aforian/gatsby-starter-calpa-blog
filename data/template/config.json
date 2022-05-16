@@ -24,10 +24,11 @@
       "aforian"
     ],
     "owner": "aforian",
-    "clientID": "a8a8bf889d4a6fa825e8",
-    "clientSecret": "54cec43b1de8ff4ee6a6d5fd43116deeaae1f259",
+    "clientID": "811d7e04ec87fc11c76e",
+    "clientSecret": "835d4d6127a2eee6e20ee57e42dc5bbb0b38993e",
     "pagerDirection": "first",
-    "distractionFreeMode": true
+    "distractionFreeMode": true,
+    "proxy": "https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"
   },
   "navbarList": [
     {
