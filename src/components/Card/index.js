@@ -64,7 +64,7 @@ Card.propTypes = {
   url: PropTypes.string.isRequired,
   headerImage: PropTypes.string,
   headerBackgroundColor: PropTypes.string,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string),
 };
 
@@ -79,6 +79,7 @@ Card.defaultProps = {
   date: '',
   headerImage: '',
   headerBackgroundColor: '',
+  description: '',
 };
 
 CardHeader.defaultProps = {
