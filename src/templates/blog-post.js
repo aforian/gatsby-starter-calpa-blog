@@ -15,7 +15,6 @@ import Content from '../components/Content';
 import SEO from '../components/SEO';
 
 import Header from '../components/Header';
-// import TableOfContent from '../components/TableOfContent';
 import ShareBox from '../components/ShareBox';
 
 import { config } from '../../data';
@@ -76,7 +75,7 @@ class BlogPost extends Component {
             如果你覺得我的文章對你有幫助的話，希望可以推薦和交流一下。歡迎
             <ExternalLink
               href="https://github.com/aforian/gatsby-starter-calpa-blog"
-              title="關注和 Star 這個blog"
+              title="關注和 Star 這個 Blog"
             />
             或者
             <ExternalLink
@@ -94,7 +93,7 @@ class BlogPost extends Component {
         <SEO
           title={title}
           url={slug}
-          siteTitleAlt="AlexIan Blog"
+          siteTitleAlt="AlexIan's Blog"
           isPost={false}
           description={excerpt}
           image={headerImage || 'https://i.imgur.com/M795H8A.jpg'}

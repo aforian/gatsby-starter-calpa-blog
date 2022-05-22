@@ -46,7 +46,7 @@ const TagPage = ({ data }) => {
       <SEO
         title="標籤"
         url="/tags/"
-        siteTitleAlt="AlexIan's Blog"
+        siteTitleAlt="Alex Ian's Blog"
         isPost={false}
         description="Tags Page"
         image="https://i.imgur.com/M795H8A.jpg"
