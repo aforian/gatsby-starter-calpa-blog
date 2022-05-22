@@ -1,4 +1,4 @@
-const path = require('path');
+// const path = require('path');
 
 const eslintrc = {
   extends: 'airbnb',
@@ -27,6 +27,8 @@ const eslintrc = {
     'import/no-extraneous-dependencies': [2, { devDependencies: true }],
     'import/no-unresolved': [2, { ignore: ['antd'] }],
     'no-underscore-dangle': ['error', { allow: ['_id'] }],
+    'react/function-component-definition': 'off',
+    'arrow-parens': [2, 'as-needed'],
   },
   env: {
     browser: true,

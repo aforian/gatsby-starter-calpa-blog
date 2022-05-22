@@ -22,7 +22,7 @@ const parseUrl = (date, rawUrl) => {
   return `/${date}/${rawUrl}/`;
 };
 
-const minusOnePage = (currentPage) => {
+const minusOnePage = currentPage => {
   if (currentPage - 1 >= 1) {
     return currentPage - 1;
   }
@@ -37,7 +37,7 @@ const addOnePage = (currentPage = 0, maxPages = 1) => {
   return -1;
 };
 
-const parsePageUrl = (index) => {
+const parsePageUrl = index => {
   if (index > 0) {
     return `/page/${index}`;
   }
@@ -47,7 +47,7 @@ const parsePageUrl = (index) => {
   return -1;
 };
 
-const handlePreviousPage = (pageNumber) => {
+const handlePreviousPage = pageNumber => {
   const index = minusOnePage(+pageNumber);
 
   return parsePageUrl(index);
