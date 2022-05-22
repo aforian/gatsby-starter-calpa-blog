@@ -90,10 +90,7 @@
     "yarn-upgrade-all": "^0.7.1"
   },
   "lint-staged": {
-    "**/*.js": [
-      "eslint --fix",
-      "git add"
-    ],
+    "**/*.js": "eslint --fix",
     "**/*.css": "stylelint",
     "**/*.scss": "stylelint --syntax=scss"
   }
