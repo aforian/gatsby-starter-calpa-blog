@@ -6,7 +6,7 @@ import ReactGA from 'react-ga';
 import GithubCorner from '../GithubCorner';
 
 // import NavItem from './NavItem';
-import { gotoPage } from '../../api/url';
+import { gotoPage } from '../../apis/url';
 import './index.scss';
 // import { config } from '../../../data';
 
