@@ -5,7 +5,7 @@ title: polyfill是什麼？
 slug: /2019/05/26/what-is-polyfill/
 date: 2019-05-26
 description: polyfill是什麼
-headerImage: ../../static/assets/polyfill-1.png
+headerImage: https://i.imgur.com/SgPSLhm.png
 publish: true
 tags:
   - JavaScript
@@ -78,7 +78,7 @@ if (!Array.prototype.includes) {
 
 那麼什麼時候才要用polyfill呢？這取決於客戶和使用者瀏覽的環境，如果環境是能夠實現需要的功能，那就避免放入冗長的polyfill，而我平常會使用 https://caniuse.com/ 檢查這原生方法是否有在該環境實現，來決定是否載入該polyfill。而另外也有一些較新的解決方法，例如 https://polyfill.io/v3/ 使用api request查找環境是否需使用polyfill，但由於我還沒有試過，所以不作評論。
 
-![萬惡的IE](../../static/assets/polyfill-2.png)
+![萬惡的IE](https://i.imgur.com/SgPSLhm.png)
 > 萬惡的IE
 
 希望大家在遭還瀏覽器Gank時，可以使用polyfill迎刃而解～
