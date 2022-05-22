@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+
 import React from 'react';
 import { graphql } from 'gatsby';
 
@@ -5,7 +7,6 @@ import Sidebar from '../components/Sidebar';
 import Tag from '../components/Tag';
 import SEO from '../components/SEO';
 
-// eslint-disable-next-line react/prop-types
 const TagPage = ({ data }) => {
   const { allMarkdownRemark } = data;
 
@@ -13,7 +14,7 @@ const TagPage = ({ data }) => {
 
   allMarkdownRemark.edges.forEach(({ node }) => {
     const { tags } = node.frontmatter;
-    tags.forEach((name) => {
+    tags.forEach(name => {
       if (mapping[name]) {
         mapping[name] += 1;
       } else {
@@ -45,7 +46,7 @@ const TagPage = ({ data }) => {
       <SEO
         title="標籤"
         url="/tags/"
-        siteTitleAlt="Calpa's Blog"
+        siteTitleAlt="Alex's Blog"
         isPost={false}
         description="Tags Page"
         image="https://i.imgur.com/M795H8A.jpg"

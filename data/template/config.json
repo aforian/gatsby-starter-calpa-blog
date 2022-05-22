@@ -1,15 +1,23 @@
 {
-  "url": "https://alexian.me",
+  "carouselItems": [
+    {
+      "src": "https://i.imgur.com/gw91CuI.jpg",
+      "target": "/stats/"
+    }
+  ],
+  "License": "by",
+  "maxPostsInPage": 10,
   "meta": {
-    "favicon": "https://alexian.me/favicons/android-chrome-192x192.png",
+    "favicon": "https://alex-ian.me/favicons/android-chrome-192x192.png",
     "keyword": "alexian, blog, JavaScript",
     "description": "Alex Ian 的 Blog",
     "theme_color": "#33a579",
     "google_site_verification": "PqBxbkZVOntH4ADgZ8VxfiFDG3RBK-WrEf4iauFn63o"
   },
+  "facebook": "alexianblog",
   "name": "alexian",
-  "about": "/2019/05/21/about-alexian/",
-  "email": "aelxian853@gmail.com",
+  "gaTrackId": "UA-100845203-2",
+  "about": "/2019/05/22/about-alexian",,
   "stats": {
     "image": "https://i.imgur.com/VjBWiSt.png",
     "title": "過去三十日數據",
@@ -18,7 +26,9 @@
   "title": "AlexIan's blog",
   "gitalk": {
     "repo": "gatsby-starter-calpa-blog",
-    "admin": ["aforian"],
+    "admin": [
+      "aforian"
+    ],
     "owner": "aforian",
     "clientID": "811d7e04ec87fc11c76e",
     "clientSecret": "835d4d6127a2eee6e20ee57e42dc5bbb0b38993e",
@@ -26,7 +36,20 @@
     "distractionFreeMode": true,
     "proxy": "https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"
   },
-  "License": "by",
+  "navbarList": [
+    {
+      "href": "https://medium.com/@alexian853",
+      "title": "Medium"
+    }
+  ],
+  "url": "https://alex-ian.me",
+  "gaOptimizeId": "GTM-5L832KF",
+  "redirectors": [
+    {
+      "toPath": "/2018/05/22/about-alexian/",
+      "fromPath": "/about/"
+    }
+  ],
   "friends": [
     {
       "href": "https://alexian.me",
@@ -34,29 +57,11 @@
     }
   ],
   "iconUrl": "https://avatars3.githubusercontent.com/u/20759116?s=300&v=4",
-  "wordings": ["ReactJS, VueJS", "畫畫/寫作/前端開發"],
-  "gaTrackId": "UA-100845203-2",
-  "navbarList": [
-    {
-      "href": "https://medium.com/@alexian853",
-      "title": "Medium"
-    }
-  ],
-  "redirectors": [
-    {
-      "toPath": "/2018/05/01/about-calpa-liu/",
-      "fromPath": "/about/"
-    }
-  ],
-  "gaOptimizeId": "GTM-5L832KF",
-  "carouselItems": [
-    {
-      "src": "https://i.imgur.com/gw91CuI.jpg",
-      "target": "/stats/"
-    }
-  ],
-  "zhihuUsername": "piao-xue-wu-ying",
   "githubUsername": "aforian",
-  "maxPostsInPage": 10,
-  "facebook": "alexianblog"
+  "wordings": [
+    "ReactJS, VueJS",
+    "畫畫/寫作/前端開發"
+  ],
+  "email": "aelxian853@gmail.com",
+  "zhihuUsername": "piao-xue-wu-ying"
 }

@@ -1,8 +1,8 @@
 {
   "name": "blog",
-  "description": "Calpa's Blog",
+  "description": "Alex's Blog",
   "version": "1.0.0",
-  "author": "Calpa Liu <calpaliu@gmail.com>",
+  "author": "Calpa Liu <calpaliu@gmail.com>, Alex Ian <alexian@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",

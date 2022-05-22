@@ -3,8 +3,8 @@ module.exports = {
   siteMetadata: {
     title: 'Alex Ian&apos;s Blog',
     description: 'Alex Ian&apos;s Blog ',
-    siteUrl: 'https://alexian.me',
-    author: 'Calpa',
+    siteUrl: 'https://alex-ian.me',
+    author: 'Alex Ian',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -56,8 +56,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "Calpa's Blog",
-        short_name: 'Calpa',
+        name: "Alex Ian's Blog",
+        short_name: 'Alex Ian',
         start_url: '/',
         background_color: '#ededed',
         theme_color: '#384f7c',
