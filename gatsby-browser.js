@@ -31,7 +31,7 @@ console.log(
   'background: #6cf; padding:5px 0;',
 );
 
-export const onRouteUpdate = (state) => {
+export const onRouteUpdate = state => {
   if (isLocalDevelopment() !== true) {
     ReactGA.pageview(state.location.pathname);
   } else {

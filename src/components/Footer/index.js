@@ -35,7 +35,7 @@ const Footer = () => (
             {new Date().getFullYear()}
             &nbsp;Theme by
             &nbsp;
-            <ExternalLink href="https://github.com/calpa" title="Calpa Liu" />
+            <ExternalLink href="https://github.com/aforian" title="Alex Ian" />
           </p>
         </div>
       </div>
