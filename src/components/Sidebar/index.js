@@ -12,8 +12,6 @@ import './index.scss';
 const {
   wordings = [],
   githubUsername,
-  zhihuUsername,
-  email,
   iconUrl,
   about,
   facebook,
@@ -39,23 +37,19 @@ const Sidebar = ({ totalCount, latestPosts }) => (
         <img className="avatar" src={iconUrl} alt="Alex Ian" />
         <h4>Alex Ian</h4>
       </Link>
-      {
-        wordings.map((wording,wid) => <p key={wid} className="mb-1">{wording}</p>)
-      }
-{/*       <p className="mb-1">{wordings[0]}</p> */}
-{/*       <p className="mb-3">{wordings[1]}</p> */}
+      {wordings.map(wording => (
+        <p key={wording} className="mb-1">{wording}</p>
+      ))}
       <Icon
-        href={`https://medium.com/@alexian853`}
+        href="https://medium.com/@alexian853"
         icon={['fab', 'medium-m']}
       />
       <Icon
         href={`https://github.com/${githubUsername}`}
         icon={['fab', 'github']}
       />
-{/*       <Icon href={`mailto:${email}`} icon={['far', 'envelope']} /> */}
       {facebook
-        && <Icon href={`https://www.facebook.com/${facebook}/`} icon={['fab', 'facebook']} />
-      }
+        && <Icon href={`https://www.facebook.com/${facebook}/`} icon={['fab', 'facebook']} />}
       <Information totalCount={totalCount} posts={latestPosts} />
     </div>
   </header>

@@ -29,6 +29,7 @@ const eslintrc = {
     'no-underscore-dangle': ['error', { allow: ['_id'] }],
     'react/function-component-definition': 'off',
     'arrow-parens': [2, 'as-needed'],
+    'react/jsx-props-no-spreading': 'off',
   },
   env: {
     browser: true,
