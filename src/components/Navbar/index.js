@@ -5,12 +5,8 @@ import ReactGA from 'react-ga';
 
 import GithubCorner from '../GithubCorner';
 
-// import NavItem from './NavItem';
 import { gotoPage } from '../../apis/url';
 import './index.scss';
-// import { config } from '../../../data';
-
-// const { navbarList = [] } = config;
 
 const NavbarClass = [
   'navbar',
@@ -47,18 +43,7 @@ const Navbar = () => (
       <div
         className="collapse navbar-collapse flex-row-reverse"
         id="navbarSupportedContent"
-      >
-        {/*         <ul className="navbar-nav mr-2"> */}
-        {/*           {navbarList.map(item => ( */}
-        {/*             <NavItem */}
-        {/*               url={item.href} */}
-        {/*               name={item.title} */}
-        {/*               list={item.list} */}
-        {/*               key={item.href} */}
-        {/*             /> */}
-        {/*           ))} */}
-        {/*         </ul> */}
-      </div>
+      />
     </div>
   </nav>
 );
