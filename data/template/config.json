@@ -5,26 +5,30 @@
       "target": "/stats/"
     }
   ],
-  "title": "Alex's Blog",
-  "author": "Alex Ian",
   "License": "",
   "maxPostsInPage": 10,
   "meta": {
-    "favicon": "https://alex-ian.me/favicons/favicon-96x96.png",
+    "favicon": "https://alex-ian.me/favicons/android-chrome-192x192.png",
     "keyword": "alexian, blog, JavaScript",
     "description": "Alex Ian 的 Blog",
-    "theme_color": "#14B8A6",
+    "theme_color": "#33a579",
     "google_site_verification": "PqBxbkZVOntH4ADgZ8VxfiFDG3RBK-WrEf4iauFn63o"
   },
-  "website": "https://portfolio.alex-ian.me/",
   "facebook": "alexianblog",
   "name": "alexian",
   "gaTrackId": "UA-100845203-2",
   "about": "/2019/05/22/about-alexian",
-  "utteranc": {
-    "repo": "aforian/gatsby-starter-calpa-blog",
-    "issueTerm": "title",
-    "theme": "github-light"
+  "gitalk": {
+    "repo": "gatsby-starter-calpa-blog",
+    "admin": [
+      "aforian"
+    ],
+    "owner": "aforian",
+    "clientID": "811d7e04ec87fc11c76e",
+    "clientSecret": "835d4d6127a2eee6e20ee57e42dc5bbb0b38993e",
+    "pagerDirection": "first",
+    "distractionFreeMode": true,
+    "proxy": "https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"
   },
   "navbarList": [
     {
