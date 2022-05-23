@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faGithub, faMediumM } from '@fortawesome/free-brands-svg-icons';
 
 import { config } from '../../../data';
 
@@ -42,14 +43,14 @@ const Sidebar = ({ totalCount, latestPosts }) => (
       ))}
       <Icon
         href="https://medium.com/@alexian853"
-        icon={['fab', 'medium-m']}
+        icon={faMediumM}
       />
       <Icon
         href={`https://github.com/${githubUsername}`}
-        icon={['fab', 'github']}
+        icon={faGithub}
       />
       {facebook
-        && <Icon href={`https://www.facebook.com/${facebook}/`} icon={['fab', 'facebook']} />}
+        && <Icon href={`https://www.facebook.com/${facebook}/`} icon={faFacebook} />}
       <Information totalCount={totalCount} posts={latestPosts} />
     </div>
   </header>
@@ -57,7 +58,7 @@ const Sidebar = ({ totalCount, latestPosts }) => (
 
 Icon.propTypes = {
   href: PropTypes.string.isRequired,
-  icon: PropTypes.arrayOf(PropTypes.string).isRequired,
+  icon: PropTypes.arrayOf(PropTypes.instanceOf(faFacebook)).isRequired,
 };
 
 Sidebar.propTypes = {

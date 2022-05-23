@@ -2,15 +2,11 @@
 import ReactGA from 'react-ga';
 import { config } from './data';
 
-import installFontAwesome from './src/api/installFontAwesome';
-
 import 'prismjs/themes/prism-solarizedlight.css';
 
 const {
   url, gaTrackId, gaOptimizeId,
 } = config;
-
-installFontAwesome();
 
 const isLocalDevelopment = () => window && window.location && window.location.origin !== url;
 

@@ -1,5 +1,6 @@
 const path = require('path');
 const createPaginatedPages = require('gatsby-paginate');
+const { config } = require('../data');
 
 module.exports = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -34,7 +35,7 @@ module.exports = ({ actions, graphql }) => {
         }
       }
     }
-  `).then((result) => {
+  `).then(result => {
     if (result.errors) {
       return Promise.reject(result.errors);
     }
@@ -47,6 +48,7 @@ module.exports = ({ actions, graphql }) => {
       edges,
       createPage,
       pageTemplate: 'src/templates/index.js',
+      pageLength: config.maxPostsInPage,
       context: {
         totalCount: edges.length,
       },
@@ -90,7 +92,7 @@ module.exports = ({ actions, graphql }) => {
     });
 
     // 創建標籤頁面
-    return tagSet.forEach((tag) => {
+    return tagSet.forEach(tag => {
       createPage({
         path: `/tag/${tag}`,
         component: path.resolve('src/templates/tag.js'),
