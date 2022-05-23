@@ -5,7 +5,7 @@
       "target": "/stats/"
     }
   ],
-  "License": "by",
+  "License": "",
   "maxPostsInPage": 10,
   "meta": {
     "favicon": "https://alex-ian.me/favicons/android-chrome-192x192.png",
@@ -18,12 +18,6 @@
   "name": "alexian",
   "gaTrackId": "UA-100845203-2",
   "about": "/2019/05/22/about-alexian",
-  "stats": {
-    "image": "https://i.imgur.com/VjBWiSt.png",
-    "title": "過去三十日數據",
-    "description": "過去三十日數據"
-  },
-  "title": "AlexIan's blog",
   "gitalk": {
     "repo": "gatsby-starter-calpa-blog",
     "admin": [
@@ -57,11 +51,17 @@
     }
   ],
   "iconUrl": "https://avatars3.githubusercontent.com/u/20759116?s=300&v=4",
+  "title": "AlexIan's blog",
   "githubUsername": "aforian",
   "wordings": [
     "ReactJS, VueJS",
     "畫畫/寫作/前端開發"
   ],
-  "email": "aelxian853@gmail.com",
-  "zhihuUsername": "piao-xue-wu-ying"
+  "email": "alexian853@gmail.com",
+  "zhihuUsername": "piao-xue-wu-ying",
+  "stats": {
+    "image": "https://i.imgur.com/VjBWiSt.png",
+    "title": "過去三十日數據",
+    "description": "過去三十日數據"
+  }
 }
