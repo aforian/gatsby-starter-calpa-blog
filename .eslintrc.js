@@ -30,6 +30,8 @@ const eslintrc = {
     'react/function-component-definition': 'off',
     'arrow-parens': [2, 'as-needed'],
     'react/jsx-props-no-spreading': 'off',
+    'import/prefer-default-export': 'off',
+    'consistent-return': 'off',
   },
   env: {
     browser: true,

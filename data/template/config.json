@@ -18,23 +18,10 @@
   "name": "alexian",
   "gaTrackId": "UA-100845203-2",
   "about": "/2019/05/22/about-alexian",
-  "stats": {
-    "image": "https://i.imgur.com/VjBWiSt.png",
-    "title": "過去三十日數據",
-    "description": "過去三十日數據"
-  },
-  "title": "AlexIan's blog",
-  "gitalk": {
-    "repo": "gatsby-starter-calpa-blog",
-    "admin": [
-      "aforian"
-    ],
-    "owner": "aforian",
-    "clientID": "811d7e04ec87fc11c76e",
-    "clientSecret": "835d4d6127a2eee6e20ee57e42dc5bbb0b38993e",
-    "pagerDirection": "first",
-    "distractionFreeMode": true,
-    "proxy": "https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"
+  "utteranc": {
+    "repo": "aforian/gatsby-starter-calpa-blog",
+    "issueTerm": "title",
+    "theme": "github-light"
   },
   "navbarList": [
     {
@@ -62,6 +49,11 @@
     "ReactJS, VueJS",
     "畫畫/寫作/前端開發"
   ],
-  "email": "aelxian853@gmail.com",
-  "zhihuUsername": "piao-xue-wu-ying"
+  "email": "alexian853@gmail.com",
+  "zhihuUsername": "piao-xue-wu-ying",
+  "stats": {
+    "image": "https://i.imgur.com/VjBWiSt.png",
+    "title": "過去三十日數據",
+    "description": "過去三十日數據"
+  }
 }
