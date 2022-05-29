@@ -4,20 +4,22 @@ import PropTypes from 'prop-types';
 
 import Friend from '../Friend';
 import LatestPost from '../LatestPost';
-import './index.scss';
+// import './index.scss';
+
+const Divider = () => <hr className="my-3" />;
 
 // eslint-disable-next-line react/prop-types
 const Information = ({ totalCount, posts }) => (
-  <div className="d-none d-lg-block information my-2">
-    <hr />
+  <div className="hidden md:block my-2">
+    <Divider />
     <p>
       共&nbsp;
       {totalCount}
       &nbsp;篇文章
     </p>
-    <hr />
+    <Divider />
     <LatestPost posts={posts} />
-    <hr />
+    <Divider />
     <Friend />
   </div>
 );

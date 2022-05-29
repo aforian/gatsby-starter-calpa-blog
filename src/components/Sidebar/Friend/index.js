@@ -1,16 +1,13 @@
 import React from 'react';
 
 import ExternalLink from '../../ExternalLink';
-
 import { config } from '../../../../data';
-
-import './index.scss';
 
 const { friends = [] } = config;
 
 const Friend = () => (
   <div className="friend">
-    <p>友情鏈接</p>
+    <h4 className="text-lg mb-3">友站連結</h4>
     {friends.map(friend => (
       <ExternalLink
         href={friend.href}
