@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import ReactGA from 'react-ga';
 
 import Dropdown from './Dropdown';
-import { gotoPage } from '../../../api/url';
+import { gotoPage } from '../../../apis/url';
 
 import './index.scss';
 

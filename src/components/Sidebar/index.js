@@ -59,7 +59,7 @@ const Sidebar = ({ totalCount, latestPosts }) => {
       {wordings.map(wording => (
         <p key={wording} className="mb-2">{wording}</p>
       ))}
-      {links.map(link => <Icon {...link} />)}
+      {links.map(link => <Icon key={link.href} {...link} />)}
       <Information totalCount={totalCount} posts={latestPosts} />
     </menu>
   );
