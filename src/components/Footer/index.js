@@ -3,7 +3,7 @@ import React from 'react';
 import ExternalLink from '../ExternalLink';
 
 const Footer = () => (
-  <footer className="footer pt-5 pb-24">
+  <footer className="footer pt-5 pb-12">
     <div className="container mx-auto">
       <div className="w-full text-center">
         <p>

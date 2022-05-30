@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Tag = ({ name, count }) => (
+const Tag = ({ name, count, className }) => (
   <a
     href={`/tag/${name}`}
     className={`
@@ -11,6 +11,7 @@ const Tag = ({ name, count }) => (
       after:absolute after:left-[-5px] after:top-1/2 after:w-[4px] after:h-[4px] after:rounded-full
       after:bg-white after:-translate-y-1/2 duration-200 before:duration-200
       hover:bg-sky-600 hover:underline hover:decoration-1 hover:before:border-r-sky-600
+      ${className}
     `}
   >
     {name}
@@ -22,10 +23,12 @@ const Tag = ({ name, count }) => (
 Tag.propTypes = {
   name: PropTypes.string.isRequired,
   count: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  className: PropTypes.string,
 };
 
 Tag.defaultProps = {
   count: '',
+  className: '',
 };
 
 export default Tag;

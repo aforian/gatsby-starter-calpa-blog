@@ -1,43 +1,35 @@
+/* eslint-disable react/prop-types */
+
 import React from 'react';
 import { graphql } from 'gatsby';
 import Card from '../components/Card';
 import SEO from '../components/SEO';
 import Sidebar from '../components/Sidebar';
+import Tag from '../components/Tag';
+import ShareBox from '../components/ShareBox';
 
-// eslint-disable-next-line react/prop-types
-const TagPage = ({ data, pageContext }) => {
+const TagPage = ({ data, pageContext, location }) => {
   const { edges } = data.allMarkdownRemark;
   const { tag } = pageContext;
-  return (
-    <div className="container">
-      <div
-        className="row"
-        style={{
-          margin: 15,
-        }}
-      >
-        <Sidebar />
 
-        <div className="col-xl-10 col-lg-7 col-md-12 col-xs-12 order-2">
-          <div
-            className="col-12"
-            style={{
-              fontSize: 20,
-              margin: 15,
-            }}
-          >
-            {edges.length}
-            &nbsp;Articles in&nbsp;
-            {tag}
+  return (
+    <>
+      <div className="container lg:max-w-screen-lg mx-auto md:pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <aside>
+          <Sidebar />
+        </aside>
+        <main className="md:col-span-2 lg:col-span-3">
+          <div className="text-xl mt-3 m-4 md:mx-0">
+            <span className="text-2xl">{edges.length}</span>
+            {' Articles in '}
+            <Tag name={tag} />
           </div>
           {edges.map(({ node }) => (
             <Card {...node.frontmatter} key={node.id} />
           ))}
-        </div>
-
-        <div className="col-xl-2 col-lg-1 order-3" />
+        </main>
       </div>
-
+      <ShareBox url={location.href} hasCommentBox={false} />
       <SEO
         title={tag}
         url={`/tag/${tag}`}
@@ -46,7 +38,7 @@ const TagPage = ({ data, pageContext }) => {
         description={tag}
         image="https://i.imgur.com/M795H8A.jpg"
       />
-    </div>
+    </>
   );
 };
 

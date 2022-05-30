@@ -43,7 +43,7 @@ const Card = ({
           ))}
         </div>
         <Link to={url} href={url}>
-          <h4 className="text-2xl text-cyan-600 mt-3 mb-1 hover:text-cyan-700 hover:underline">{title}</h4>
+          <h3 className="text-xl md:text-2xl text-cyan-600 mt-3 mb-1 hover:text-cyan-700 hover:underline">{title}</h3>
         </Link>
         <p className="line-clamp-2 mb-4">{description}</p>
         <Link to={url} href={url} className="text-cyan-600 hover:text-cyan-700">
