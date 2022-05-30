@@ -29,19 +29,11 @@ const TagPage = ({ data }) => {
 
   return (
     <div className="container">
-      <div
-        className="row"
-        style={{
-          margin: 15,
-        }}
-      >
-        <Sidebar />
-
-        <div className="col order-2">
-          {tags.map(item => (
-            <Tag name={item} key={item} count={mapping[item]} />
-          ))}
-        </div>
+      <Sidebar />
+      <div className="col order-2">
+        {tags.map(item => (
+          <Tag name={item} key={item} count={mapping[item]} />
+        ))}
       </div>
       <SEO
         title="標籤"

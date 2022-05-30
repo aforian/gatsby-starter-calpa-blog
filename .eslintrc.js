@@ -13,6 +13,9 @@ const eslintrc = {
       'prop-types',
     ],
   },
+  parserOptions: {
+    ecmaVersion: 2020,
+  },
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/forbid-prop-types': 0,

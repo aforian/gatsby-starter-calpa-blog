@@ -1,26 +1,14 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 import ReactGA from 'react-ga';
 
-import GithubCorner from '../GithubCorner';
-
 import { gotoPage } from '../../apis/url';
-import './index.scss';
-
-const NavbarClass = [
-  'navbar',
-  'navbar-expand-md',
-  'sticky-top',
-  'custom-navbar',
-];
 
 const Navbar = () => (
-  <nav id="m-navbar" className={`${NavbarClass.join(' ')} navbar-night`}>
-    <div className="container">
+  <nav className="fixed w-full top-0 left-0 px-4 py-2 z-[1020] shadow-lg bg-white">
+    <div className="container lg:max-w-screen-lg mx-auto flex justify-between">
       <button
         type="button"
-        className="navbar-brand btn btn-default"
+        className="py-1 px-2 text-lg font-bold rounded-md hover:bg-gray-200 hover:hover:text-teal-600 duration-200"
         onClick={() => {
           ReactGA.event({
             category: 'User',
@@ -31,19 +19,6 @@ const Navbar = () => (
       >
         Alex Ian&apos;s Blog
       </button>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-      >
-        <FontAwesomeIcon icon={faBars} />
-      </button>
-      <GithubCorner url="https://github.com/aforian/" />
-      <div
-        className="collapse navbar-collapse flex-row-reverse"
-        id="navbarSupportedContent"
-      />
     </div>
   </nav>
 );

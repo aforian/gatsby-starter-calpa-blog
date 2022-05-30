@@ -1,3 +1,5 @@
+const tailwindcss = require('tailwindcss');
+
 module.exports = {
   pathPrefix: '/',
   siteMetadata: {
@@ -8,7 +10,14 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        postCssPlugins: [
+          tailwindcss,
+        ],
+      },
+    },
     'gatsby-plugin-fontawesome-css',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-webpack-bundle-analyser-v2',
@@ -49,6 +58,8 @@ module.exports = {
       resolve: 'gatsby-plugin-sentry',
       options: {
         dsn: 'https://8a4706349eb5491a84671b2dd55f3dfa@sentry.io/1878116',
+        environment: process.env.NODE_ENV,
+        enabled: (() => ['production', 'stage'].indexOf(process.env.NODE_ENV) !== -1)(),
       },
     },
     {

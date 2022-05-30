@@ -18,10 +18,18 @@ const UtterancesComments = ({
     scriptEl.setAttribute('theme', theme);
 
     commentBox.current.appendChild(scriptEl);
+
+    return () => {
+      if (commentBox?.current?.innerHTML) {
+        commentBox.current.innerHTML = '';
+      }
+    };
   }, []);
 
   return (
-    <div ref={commentBox} id={id} />
+    <div className="pt-3 px-3 md:px-0">
+      <div ref={commentBox} id={id} />
+    </div>
   );
 };
 

@@ -5,7 +5,12 @@ import PropTypes from 'prop-types';
 const ExternalLink = ({
   href, title, target, className, rel,
 }) => (
-  <a href={href} rel={rel} target={target} className={className}>
+  <a
+    href={href}
+    rel={rel}
+    target={target}
+    className={`inline-block text-left duration-200 text-teal-600 hover:text-teal-700 ${className}`}
+  >
     {title}
   </a>
 );

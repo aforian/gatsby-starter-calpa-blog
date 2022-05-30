@@ -10,15 +10,17 @@ import './index.scss';
 if (typeof window !== 'undefined') {
   // Make scroll behavior of internal links smooth
   // eslint-disable-next-line global-require
-  require('smooth-scroll')('a', { offset: 60 });
+  require('smooth-scroll')('a', { offset: 60, speed: 200 });
 }
 
 const Layout = ({ children, location }) => (
-  <div className="layout">
+  <div className="layout bg-gray-100">
     <Head />
     <Navbar location={location} />
     <Transition location={location}>
-      <div className="container-fluid">{children}</div>
+      <div className="w-full mt-header">
+        {children}
+      </div>
     </Transition>
     <Footer />
   </div>

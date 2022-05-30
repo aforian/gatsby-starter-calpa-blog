@@ -1,69 +1,78 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faGithub, faMediumM } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faMediumM, faCodepen } from '@fortawesome/free-brands-svg-icons';
 
 import { config } from '../../../data';
-
 import Information from './Information';
 
-import './index.scss';
+const IconWraper = styled.span`
+  path {
+    transition: all 200ms;
+  }
+  &:hover {
+    path {
+      fill: rgb(13,148,136);
+    }
+  }
+`;
 
 const {
   wordings = [],
   githubUsername,
   iconUrl,
   about,
-  facebook,
 } = config;
 
 const Icon = ({ href, icon }) => (
   <a
+    className="inline-block mr-1 last:mr-0"
     target="_blank"
     href={href}
     rel="external nofollow noopener noreferrer"
-    className="custom-icon"
   >
-    <span className="fa-layers fa-fw fa-2x">
+    <IconWraper className="fa-layers fa-fw fa-2x">
       <FontAwesomeIcon icon={icon} />
-    </span>
+    </IconWraper>
   </a>
 );
 
-const Sidebar = ({ totalCount, latestPosts }) => (
-  <header className="intro-header site-heading text-center col-xl-2 col-lg-3 col-xs-12 order-lg-1">
-    <div className="about-me">
-      <Link to={about} href={about} className="name">
-        <img className="avatar" src={iconUrl} alt="Alex Ian" />
-        <h4>Alex Ian</h4>
+const Sidebar = ({ totalCount, latestPosts }) => {
+  const links = useMemo(() => [
+    { icon: faMediumM, href: 'https://medium.com/@alexian853' },
+    { icon: faGithub, href: `https://github.com/${githubUsername}` },
+    { icon: faCodepen, href: 'https://codepen.io/alexian' },
+  ]);
+
+  return (
+    <menu className="p-4 text-center bg-white">
+      <Link to={about} href={about} className="inline-block hover:text-teal-600 duration-200">
+        <img
+          src={iconUrl}
+          className="w-36 hover:scale-105 hover:opacity-90 duration-200"
+          alt="Alex Ian"
+        />
+        <h4 className="text-xl my-2">Alex Ian</h4>
       </Link>
       {wordings.map(wording => (
-        <p key={wording} className="mb-1">{wording}</p>
+        <p key={wording} className="mb-2">{wording}</p>
       ))}
-      <Icon
-        href="https://medium.com/@alexian853"
-        icon={faMediumM}
-      />
-      <Icon
-        href={`https://github.com/${githubUsername}`}
-        icon={faGithub}
-      />
-      {facebook
-        && <Icon href={`https://www.facebook.com/${facebook}/`} icon={faFacebook} />}
+      {links.map(link => <Icon key={link.href} {...link} />)}
       <Information totalCount={totalCount} posts={latestPosts} />
-    </div>
-  </header>
-);
+    </menu>
+  );
+};
 
 Icon.propTypes = {
   href: PropTypes.string.isRequired,
-  icon: PropTypes.arrayOf(PropTypes.instanceOf(faFacebook)).isRequired,
+  icon: PropTypes.object.isRequired,
 };
 
 Sidebar.propTypes = {
   totalCount: PropTypes.number,
-  latestPosts: PropTypes.array, //eslint-disable-line
+  latestPosts: PropTypes.array,
 };
 
 Sidebar.defaultProps = {

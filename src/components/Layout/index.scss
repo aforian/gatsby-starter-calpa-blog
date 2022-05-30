@@ -1,5 +1,6 @@
-@import "../../styles/colors.scss"; // Colors
-// Content
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .fadeIn {
   animation-duration: 1s;
@@ -17,9 +18,6 @@
 }
 
 .layout {
-  // Pixiv background style
-  background-color: $bg;
-
   img {
     max-width: 100%;
   }

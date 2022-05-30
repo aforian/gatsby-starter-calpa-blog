@@ -22,8 +22,6 @@ import './blog-post.scss';
 
 const { name, iconUrl, utteranc } = config;
 
-const bgWhite = { padding: '10px 30px', background: 'white' };
-
 // Prevent webpack window problem
 const isBrowser = typeof window !== 'undefined';
 
@@ -45,7 +43,7 @@ class BlogPost extends Component {
     const { date, headerImage, title } = frontmatter;
 
     return (
-      <div className="row post order-2">
+      <>
         <Header
           img={headerImage || 'https://i.imgur.com/M795H8A.jpg'}
           title={title}
@@ -53,28 +51,34 @@ class BlogPost extends Component {
           authorImage={iconUrl}
           subTitle={parseChineseDate(date)}
         />
-        <Sidebar />
-        <div className="col-xl-7 col-lg-6 col-md-12 col-sm-12 order-10 content">
-          <Content post={html} />
-          <div className="m-message" style={bgWhite}>
-            如果你覺得我的文章對你有幫助的話，希望可以推薦和交流一下。歡迎
-            <ExternalLink
-              href="https://github.com/aforian/gatsby-starter-calpa-blog"
-              title="關注和 Star 這個 Blog"
-            />
-            或者
-            <ExternalLink
-              href="https://github.com/aforian/"
-              title="關注我的 Github"
-            />
-            。
-          </div>
-
-          {isBrowser && <UtterancesComments id="utterance-container" {...utteranc} />}
+        <div className="container lg:max-w-screen-lg mx-auto md:pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          <aside>
+            <Sidebar />
+          </aside>
+          <main className="md:col-span-2 lg:col-span-3">
+            <div id="post" className="bg-white p-8">
+              <Content post={html} />
+              <hr className="my-8" />
+              <div className="mt-3 text-sm">
+                如果你覺得我的文章對你有幫助的話，希望可以推薦和交流一下。
+                <br />
+                歡迎
+                <ExternalLink
+                  href="https://github.com/aforian/gatsby-starter-calpa-blog"
+                  title="關注和 Star 這個 Blog"
+                />
+                或者
+                <ExternalLink
+                  href="https://github.com/aforian/"
+                  title="關注我的 Github"
+                />
+                。
+              </div>
+            </div>
+            {isBrowser && <UtterancesComments id="utterance-container" {...utteranc} />}
+            <ShareBox url={slug} />
+          </main>
         </div>
-
-        <ShareBox url={slug} />
-
         <SEO
           title={title}
           url={slug}
@@ -83,7 +87,7 @@ class BlogPost extends Component {
           description={excerpt}
           image={headerImage || 'https://i.imgur.com/M795H8A.jpg'}
         />
-      </div>
+      </>
     );
   }
 }

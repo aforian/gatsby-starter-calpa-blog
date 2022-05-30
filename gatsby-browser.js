@@ -2,8 +2,6 @@
 import ReactGA from 'react-ga';
 import { config } from './data';
 
-import 'prismjs/themes/prism-solarizedlight.css';
-
 const {
   url, gaTrackId, gaOptimizeId,
 } = config;

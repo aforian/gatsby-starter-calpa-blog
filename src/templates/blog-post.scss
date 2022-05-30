@@ -1,52 +1,63 @@
-@import "../styles/colors";
+@import '~prism-themes/themes/prism-one-light.css';
 
-.post {
-  @media screen and (max-width: 990px) {
-    padding: 5px 25px;
-  }
-  border-radius: 2px;
+#post {
+  h2 {
+    font-size: 1.5rem; /* 24px */
+    line-height: 2rem; /* 32px */
 
-  .content {
-    padding: 0;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-
-    @media screen and (min-width: 990px) {
-      margin-left: 1.5rem;
+    svg {
+      width: 1rem;
+      height: 1rem;
     }
-    margin-right: auto;
+  }
+  h3 {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 
     a {
-      color: $light-blue;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        transition: all 0.2s;
+      }
 
       &:hover {
-        color: $blue;
-        text-decoration: none;
+        svg {
+          fill: #0d9488;
+        }
       }
-    }
-    @for $i from 1 through 6 {
-      h#{$i} {
-        font-size: 26 - $i * 2px;
-        font-weight: 400;
-      }
-    }
-
-    h2 {
-      font-weight: 600;
-    }
-
-    blockquote {
-      max-width: 100%;
-      width: 100%;
-      word-break: break-word;
-      caret-color: rgba(255, 255, 255, 0.9);
-      border-left: 3px solid currentcolor;
-      margin: 0; // Required
-      padding-left: 0.9em;
-      padding-right: 0.9em;
     }
   }
+  a {
+    color: #0d9488;
 
-  #gitalk-container {
-    margin: 0 auto;
+    &:hover {
+      color: #0f766e;
+      text-decoration: underline;
+    }
+  }
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
+  }
+  blockquote {
+    max-width: 100%;
+    width: 100%;
+    word-break: break-word;
+    caret-color: rgba(255, 255, 255, 0.9);
+    border-left: 3px solid currentcolor;
+    margin: 0;
+    padding-left: 0.9em;
+    padding-right: 0.9em;
+  }
+  pre[class*=language-] {
+    margin-bottom: 1rem;
   }
 }
