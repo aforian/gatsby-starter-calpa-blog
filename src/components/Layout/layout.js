@@ -14,11 +14,13 @@ if (typeof window !== 'undefined') {
 }
 
 const Layout = ({ children, location }) => (
-  <div className="layout">
+  <div className="layout bg-gray-100">
     <Head />
     <Navbar location={location} />
     <Transition location={location}>
-      <div className="container-fluid">{children}</div>
+      <div className="container mt-header mx-auto">
+        {children}
+      </div>
     </Transition>
     <Footer />
   </div>

@@ -6,27 +6,21 @@ import Card from '../components/Card';
 import Sidebar from '../components/Sidebar';
 import ShareBox from '../components/ShareBox';
 
-import './index.scss';
-
-const NavLinkText = ({ color, text }) => (
-  <div
-    className="navlink"
-    style={{
-      color,
-    }}
-  >
-    {text}
-  </div>
-);
-
-const NavLink = ({ test, url, text }) => {
-  if (!test) {
-    return <NavLinkText color="#7d7d7d" text={text} />;
-  }
+const NavLink = ({ disabled, url, text }) => {
+  const statusClassName = !disabled
+    ? 'text-teal-600 hover:text-teal-700 hover:bg-gray-50 cursor-pointer'
+    : 'text-gray-300 bg-gray-100 cursor-not-allowed';
 
   return (
     <Link to={`${url}`}>
-      <NavLinkText color="#66ccff" text={text} />
+      <div
+        className={`
+          inline-block w-24 p-2 text-center bg-white border border-gray-200 rounded duration-200
+          ${statusClassName}
+        `}
+      >
+        {text}
+      </div>
     </Link>
   );
 };
@@ -40,38 +34,27 @@ const Page = ({ pageContext, location }) => {
   const nextUrl = `/${pathPrefix}/${index + 1}`;
 
   return (
-    <React.Fragment>
-      <div
-        className="row homepage"
-        style={{
-          marginTop: 20,
-        }}
-      >
-        <Sidebar />
-        <div className="col-xl-6 col-lg-7 col-md-12 col-xs-12 order-2">
+    <>
+      <div className="container max-w-screen-lg mx-auto pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <aside>
+          <Sidebar />
+        </aside>
+        <main className="md:col-span-2 lg:col-span-3">
           {group.map(({ node }) => (
-            <Card {...node.frontmatter} url={node.frontmatter.slug ? node.frontmatter.slug : node.fields.slug} key={node.fields.slug} />
+            <Card
+              {...node.frontmatter}
+              url={node.frontmatter.slug ? node.frontmatter.slug : node.fields.slug}
+              key={node.fields.slug}
+            />
           ))}
-
-          <div
-            className="row"
-            style={{
-              justifyContent: 'space-around',
-              marginBottom: '20px',
-            }}
-          >
-            <div className="previousLink">
-              <NavLink test={!first} url={previousUrl} text="Previous" />
-            </div>
-            <div className="nextLink">
-              <NavLink test={!last} url={nextUrl} text="Next" />
-            </div>
+          <div className="flex justify-between mb-3">
+            <NavLink disabled={first} url={previousUrl} text="Previous" />
+            <NavLink disabled={!last} url={nextUrl} text="Next" />
           </div>
-        </div>
-        <div className="col-xl-2 col-lg-1 order-3" />
+        </main>
       </div>
       <ShareBox url={location.href} hasCommentBox={false} />
-    </React.Fragment>
+    </>
   );
 };
 

@@ -9,7 +9,7 @@ const ExternalLink = ({
     href={href}
     rel={rel}
     target={target}
-    className={`inline-block text-left mb-2 last:mb-0 duration-200 text-teal-600 hover:text-teal-700 ${className}`}
+    className={`inline-block text-left duration-200 text-teal-600 hover:text-teal-700 ${className}`}
   >
     {title}
   </a>
