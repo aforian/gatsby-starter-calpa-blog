@@ -64,7 +64,7 @@
     "develop:remote": "gatsby develop -p 8080 -H 0.0.0.0",
     "deploy": "yarn build && gh-pages -d public",
     "format": "eslint --fix --ignore-path .gitignore .",
-    "format-style": "stylelint src/**/*.scss --syntax=scss",
+    "format-style": "stylelint src/**/*.scss",
     "test": "echo \"Error: no test specified\" && exit 1",
     "functions": "netlify-lambda serve functions",
     "reset": "rimraf pubilc/ .cache/",
