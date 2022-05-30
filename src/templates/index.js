@@ -49,7 +49,7 @@ const Page = ({ pageContext, location }) => {
           ))}
           <div className="flex justify-between mb-3">
             <NavLink disabled={first} url={previousUrl} text="Previous" />
-            <NavLink disabled={!last} url={nextUrl} text="Next" />
+            <NavLink disabled={last} url={nextUrl} text="Next" />
           </div>
         </main>
       </div>
