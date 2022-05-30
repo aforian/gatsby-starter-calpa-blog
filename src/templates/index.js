@@ -35,7 +35,7 @@ const Page = ({ pageContext, location }) => {
 
   return (
     <>
-      <div className="container max-w-screen-lg mx-auto pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <div className="container lg:max-w-screen-lg mx-auto pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
         <aside>
           <Sidebar />
         </aside>

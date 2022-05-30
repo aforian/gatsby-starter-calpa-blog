@@ -8,5 +8,6 @@ module.exports = {
         ignoreAtRules: ['tailwind'],
       },
     ],
+    'no-descending-specificity': null,
   },
 };

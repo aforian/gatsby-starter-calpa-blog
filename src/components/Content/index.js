@@ -5,12 +5,6 @@ import lozad from 'lozad';
 import { isBrowser } from '../../api';
 
 class Content extends Component {
-  constructor(props) {
-    super(props);
-    const { post } = this.props;
-    this.post = post;
-  }
-
   componentDidMount() {
     // lazy loads elements with default selector as '.lozad'
     // Prevent WebPack build fail
@@ -36,12 +30,9 @@ class Content extends Component {
     const { post } = this.props;
     return (
       <div
+        className="content"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: post }}
-        style={{
-          padding: 30,
-          background: 'white',
-        }}
       />
     );
   }

@@ -1,10 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './index.scss';
-
-import JueJin from '../JueJin';
-
-import { parseImgur } from '../../api/images';
 
 const Header = ({
   img,
@@ -12,38 +7,31 @@ const Header = ({
   subTitle,
   authorImage,
   authorName,
-  jueJinPostLink,
-  jueJinLikeIconLink,
 }) => (
-  <div className="col-12 header" style={{ padding: 0 }} id="header">
+  <div id="header" className="w-full" style={{ padding: 0 }}>
     <div
-      className="img-container"
+      className={`
+        w-full bg-cover bg-center px-3 py-5 min-h-[140px] md:min-h-[300px] lg:min-h-[400px]
+        text-center flex flex-col justify-center text-white relative
+      `}
       style={{
         backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url(${img})`,
-        marginTop: -58,
       }}
     >
-      {title && <h1 className="u-title">{title}</h1>}
+      {title && <h1 className="text-2xl font-semibold md:mb-5">{title}</h1>}
       {subTitle && (
-        <div className="u-subtitle">
-          <div className="m-left">
+        <div>
+          <div className="flex justify-center items-center mb-1 absolute md:static bottom-3 left-3">
             {authorImage && (
               <img
                 src={authorImage}
-                className="author-image"
+                className="w-5 h-5 mr-1 rounded-full"
                 alt={authorName}
               />
             )}
-            <span className="author-name">{authorName}</span>
+            <span className="leading-4">{authorName}</span>
           </div>
-          <span className="text">{subTitle}</span>
-          {jueJinPostLink &&
-            jueJinLikeIconLink && (
-              <JueJin
-                jueJinPostLink={jueJinPostLink}
-                jueJinLikeIconLink={jueJinLikeIconLink}
-              />
-            )}
+          <span className="absolute md:static bottom-3 right-3">{subTitle}</span>
         </div>
       )}
     </div>
@@ -56,8 +44,6 @@ Header.propTypes = {
   subTitle: PropTypes.string,
   authorName: PropTypes.string,
   authorImage: PropTypes.string,
-  jueJinPostLink: PropTypes.string,
-  jueJinLikeIconLink: PropTypes.string,
 };
 
 Header.defaultProps = {
@@ -65,8 +51,6 @@ Header.defaultProps = {
   subTitle: '',
   authorName: '',
   authorImage: '',
-  jueJinPostLink: '',
-  jueJinLikeIconLink: '',
 };
 
 export default Header;
