@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faMediumM, faCodepen } from '@fortawesome/free-brands-svg-icons';
+import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 
 import { config } from '../../../data';
 import Information from './Information';
@@ -24,6 +25,7 @@ const {
   githubUsername,
   iconUrl,
   about,
+  website,
 } = config;
 
 const Icon = ({ href, icon }) => (
@@ -44,6 +46,7 @@ const Sidebar = ({ totalCount, latestPosts }) => {
     { icon: faMediumM, href: 'https://medium.com/@alexian853' },
     { icon: faGithub, href: `https://github.com/${githubUsername}` },
     { icon: faCodepen, href: 'https://codepen.io/alexian' },
+    { icon: faLaptopCode, href: website },
   ]);
 
   return (
