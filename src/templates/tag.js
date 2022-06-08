@@ -1,19 +1,22 @@
 /* eslint-disable react/prop-types */
-
-import React from 'react';
+import React, { useRef } from 'react';
 import { graphql } from 'gatsby';
 import Card from '../components/Card';
 import SEO from '../components/SEO';
 import Sidebar from '../components/Sidebar';
 import Tag from '../components/Tag';
 import ShareBox from '../components/ShareBox';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const TagPage = ({ data, pageContext, location }) => {
   const { edges } = data.allMarkdownRemark;
   const { tag } = pageContext;
+  const ref = useRef();
+  const show = useIntersectionObserver(ref);
 
   return (
     <>
+      <span ref={ref} />
       <div className="container lg:max-w-screen-lg mx-auto md:pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
         <aside>
           <Sidebar />
@@ -29,7 +32,7 @@ const TagPage = ({ data, pageContext, location }) => {
           ))}
         </main>
       </div>
-      <ShareBox url={location.href} hasCommentBox={false} />
+      <ShareBox url={location.href} show={show} />
       <SEO
         title={tag}
         url={`/tag/${tag}`}

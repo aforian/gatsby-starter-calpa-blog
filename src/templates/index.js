@@ -1,10 +1,11 @@
 /* eslint react/prop-types: 0 */
-import React from 'react';
+import React, { useRef } from 'react';
 import Link from 'gatsby-link';
 
 import Card from '../components/Card';
 import Sidebar from '../components/Sidebar';
 import ShareBox from '../components/ShareBox';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const NavLink = ({ disabled, url, text }) => {
   const statusClassName = !disabled
@@ -32,10 +33,16 @@ const Page = ({ pageContext, location }) => {
 
   const previousUrl = index - 1 === 1 ? '' : `/${pathPrefix}/${index - 1}`;
   const nextUrl = `/${pathPrefix}/${index + 1}`;
+  const ref = useRef();
+  const show = useIntersectionObserver(ref);
 
   return (
     <>
-      <div className="container lg:max-w-screen-lg mx-auto pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <span ref={ref} />
+      <div
+        id="header"
+        className="container lg:max-w-screen-lg mx-auto pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5"
+      >
         <aside>
           <Sidebar />
         </aside>
@@ -53,7 +60,7 @@ const Page = ({ pageContext, location }) => {
           </div>
         </main>
       </div>
-      <ShareBox url={location.href} hasCommentBox={false} />
+      <ShareBox url={location.href} show={show} />
     </>
   );
 };

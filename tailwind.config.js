@@ -9,6 +9,9 @@ module.exports = {
       spacing: {
         header: '52px',
       },
+      screens: {
+        'lg-pad': '1150px',
+      },
     },
   },
   plugins: [
