@@ -15,7 +15,7 @@ const Tag = ({ name, count, className }) => (
     `}
   >
     {name}
-    {!!count && '&nbsp;'}
+    {!!count && ' '}
     {count}
   </a>
 );

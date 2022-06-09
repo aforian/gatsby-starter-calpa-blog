@@ -14,7 +14,7 @@ if (typeof window !== 'undefined') {
 }
 
 const Layout = ({ children, location }) => (
-  <div className="layout bg-gray-100">
+  <div className="layout min-h-[calc(100vh-52px)] bg-gray-100">
     <Head />
     <Navbar location={location} />
     <Transition location={location}>

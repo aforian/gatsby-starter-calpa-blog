@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 const NotFoundPage = ({ data }) => (
-  <div className="container mx-auto lg:max-w-screen-lg min-h-[calc(100vh-200px)] p-5">
+  <div className="container mx-auto lg:max-w-screen-lg p-5">
     <h4 className="text-lg mb-4">找不到你的網頁，本站所有頁面為：</h4>
     <ul>
       {data.allSitePage.edges.map(({ node: { path } }) => (

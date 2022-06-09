@@ -3,13 +3,7 @@ import dayjs from 'dayjs';
 
 const getUrl = ({ createdDate, url }) => `/${dayjs(createdDate).format('YYYY/MM/DD')}/${url}`;
 
-const gotoPage = async (url, show = false) => {
-  if (show === true) {
-    await window.$('.collapse').collapse('show');
-  } else {
-    await window.$('.collapse').collapse('hide');
-  }
-
+const gotoPage = async url => {
   await navigate(url);
 };
 
