@@ -43,9 +43,6 @@ const Page = ({ pageContext, location }) => {
         id="header"
         className="container lg:max-w-screen-lg mx-auto pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5"
       >
-        <aside>
-          <Sidebar />
-        </aside>
         <main className="md:col-span-2 lg:col-span-3">
           {group.map(({ node }) => (
             <Card
@@ -59,6 +56,9 @@ const Page = ({ pageContext, location }) => {
             <NavLink disabled={last} url={nextUrl} text="Next" />
           </div>
         </main>
+        <aside>
+          <Sidebar />
+        </aside>
       </div>
       <ShareBox url={location.href} show={show} />
     </>

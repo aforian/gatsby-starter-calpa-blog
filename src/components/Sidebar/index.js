@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Link, StaticQuery, graphql } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -28,42 +28,50 @@ const {
   website,
 } = config;
 
-const Icon = ({ href, icon }) => (
+const Icon = ({ href, icon, title }) => (
   <a
     className="inline-block mr-1 last:mr-0"
     target="_blank"
     href={href}
+    title={title}
     rel="external nofollow noopener noreferrer"
   >
-    <IconWraper className="fa-layers fa-fw fa-2x">
+    <IconWraper className="fa-layers fa-fw fa-lg">
       <FontAwesomeIcon icon={icon} />
     </IconWraper>
   </a>
 );
 
-const Sidebar = ({ totalCount, latestPosts }) => {
+const Sidebar = ({ className }) => {
+  const { all } = useStaticQuery(graphql`
+    query SidebarQuery {
+      all: allMarkdownRemark(
+        filter: { frontmatter: { publish: { eq: true } } }
+      ) {
+        totalCount
+      }
+    }
+  `);
   const links = useMemo(() => [
-    { icon: faMediumM, href: 'https://medium.com/@alexian853' },
-    { icon: faGithub, href: `https://github.com/${githubUsername}` },
-    { icon: faCodepen, href: 'https://codepen.io/alexian' },
-    { icon: faLaptopCode, href: website },
-  ]);
+    { icon: faMediumM, href: 'https://medium.com/@alexian853', title: 'Medium' },
+    { icon: faGithub, href: `https://github.com/${githubUsername}`, title: 'Github' },
+    { icon: faCodepen, href: 'https://codepen.io/alexian', title: 'Codepen' },
+    { icon: faLaptopCode, href: website, title: 'Portfolio' },
+  ], []);
 
   return (
-    <menu className="p-4 text-center bg-white">
+    <menu className={`p-4 text-center bg-white ${className} border-b-4 border-b-teal-500`}>
       <Link to={about} href={about} className="inline-block hover:text-teal-600 duration-200">
         <img
           src={iconUrl}
-          className="w-36 hover:scale-105 hover:opacity-90 duration-200"
+          className="w-24 hover:scale-105 hover:opacity-90 duration-200"
           alt="Alex Ian"
         />
-        <h4 className="text-xl my-2">Alex Ian</h4>
+        <h4 className="text-xl mt-1 mb-2">Alex Ian</h4>
       </Link>
-      {wordings.map(wording => (
-        <p key={wording} className="mb-2">{wording}</p>
-      ))}
+      <p className="whitespace-pre mb-1">{wordings.join('\n')}</p>
       {links.map(link => <Icon key={link.href} {...link} />)}
-      <Information totalCount={totalCount} posts={latestPosts} />
+      <Information totalCount={all.totalCount} />
     </menu>
   );
 };
@@ -71,56 +79,14 @@ const Sidebar = ({ totalCount, latestPosts }) => {
 Icon.propTypes = {
   href: PropTypes.string.isRequired,
   icon: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 Sidebar.propTypes = {
-  totalCount: PropTypes.number,
-  latestPosts: PropTypes.array,
+  className: PropTypes.string,
 };
-
 Sidebar.defaultProps = {
-  totalCount: 0,
-  latestPosts: [],
+  className: undefined,
 };
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      fragment cardData on MarkdownRemark {
-        fields {
-          slug
-        }
-        frontmatter {
-          id
-          title
-          url: slug
-          date
-          tags
-          description
-          headerImage
-        }
-      }
-
-      query SidebarQuery {
-        all: allMarkdownRemark(
-          filter: { frontmatter: { publish: { eq: true } } }
-        ) {
-          totalCount
-        }
-
-        limited: allMarkdownRemark(
-          sort: { order: DESC, fields: frontmatter___date }
-          filter: { frontmatter: { publish: { eq: true } } }
-          limit: 6
-        ) {
-          latestPosts: edges {
-            node {
-              ...cardData
-            }
-          }
-        }
-      }
-    `}
-    render={data => <Sidebar {...data.all} {...data.limited} />}
-  />
-);
+export default Sidebar;

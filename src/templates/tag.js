@@ -18,9 +18,6 @@ const TagPage = ({ data, pageContext, location }) => {
     <>
       <span ref={ref} />
       <div className="container lg:max-w-screen-lg mx-auto md:pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        <aside>
-          <Sidebar />
-        </aside>
         <main className="md:col-span-2 lg:col-span-3">
           <div className="text-xl mt-3 m-4 md:mx-0">
             <span className="text-2xl">{edges.length}</span>
@@ -31,6 +28,9 @@ const TagPage = ({ data, pageContext, location }) => {
             <Card {...node.frontmatter} key={node.id} />
           ))}
         </main>
+        <aside>
+          <Sidebar />
+        </aside>
       </div>
       <ShareBox url={location.href} show={show} />
       <SEO

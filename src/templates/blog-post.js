@@ -44,9 +44,6 @@ const BlogPost = ({ data }) => {
         subTitle={parseChineseDate(date)}
       />
       <div className="container lg:max-w-screen-lg mx-auto md:pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        <aside>
-          <Sidebar />
-        </aside>
         <main className="md:col-span-2 lg:col-span-3">
           <div id="post" className="bg-white p-8">
             <Content post={html} />
@@ -70,6 +67,9 @@ const BlogPost = ({ data }) => {
           {isBrowser && <UtterancesComments id="utterance-container" {...utteranc} />}
           <ShareBox url={slug} hasCommentBox show={show} />
         </main>
+        <aside>
+          <Sidebar />
+        </aside>
       </div>
       <SEO
         title={title}
