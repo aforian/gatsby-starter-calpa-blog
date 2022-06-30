@@ -15,9 +15,13 @@ const TagPage = () => {
         className="container lg:max-w-screen-lg mx-auto pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5"
       >
         <main className="md:col-span-2 lg:col-span-3">
-          {tags.map(({ name, count }) => (
-            <Tag name={name} key={name} count={count} />
-          ))}
+          <ul>
+            {tags.map(({ name, count }) => (
+              <li className="mb-2 text-lg" key={name}>
+                <Tag name={name} count={count} className="justify-start" />
+              </li>
+            ))}
+          </ul>
         </main>
         <aside>
           <Sidebar />

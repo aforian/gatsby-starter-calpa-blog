@@ -1,34 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
+import { faTag } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Tag = ({ name, count, className }) => (
-  <a
-    href={`/tag/${name}`}
-    className={`
-      relative inline-block ml-5 p-1 px-2 rounded-tr rounded-br bg-sky-500 text-white text-sm
-      before:absolute before:right-full before:top-0 before:border-solid before:border-r-sky-500
-      before:border-r-[14px] before:border-y-transparent before:border-y-[14px] before:border-l-0
-      after:absolute after:left-[-5px] after:top-1/2 after:w-[4px] after:h-[4px] after:rounded-full
-      after:bg-white after:-translate-y-1/2 duration-200 before:duration-200
-      hover:bg-sky-600 hover:underline hover:decoration-1 hover:before:border-r-sky-600
-      ${className}
-    `}
-  >
-    {name}
-    {!!count && ' '}
-    {count}
-  </a>
-);
+const Tag = ({ name, count, className }) => {
+  const href = `/tag/${name}`;
+
+  return (
+    <Link
+      to={href}
+      href={href}
+      className={
+        `inline-flex items-start justify-between text-gray-800 hover:text-teal-600 ${className}`
+      }
+    >
+      <span>
+        <FontAwesomeIcon icon={faTag} className="mr-1" />
+        {name}
+      </span>
+      {count && <span className="inline-block px-3 ml-2 rounded-full bg-teal-500 text-white">{count}</span>}
+    </Link>
+  );
+};
 
 Tag.propTypes = {
   name: PropTypes.string.isRequired,
-  count: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  count: PropTypes.number,
   className: PropTypes.string,
 };
 
 Tag.defaultProps = {
-  count: '',
-  className: '',
+  count: undefined,
+  className: undefined,
 };
 
 export default Tag;
