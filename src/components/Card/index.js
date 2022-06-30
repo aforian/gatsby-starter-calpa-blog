@@ -1,54 +1,88 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-
-import Tag from '../Tag';
+import { faCalendarDays, faTag } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { parseImgur } from '../../api/images';
 
-const imageStyle = (headerImage, color) => ({
-  backgroundColor: `#${color}`,
-  backgroundImage: ` url(${parseImgur(headerImage, 'large')})`,
-});
-
-const CardHeader = ({ url, image, backgroundColor }) => (
-  <Link to={url} href={url} className="block w-full">
-    <div className="bg-center bg-cover w-full h-24 md:h-36 lg:h-64" style={imageStyle(image, backgroundColor)} />
-  </Link>
+const IconBlock = ({ icon, children }) => (
+  <div className="flex items-start mr-4 last:mr-0 text-gray-500 text-sm z">
+    <span className="flex h-5 mr-1 items-center">
+      <FontAwesomeIcon icon={icon} className="align-middle" />
+    </span>
+    {children}
+  </div>
 );
+
+IconBlock.propTypes = {
+  icon: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
+};
+
+const TagItem = ({ name, isLast }) => {
+  const href = `/tag/${name}`;
+  return (
+    <Link
+      className={`hover:text-gray-600 ${!isLast && 'after:content-["、"] after:inline-block'}`}
+      to={href}
+      href={href}
+    >
+      {name}
+    </Link>
+  );
+};
+
+TagItem.propTypes = {
+  name: PropTypes.string.isRequired,
+  isLast: PropTypes.bool.isRequired,
+};
 
 const Card = ({
   title,
   date,
   url,
   headerImage,
-  headerBackgroundColor,
   description,
   tags = [],
 }) => (
   <div className="pb-4 px-4 md:px-0">
-    <div className="hover:shadow-xl hover:z-2 duration-200 ease-in-out">
-      {headerImage && (
-        <CardHeader
-          url={url}
-          image={headerImage}
-          backgroundColor={headerBackgroundColor}
-        />
-      )}
-      <div className="relative z-1 bg-white p-3 border-t border-gray-100 flex flex-col">
-        <div>
-          <span className="inline-block p-3 mr-2 bg-emerald-300 text-white">{date.split('T')[0]}</span>
-          {tags.map(name => (
-            <Tag name={name} key={name} />
-          ))}
+    <div className="md:hover:shadow-xl md:hover:z-2 duration-200 ease-in-out">
+      <div className="relative z-1 flex bg-white border-l-4 border-teal-500">
+        <div className="flex-1 p-4">
+          <Link to={url} href={url}>
+            <h3 className="inline-block text-xl md:text-2xl mb-1 text-teal-500 hover:text-teal-700">{title}</h3>
+          </Link>
+          <div className="flex mb-1">
+            <IconBlock icon={faCalendarDays}>
+              <div className="min-w-[82px]">
+                {date.split('T')[0]}
+              </div>
+            </IconBlock>
+            <IconBlock icon={faTag}>
+              <div>
+                {tags.map((name, index, arr) => (
+                  <TagItem key={name} name={name} isLast={index >= arr.length - 1} />
+                ))}
+              </div>
+            </IconBlock>
+          </div>
+          <p className="line-clamp-2 mb-4 min-h-[3em]">{description}</p>
+          <Link to={url} href={url} className="text-gray-400 hover:text-gray-700">
+            繼續閱讀...
+          </Link>
         </div>
-        <Link to={url} href={url}>
-          <h3 className="text-xl md:text-2xl text-cyan-600 mt-3 mb-1 hover:text-cyan-700 hover:underline">{title}</h3>
-        </Link>
-        <p className="line-clamp-2 mb-4">{description}</p>
-        <Link to={url} href={url} className="text-cyan-600 hover:text-cyan-700">
-          繼續閱讀全文內容
-        </Link>
+        {headerImage && (
+          <div className="hidden md:block w-[150px] min-w[150px] lg:w-[200px] lg:min-w-[200px] py-4 pr-4">
+            <Link to={url} href={url} className="w-full h-full flex items-center justify-center">
+              <img
+                className="block w-full aspect-video object-cover object-center bg-gray-200"
+                src={parseImgur(headerImage, 'large')}
+                alt={title}
+              />
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   </div>
@@ -59,28 +93,15 @@ Card.propTypes = {
   date: PropTypes.string,
   url: PropTypes.string.isRequired,
   headerImage: PropTypes.string,
-  headerBackgroundColor: PropTypes.string,
   description: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string),
-};
-
-CardHeader.propTypes = {
-  url: PropTypes.string.isRequired,
-  image: PropTypes.string,
-  backgroundColor: PropTypes.string,
 };
 
 Card.defaultProps = {
   tags: [],
   date: '',
   headerImage: '',
-  headerBackgroundColor: '',
   description: '',
-};
-
-CardHeader.defaultProps = {
-  image: '',
-  backgroundColor: '',
 };
 
 export default Card;
