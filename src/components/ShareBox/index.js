@@ -39,7 +39,7 @@ const ShareBox = ({ url, hasCommentBox, show }) => (
   >
     <div className="container mx-auto lg:max-w-screen-lg flex flex-col justify-between items-center">
       <RoundIconAnchor
-        href={`https://www.fRoundIconAnchorcebook.com/sharer/sharer.php?u=${url}`}
+        href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
         onClick={() => ReactGA.event({
           category: 'Share',
           action: 'Facebook Share',

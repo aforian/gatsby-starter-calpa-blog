@@ -22,7 +22,7 @@ const { name, iconUrl, utteranc } = config;
 // Prevent webpack window problem
 const isBrowser = typeof window !== 'undefined';
 
-const BlogPost = ({ pageContext }) => {
+const BlogPost = ({ pageContext, location }) => {
   const { node, previous, next } = pageContext;
   const ref = useRef();
   const show = useIntersectionObserver(ref);
@@ -57,7 +57,7 @@ const BlogPost = ({ pageContext }) => {
             <AuthorRow />
           </article>
           {isBrowser && <UtterancesComments id="utterance-container" {...utteranc} />}
-          <ShareBox url={slug} hasCommentBox show={show} />
+          <ShareBox url={location.href} hasCommentBox show={show} />
         </main>
         <aside className="hidden md:block">
           <Sidebar />
