@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const PageContainer = ({ id, children }) => (
   <div
     id={id}
-    className="container lg:max-w-screen-lg mx-auto md:pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4"
+    className="container lg:max-w-screen-lg md:px-2 mx-auto md:pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4"
   >
     {children}
   </div>

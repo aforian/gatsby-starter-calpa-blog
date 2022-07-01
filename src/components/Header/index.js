@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Divider from '../Sidebar/Divider';
 import IconBlock from '../IconBlock';
 import TagList from '../TagList';
 import { IconName } from '../Icon';
@@ -36,7 +35,7 @@ const Header = ({
         <TagList tags={tags} />
       </IconBlock>
     </div>
-    <Divider />
+    <hr className="my-4 md:my-8" />
     {img && (
       <div className="mb-4">
         <img

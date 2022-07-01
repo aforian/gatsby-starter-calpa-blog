@@ -17,7 +17,7 @@ const {
 
 const IconLink = ({ href, icon, title }) => (
   <a
-    className="inline-block mr-2 last:mr-0 hover:text-teal-500 duration-200"
+    className="inline-block mr-2 last:mr-0 hover:text-teal-600 duration-200"
     target="_blank"
     href={href}
     title={title}
@@ -62,7 +62,7 @@ const Sidebar = ({ className }) => {
       </div>
       <div className=" col-span-2">
         <Link to={about} href={about} className="hover:text-teal-600 duration-200">
-          <author className="font-bold text-xl mb-2">{author}</author>
+          <div className="font-bold text-xl mb-2">{author}</div>
         </Link>
         <p className="whitespace-pre mb-1">{wordings.join('\n')}</p>
         {authorsLinks.map(link => <IconLink key={link.href} {...link} />)}

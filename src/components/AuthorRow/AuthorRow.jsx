@@ -15,7 +15,7 @@ const {
 
 const IconLink = ({ href, icon, title }) => (
   <a
-    className="inline-block mr-2 last:mr-0 fa-lg hover:text-teal-500 duration-200"
+    className="inline-block mr-2 last:mr-0 fa-lg hover:text-teal-600 duration-200"
     target="_blank"
     href={href}
     title={title}
@@ -41,8 +41,8 @@ const AuthorRow = () => (
       />
     </div>
     <div className="col-span-2 md:col-span-4 flex flex-col justify-center">
-      <Link to={about}>
-        <author className="text-lg font-bold">{author}</author>
+      <Link to={about} className="text-lg font-bold hover:text-teal-600">
+        {author}
       </Link>
       <p className="text-sm mb-2">{wordings.join('\n')}</p>
       <div className="links">

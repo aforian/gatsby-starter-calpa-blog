@@ -36,8 +36,8 @@ export const IconName = {
 
 const Icon = ({ icon, className }) => {
   useEffect(() => {
-    if (IconName[icon] === undefined) {
-      console.warn('Icon not exist');
+    if (icons[icon] === undefined) {
+      console.warn(`Icon with name: "${icon}" not exist`);
     }
   }, [icon]);
 

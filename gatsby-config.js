@@ -3,8 +3,8 @@ const tailwindcss = require('tailwindcss');
 module.exports = {
   pathPrefix: '/',
   siteMetadata: {
-    title: 'Alex Ian&apos;s Blog',
-    description: 'Alex Ian&apos;s Blog ',
+    title: 'Alex Ian\' Blog',
+    description: 'Alex Ian\' Blog ',
     siteUrl: 'https://alex-ian.me',
     author: 'Alex Ian',
   },
