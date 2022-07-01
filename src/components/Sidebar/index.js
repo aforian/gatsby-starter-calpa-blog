@@ -2,12 +2,11 @@ import React, { useMemo } from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faMediumM, faCodepen } from '@fortawesome/free-brands-svg-icons';
-import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+
+import Information from './Information';
+import Icon, { IconName } from '../Icon';
 
 import { config } from '../../../data';
-import Information from './Information';
 
 const IconWraper = styled.span`
   path {
@@ -28,7 +27,7 @@ const {
   website,
 } = config;
 
-const Icon = ({ href, icon, title }) => (
+const IconLink = ({ href, icon, title }) => (
   <a
     className="inline-block mr-1 last:mr-0"
     target="_blank"
@@ -37,10 +36,16 @@ const Icon = ({ href, icon, title }) => (
     rel="external nofollow noopener noreferrer"
   >
     <IconWraper className="fa-layers fa-fw fa-lg">
-      <FontAwesomeIcon icon={icon} />
+      <Icon icon={icon} />
     </IconWraper>
   </a>
 );
+
+IconLink.propTypes = {
+  href: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 const Sidebar = ({ className }) => {
   const { all } = useStaticQuery(graphql`
@@ -53,10 +58,10 @@ const Sidebar = ({ className }) => {
     }
   `);
   const links = useMemo(() => [
-    { icon: faMediumM, href: 'https://medium.com/@alexian853', title: 'Medium' },
-    { icon: faGithub, href: `https://github.com/${githubUsername}`, title: 'Github' },
-    { icon: faCodepen, href: 'https://codepen.io/alexian', title: 'Codepen' },
-    { icon: faLaptopCode, href: website, title: 'Portfolio' },
+    { icon: IconName.Medium, href: 'https://medium.com/@alexian853', title: 'Medium' },
+    { icon: IconName.Github, href: `https://github.com/${githubUsername}`, title: 'Github' },
+    { icon: IconName.Codepen, href: 'https://codepen.io/alexian', title: 'Codepen' },
+    { icon: IconName.Portfolio, href: website, title: 'Portfolio' },
   ], []);
 
   return (
@@ -70,16 +75,10 @@ const Sidebar = ({ className }) => {
         <h4 className="text-xl mt-1 mb-2">Alex Ian</h4>
       </Link>
       <p className="whitespace-pre mb-1">{wordings.join('\n')}</p>
-      {links.map(link => <Icon key={link.href} {...link} />)}
+      {links.map(link => <IconLink key={link.href} {...link} />)}
       <Information totalCount={all.totalCount} />
     </menu>
   );
-};
-
-Icon.propTypes = {
-  href: PropTypes.string.isRequired,
-  icon: PropTypes.object.isRequired,
-  title: PropTypes.string.isRequired,
 };
 
 Sidebar.propTypes = {

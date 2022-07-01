@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { faTag } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import Icon, { IconName } from '../Icon';
 
 const Tag = ({ name, count, className }) => {
   const href = `/tag/${name}`;
@@ -16,7 +16,7 @@ const Tag = ({ name, count, className }) => {
       }
     >
       <span>
-        <FontAwesomeIcon icon={faTag} className="mr-1" />
+        <Icon icon={IconName.Tag} className="mr-1" />
         {name}
       </span>
       {count && <span className="inline-block px-3 ml-2 rounded-full bg-teal-500 text-white">{count}</span>}

@@ -1,24 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import { faCalendarDays, faTag } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { parseImgur } from '../../api/images';
-
-const IconBlock = ({ icon, children }) => (
-  <div className="flex items-start mr-4 last:mr-0 text-gray-500 text-sm z">
-    <span className="flex h-5 mr-1 items-center">
-      <FontAwesomeIcon icon={icon} className="align-middle" />
-    </span>
-    {children}
-  </div>
-);
-
-IconBlock.propTypes = {
-  icon: PropTypes.object.isRequired,
-  children: PropTypes.node.isRequired,
-};
+import IconBlock from '../IconBlock';
+import { IconName } from '../Icon';
 
 const TagItem = ({ name, isLast }) => {
   const href = `/tag/${name}`;
@@ -46,20 +32,20 @@ const Card = ({
   description,
   tags = [],
 }) => (
-  <div className="pb-4 px-4 md:px-0">
+  <div className="pb-4 last:pb-0 px-4 md:px-0">
     <div className="md:hover:shadow-xl md:hover:z-2 duration-200 ease-in-out">
       <div className="relative z-1 flex bg-white border-l-4 border-teal-500">
         <div className="flex-1 p-4">
           <Link to={url} href={url}>
-            <h3 className="inline-block text-xl md:text-2xl mb-1 text-teal-500 hover:text-teal-700">{title}</h3>
+            <h2 className="inline-block text-xl font-semibold md:text-2xl mb-1 text-teal-500 hover:text-teal-700">{title}</h2>
           </Link>
           <div className="flex mb-1">
-            <IconBlock icon={faCalendarDays}>
+            <IconBlock icon={IconName.Date}>
               <div className="min-w-[82px]">
                 {date.split('T')[0]}
               </div>
             </IconBlock>
-            <IconBlock icon={faTag}>
+            <IconBlock icon={IconName.Tag}>
               <div>
                 {tags.map((name, index, arr) => (
                   <TagItem key={name} name={name} isLast={index >= arr.length - 1} />

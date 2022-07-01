@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
+
+import Icon, { IconName } from '../components/Icon';
 
 const NotFoundPage = ({ data }) => (
   <div className="container mx-auto lg:max-w-screen-lg p-5">
@@ -16,7 +16,7 @@ const NotFoundPage = ({ data }) => (
             href={path}
           >
             <span className="mr-2">
-              <FontAwesomeIcon icon={faLink} />
+              <Icon icon={IconName.Link} />
             </span>
             {path === '/' ? '首頁' : path}
           </Link>

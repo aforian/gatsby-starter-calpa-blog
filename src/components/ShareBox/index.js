@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp, faComment } from '@fortawesome/free-solid-svg-icons';
-import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
+
+import Icon, { IconName } from '../Icon';
 
 const RoundIconAnchor = ({ children, ...restProps }) => (
   <a
@@ -26,7 +25,7 @@ const CommentButton = () => (
       action: 'Goto Comment Box',
     })}
   >
-    <FontAwesomeIcon icon={faComment} />
+    <Icon icon={IconName.Comment} />
   </RoundIconAnchor>
 );
 
@@ -46,7 +45,7 @@ const ShareBox = ({ url, hasCommentBox, show }) => (
           action: 'Facebook Share',
         })}
       >
-        <FontAwesomeIcon icon={faFacebookF} />
+        <Icon icon={IconName.Facebook} />
       </RoundIconAnchor>
       {hasCommentBox && <CommentButton />}
       <RoundIconAnchor
@@ -59,7 +58,7 @@ const ShareBox = ({ url, hasCommentBox, show }) => (
           });
         }}
       >
-        <FontAwesomeIcon icon={faChevronUp} />
+        <Icon icon={IconName.Up} />
       </RoundIconAnchor>
     </div>
   </div>
