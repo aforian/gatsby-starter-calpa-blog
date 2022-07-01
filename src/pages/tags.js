@@ -1,5 +1,6 @@
 import React from 'react';
 
+import PageContainer from '../components/PageContainer';
 import Sidebar from '../components/Sidebar';
 import Tag from '../components/Tag';
 import SEO from '../components/SEO';
@@ -10,10 +11,7 @@ const TagPage = () => {
 
   return (
     <>
-      <div
-        id="header"
-        className="container lg:max-w-screen-lg mx-auto pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5"
-      >
+      <PageContainer id="header">
         <main className="md:col-span-2 lg:col-span-3">
           <ul>
             {tags.map(({ name, count }) => (
@@ -26,7 +24,7 @@ const TagPage = () => {
         <aside>
           <Sidebar />
         </aside>
-      </div>
+      </PageContainer>
       <SEO
         title="標籤"
         url="/tags/"

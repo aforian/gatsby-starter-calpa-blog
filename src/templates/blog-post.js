@@ -3,6 +3,7 @@
 import React, { useRef } from 'react';
 import { graphql } from 'gatsby';
 
+import PageContainer from '../components/PageContainer';
 import ExternalLink from '../components/ExternalLink';
 import Sidebar from '../components/Sidebar';
 import Content from '../components/Content';
@@ -37,7 +38,7 @@ const BlogPost = ({ data }) => {
   return (
     <>
       <span ref={ref} />
-      <div className="container lg:max-w-screen-lg mx-auto md:pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <PageContainer id="header">
         <main className="md:col-span-2 lg:col-span-3">
           <article id="article" className="bg-white p-4 md:p-8">
             <Header
@@ -74,7 +75,7 @@ const BlogPost = ({ data }) => {
         <aside>
           <Sidebar />
         </aside>
-      </div>
+      </PageContainer>
       <SEO
         title={title}
         url={slug}

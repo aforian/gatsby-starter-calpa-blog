@@ -2,6 +2,7 @@
 import React, { useRef } from 'react';
 import { graphql } from 'gatsby';
 
+import PageContainer from '../components/PageContainer';
 import Card from '../components/Card';
 import SEO from '../components/SEO';
 import Sidebar from '../components/Sidebar';
@@ -18,7 +19,7 @@ const TagPage = ({ data, pageContext, location }) => {
   return (
     <>
       <span ref={ref} />
-      <div className="container lg:max-w-screen-lg mx-auto md:pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <PageContainer id="header">
         <main className="md:col-span-2 lg:col-span-3">
           <div className="text-xl m-4 md:mx-0">
             <Tag name={tag} />
@@ -33,7 +34,7 @@ const TagPage = ({ data, pageContext, location }) => {
         <aside>
           <Sidebar />
         </aside>
-      </div>
+      </PageContainer>
       <ShareBox url={location.href} show={show} />
       <SEO
         title={tag}
