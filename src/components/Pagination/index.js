@@ -5,11 +5,11 @@ import { Link } from 'gatsby';
 import Dropdown from './Dropdown';
 
 import { getPages } from '../../api';
-import { handlePreviousPage, handleNextPage } from '../../api/url';
+import { handlePreviousPage, handleNextPage } from '../../apis/url';
 
 const PageItem = ({ number, content }) => (
   <li className={`page-item${number < 0 ? ' disabled' : ''}`}>
-    <Link className="page-link" to={`${number}`} href={number}>
+    <Link className="page-link" to={number} href={number}>
       {content || number}
     </Link>
   </li>

@@ -5,7 +5,7 @@ import ExternalLink from '../ExternalLink';
 const Footer = () => (
   <footer className="footer py-6">
     <div className="container mx-auto">
-      <div className="w-full text-center">
+      <div className="w-full text-center text-sm">
         <p>
           {'Build with '}
           <ExternalLink href="https://www.gatsbyjs.org/" title="GatsbyJS" />

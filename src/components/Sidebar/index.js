@@ -64,7 +64,7 @@ const Sidebar = ({ className }) => {
       <Link to={about} href={about} className="inline-block hover:text-teal-600 duration-200">
         <img
           src={iconUrl}
-          className="w-24 hover:scale-105 hover:opacity-90 duration-200"
+          className="w-24 hover:opacity-90 duration-200"
           alt="Alex Ian"
         />
         <h4 className="text-xl mt-1 mb-2">Alex Ian</h4>
