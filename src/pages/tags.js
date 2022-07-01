@@ -21,7 +21,7 @@ const TagPage = () => {
             ))}
           </ul>
         </main>
-        <aside>
+        <aside className="order-first md:order-1">
           <Sidebar />
         </aside>
       </PageContainer>

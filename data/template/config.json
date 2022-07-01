@@ -5,7 +5,8 @@
       "target": "/stats/"
     }
   ],
-  "License": "by",
+  "author": "Alex Ian",
+  "License": "",
   "maxPostsInPage": 10,
   "meta": {
     "favicon": "https://alex-ian.me/favicons/android-chrome-192x192.png",

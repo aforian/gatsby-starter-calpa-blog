@@ -1,43 +1,29 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import Information from './Information';
-import Icon, { IconName } from '../Icon';
+import Icon from '../Icon';
 
 import { config } from '../../../data';
-
-const IconWraper = styled.span`
-  path {
-    transition: all 200ms;
-  }
-  &:hover {
-    path {
-      fill: rgb(13,148,136);
-    }
-  }
-`;
+import { authorsLinks } from '../../apis/authorLinks';
 
 const {
   wordings = [],
-  githubUsername,
   iconUrl,
   about,
-  website,
+  author,
 } = config;
 
 const IconLink = ({ href, icon, title }) => (
   <a
-    className="inline-block mr-1 last:mr-0"
+    className="inline-block mr-2 last:mr-0 hover:text-teal-500 duration-200"
     target="_blank"
     href={href}
     title={title}
     rel="external nofollow noopener noreferrer"
   >
-    <IconWraper className="fa-layers fa-fw fa-lg">
-      <Icon icon={icon} />
-    </IconWraper>
+    <Icon icon={icon} className="fa-lg" />
   </a>
 );
 
@@ -57,26 +43,31 @@ const Sidebar = ({ className }) => {
       }
     }
   `);
-  const links = useMemo(() => [
-    { icon: IconName.Medium, href: 'https://medium.com/@alexian853', title: 'Medium' },
-    { icon: IconName.Github, href: `https://github.com/${githubUsername}`, title: 'Github' },
-    { icon: IconName.Codepen, href: 'https://codepen.io/alexian', title: 'Codepen' },
-    { icon: IconName.Portfolio, href: website, title: 'Portfolio' },
-  ], []);
 
   return (
-    <menu className={`p-4 text-center bg-white ${className} border-b-4 border-b-teal-500`}>
-      <Link to={about} href={about} className="inline-block hover:text-teal-600 duration-200">
-        <img
-          src={iconUrl}
-          className="w-24 hover:opacity-90 duration-200"
-          alt="Alex Ian"
-        />
-        <h4 className="text-xl mt-1 mb-2">Alex Ian</h4>
-      </Link>
-      <p className="whitespace-pre mb-1">{wordings.join('\n')}</p>
-      {links.map(link => <IconLink key={link.href} {...link} />)}
-      <Information totalCount={all.totalCount} />
+    <menu
+      className={`
+        grid grid-cols-3 md:grid-cols-1 gap-4 md:gap-1 p-4 bg-white border-b-4 border-b-teal-500
+        text-left md:text-center ${className}
+      `}
+    >
+      <div className="flex justify-center">
+        <Link to={about} href={about} className="block hover:text-teal-600 duration-200 aspect-rect">
+          <img
+            src={iconUrl}
+            className="block md:w-24 hover:opacity-90 duration-200"
+            alt={author}
+          />
+        </Link>
+      </div>
+      <div className=" col-span-2">
+        <Link to={about} href={about} className="hover:text-teal-600 duration-200">
+          <author className="font-bold text-xl mb-2">{author}</author>
+        </Link>
+        <p className="whitespace-pre mb-1">{wordings.join('\n')}</p>
+        {authorsLinks.map(link => <IconLink key={link.href} {...link} />)}
+        <Information totalCount={all.totalCount} />
+      </div>
     </menu>
   );
 };

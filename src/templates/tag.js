@@ -21,8 +21,8 @@ const TagPage = ({ data, pageContext, location }) => {
       <span ref={ref} />
       <PageContainer id="header">
         <main className="md:col-span-2 lg:col-span-3">
-          <div className="text-xl m-4 md:mx-0">
-            <Tag name={tag} />
+          <div className="text-xl px-4 md:px-0 mb-4 md:mx-0">
+            <Tag name={tag} className="!text-teal-500" />
             <span className="text-lg ml-2">
               {`共有 ${edges.length} 篇文章`}
             </span>
@@ -31,7 +31,7 @@ const TagPage = ({ data, pageContext, location }) => {
             <Card {...node.frontmatter} key={node.id} />
           ))}
         </main>
-        <aside>
+        <aside className="order-first md:order-1">
           <Sidebar />
         </aside>
       </PageContainer>

@@ -1,16 +1,15 @@
 /* eslint react/prop-types: 0 */
-
 import React, { useRef } from 'react';
 import { graphql } from 'gatsby';
 
 import PageContainer from '../components/PageContainer';
-import ExternalLink from '../components/ExternalLink';
 import Sidebar from '../components/Sidebar';
 import Content from '../components/Content';
 import UtterancesComments from '../components/UtterancesComments';
 import SEO from '../components/SEO';
 import Header from '../components/Header';
 import ShareBox from '../components/ShareBox';
+import AuthorRow from '../components/AuthorRow/AuthorRow';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 import { config } from '../../data';
@@ -52,27 +51,13 @@ const BlogPost = ({ data }) => {
             <div id="post">
               <Content post={html} />
             </div>
-            <hr className="my-4" />
-            <div className="mt-3 text-sm">
-              如果你覺得我的文章對你有幫助的話，希望可以推薦和交流一下。
-              <br />
-              歡迎
-              <ExternalLink
-                href="https://github.com/aforian/gatsby-starter-calpa-blog"
-                title="關注和 Star 這個 Blog"
-              />
-              或者
-              <ExternalLink
-                href="https://github.com/aforian/"
-                title="關注我的 Github"
-              />
-              。
-            </div>
+            <hr className="my-4 md:my-8" />
+            <AuthorRow />
           </article>
           {isBrowser && <UtterancesComments id="utterance-container" {...utteranc} />}
           <ShareBox url={slug} hasCommentBox show={show} />
         </main>
-        <aside>
+        <aside className="hidden md:block">
           <Sidebar />
         </aside>
       </PageContainer>

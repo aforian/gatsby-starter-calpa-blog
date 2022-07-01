@@ -4,7 +4,7 @@ import ReactGA from 'react-ga';
 import { gotoPage } from '../../apis/url';
 
 const Navbar = () => (
-  <nav className="fixed w-full top-0 left-0 px-4 py-2 z-[1020] shadow-lg bg-white">
+  <nav className="fixed w-full top-0 left-0 py-2 z-[1020] shadow-lg bg-white">
     <div className="container lg:max-w-screen-lg mx-auto flex justify-between">
       <button
         type="button"
@@ -17,7 +17,7 @@ const Navbar = () => (
           gotoPage('/');
         }}
       >
-        Alex Ian&apos;s Blog
+        {'Alex Ian\'s Blog'}
       </button>
     </div>
   </nav>
