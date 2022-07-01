@@ -4,25 +4,8 @@ import PropTypes from 'prop-types';
 
 import { parseImgur } from '../../api/images';
 import IconBlock from '../IconBlock';
+import TagList from '../TagList';
 import { IconName } from '../Icon';
-
-const TagItem = ({ name, isLast }) => {
-  const href = `/tag/${name}`;
-  return (
-    <Link
-      className={`hover:text-gray-600 ${!isLast && 'after:content-["、"] after:inline-block'}`}
-      to={href}
-      href={href}
-    >
-      {name}
-    </Link>
-  );
-};
-
-TagItem.propTypes = {
-  name: PropTypes.string.isRequired,
-  isLast: PropTypes.bool.isRequired,
-};
 
 const Card = ({
   title,
@@ -39,18 +22,14 @@ const Card = ({
           <Link to={url} href={url}>
             <h2 className="inline-block text-xl font-semibold md:text-2xl mb-1 text-teal-500 hover:text-teal-700">{title}</h2>
           </Link>
-          <div className="flex mb-1">
+          <div className="flex mb-1 gap-3 flex-wrap">
             <IconBlock icon={IconName.Date}>
-              <div className="min-w-[82px]">
+              <div>
                 {date.split('T')[0]}
               </div>
             </IconBlock>
             <IconBlock icon={IconName.Tag}>
-              <div>
-                {tags.map((name, index, arr) => (
-                  <TagItem key={name} name={name} isLast={index >= arr.length - 1} />
-                ))}
-              </div>
+              <TagList tags={tags} />
             </IconBlock>
           </div>
           <p className="line-clamp-2 mb-4 min-h-[3em]">{description}</p>
