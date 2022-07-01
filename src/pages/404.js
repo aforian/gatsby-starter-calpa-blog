@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
+
+import Icon, { IconName } from '../components/Icon';
 
 const NotFoundPage = ({ data }) => (
   <div className="container mx-auto lg:max-w-screen-lg p-5">
+    <h2 className="text-4xl font-bold mb-4">404 Not found!</h2>
     <h4 className="text-lg mb-4">找不到你的網頁，本站所有頁面為：</h4>
     <ul>
       {data.allSitePage.edges.map(({ node: { path } }) => (
@@ -16,7 +17,7 @@ const NotFoundPage = ({ data }) => (
             href={path}
           >
             <span className="mr-2">
-              <FontAwesomeIcon icon={faLink} />
+              <Icon icon={IconName.Link} />
             </span>
             {path === '/' ? '首頁' : path}
           </Link>

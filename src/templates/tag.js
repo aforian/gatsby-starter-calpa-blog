@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { useRef } from 'react';
 import { graphql } from 'gatsby';
+
+import PageContainer from '../components/PageContainer';
 import Card from '../components/Card';
 import SEO from '../components/SEO';
 import Sidebar from '../components/Sidebar';
@@ -17,21 +19,22 @@ const TagPage = ({ data, pageContext, location }) => {
   return (
     <>
       <span ref={ref} />
-      <div className="container lg:max-w-screen-lg mx-auto md:pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        <aside>
-          <Sidebar />
-        </aside>
+      <PageContainer id="header">
         <main className="md:col-span-2 lg:col-span-3">
-          <div className="text-xl mt-3 m-4 md:mx-0">
-            <span className="text-2xl">{edges.length}</span>
-            {' Articles in '}
-            <Tag name={tag} />
+          <div className="text-xl px-4 md:px-0 mb-4 md:mx-0">
+            <Tag name={tag} className="!text-teal-500" />
+            <span className="text-lg ml-2">
+              {`共有 ${edges.length} 篇文章`}
+            </span>
           </div>
           {edges.map(({ node }) => (
             <Card {...node.frontmatter} key={node.id} />
           ))}
         </main>
-      </div>
+        <aside className="order-first md:order-1">
+          <Sidebar />
+        </aside>
+      </PageContainer>
       <ShareBox url={location.href} show={show} />
       <SEO
         title={tag}

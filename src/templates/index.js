@@ -1,19 +1,29 @@
 /* eslint react/prop-types: 0 */
 import React, { useRef } from 'react';
 import Link from 'gatsby-link';
+import PropTypes from 'prop-types';
 
+import PageContainer from '../components/PageContainer';
 import Card from '../components/Card';
 import Sidebar from '../components/Sidebar';
 import ShareBox from '../components/ShareBox';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
-const NavLink = ({ disabled, url, text }) => {
+const NavLink = ({
+  disabled, url, text, className = '',
+}) => {
   const statusClassName = !disabled
     ? 'text-teal-600 hover:text-teal-700 hover:bg-gray-50 cursor-pointer'
     : 'text-gray-300 bg-gray-100 cursor-not-allowed';
 
+  const onClick = e => {
+    if (disabled) {
+      e.preventDefault();
+    }
+  };
+
   return (
-    <Link to={`${url}`}>
+    <Link to={url} onClick={onClick} className={className}>
       <div
         className={`
           inline-block w-24 p-2 text-center bg-white border border-gray-200 rounded duration-200
@@ -24,6 +34,13 @@ const NavLink = ({ disabled, url, text }) => {
       </div>
     </Link>
   );
+};
+
+NavLink.propTypes = {
+  disabled: PropTypes.bool.isRequired,
+  url: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 const Page = ({ pageContext, location }) => {
@@ -39,13 +56,7 @@ const Page = ({ pageContext, location }) => {
   return (
     <>
       <span ref={ref} />
-      <div
-        id="header"
-        className="container lg:max-w-screen-lg mx-auto pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5"
-      >
-        <aside>
-          <Sidebar />
-        </aside>
+      <PageContainer id="header">
         <main className="md:col-span-2 lg:col-span-3">
           {group.map(({ node }) => (
             <Card
@@ -54,12 +65,17 @@ const Page = ({ pageContext, location }) => {
               key={node.fields.slug}
             />
           ))}
-          <div className="flex justify-between mb-3">
-            <NavLink disabled={first} url={previousUrl} text="Previous" />
-            <NavLink disabled={last} url={nextUrl} text="Next" />
-          </div>
+          {first !== last && (
+            <div className="flex justify-between mb-3 mx-4 md:mx-0">
+              {!first && <NavLink disabled={first} url={previousUrl} text="Previous" className="ml-0 mr-auto" />}
+              {!last && <NavLink disabled={last} url={nextUrl} text="Next" className="mr-0 ml-auto" />}
+            </div>
+          )}
         </main>
-      </div>
+        <aside className="order-first md:order-1">
+          <Sidebar />
+        </aside>
+      </PageContainer>
       <ShareBox url={location.href} show={show} />
     </>
   );
