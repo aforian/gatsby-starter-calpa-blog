@@ -1,6 +1,5 @@
 /* eslint react/prop-types: 0 */
 import React, { useRef } from 'react';
-import { graphql } from 'gatsby';
 
 import PageContainer from '../components/PageContainer';
 import Sidebar from '../components/Sidebar';
@@ -10,6 +9,7 @@ import SEO from '../components/SEO';
 import Header from '../components/Header';
 import ShareBox from '../components/ShareBox';
 import AuthorRow from '../components/AuthorRow/AuthorRow';
+import SibilingArticles from '../components/SibilingArticles';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 import { config } from '../../data';
@@ -22,10 +22,10 @@ const { name, iconUrl, utteranc } = config;
 // Prevent webpack window problem
 const isBrowser = typeof window !== 'undefined';
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ pageContext }) => {
+  const { node, previous, next } = pageContext;
   const ref = useRef();
   const show = useIntersectionObserver(ref);
-  const { node } = data.content.edges[0];
   const {
     html, frontmatter, fields, excerpt,
   } = node;
@@ -52,6 +52,8 @@ const BlogPost = ({ data }) => {
               <Content post={html} />
             </div>
             <hr className="my-4 md:my-8" />
+            <SibilingArticles previous={previous} next={next} />
+            <hr className="my-4 md:my-8" />
             <AuthorRow />
           </article>
           {isBrowser && <UtterancesComments id="utterance-container" {...utteranc} />}
@@ -72,46 +74,5 @@ const BlogPost = ({ data }) => {
     </>
   );
 };
-
-export const pageQuery = graphql`
-  fragment post on MarkdownRemark {
-    fields {
-      slug
-    }
-    frontmatter {
-      id
-      title
-      slug
-      date
-      headerImage
-      tags
-    }
-  }
-
-  query BlogPostQuery($index: Int) {
-    content: allMarkdownRemark(
-      sort: { order: DESC, fields: frontmatter___date }
-      skip: $index
-      limit: 1
-    ) {
-      edges {
-        node {
-          id
-          html
-          excerpt
-          ...post
-        }
-
-        previous {
-          ...post
-        }
-
-        next {
-          ...post
-        }
-      }
-    }
-  }
-`;
 
 export default BlogPost;

@@ -2,10 +2,10 @@ const path = require('path');
 const createPaginatedPages = require('gatsby-paginate');
 const { config } = require('../data');
 
-module.exports = ({ actions, graphql }) => {
+module.exports = async ({ actions, graphql }) => {
   const { createPage } = actions;
 
-  return graphql(`
+  await graphql(`
     {
       allMarkdownRemark(
         limit: 1000
@@ -15,6 +15,8 @@ module.exports = ({ actions, graphql }) => {
         edges {
           node {
             id
+            html
+            excerpt
             fields {
               slug
             }
@@ -71,28 +73,32 @@ module.exports = ({ actions, graphql }) => {
         tags.forEach(item => tagSet.add(item));
       }
 
-      // 允许自定义地址
+      // 自訂網址
       let $path = fields.slug;
       if (slug) {
         $path = slug;
       }
 
       const component = templateKey || 'blog-post';
+      const previous = edges[index - 1]?.node || null;
+      const next = edges[index + 1]?.node || null;
 
       createPage({
         path: $path,
-        tags,
+        hello: 'hello',
         component: path.resolve(`src/templates/${String(component)}.js`),
         // additional data can be passed via context
         context: {
           id,
-          index,
+          node,
+          previous,
+          next,
         },
       });
     });
 
     // 創建標籤頁面
-    return tagSet.forEach(tag => {
+    tagSet.forEach(tag => {
       createPage({
         path: `/tag/${tag}`,
         component: path.resolve('src/templates/tag.js'),
