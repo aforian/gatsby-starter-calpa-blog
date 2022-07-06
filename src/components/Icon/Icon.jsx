@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faCalendarDays, faTag, faChevronUp, faComment, faLaptopCode, faLink,
+  faCalendarDays, faTag, faChevronUp, faComment, faLaptopCode, faLink, faSun, faMoon,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub, faMediumM, faCodepen, faFacebookF,
@@ -19,6 +19,8 @@ const icons = {
   codepen: faCodepen,
   portfolio: faLaptopCode,
   link: faLink,
+  day: faSun,
+  night: faMoon,
 };
 
 export const IconName = {
@@ -32,6 +34,8 @@ export const IconName = {
   Codepen: 'codepen',
   Portfolio: 'portfolio',
   Link: 'link',
+  Day: 'day',
+  Night: 'night',
 };
 
 const Icon = ({ icon, className }) => {
