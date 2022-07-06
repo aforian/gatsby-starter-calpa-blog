@@ -1,12 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import './index.scss';
+import { ThemeContext } from '../Layout/themeContext';
 
 const UtterancesComments = ({
-  id, repo, issueTerm, theme,
+  id, repo, issueTerm, themeLight, themeDark,
 }) => {
   const commentBox = useRef();
+  const [darkTheme] = useContext(ThemeContext);
+  const theme = darkTheme ? themeDark : themeLight;
 
   useEffect(() => {
     const scriptEl = document.createElement('script');
@@ -26,6 +29,17 @@ const UtterancesComments = ({
     };
   }, []);
 
+  useEffect(() => {
+    const iframe = commentBox?.current?.querySelector('iframe');
+
+    if (iframe) {
+      iframe.contentWindow?.postMessage({
+        type: 'set-theme',
+        theme,
+      }, 'https://utteranc.es');
+    }
+  }, [theme]);
+
   return (
     <div className="pt-3 px-3 md:px-0">
       <div ref={commentBox} id={id} />
@@ -37,11 +51,13 @@ UtterancesComments.propTypes = {
   id: PropTypes.string.isRequired,
   repo: PropTypes.string.isRequired,
   issueTerm: PropTypes.string,
-  theme: PropTypes.string,
+  themeLight: PropTypes.string,
+  themeDark: PropTypes.string,
 };
 UtterancesComments.defaultProps = {
   issueTerm: 'title',
-  theme: 'github-light',
+  themeLight: 'github-light',
+  themeDark: 'github-dark',
 };
 
 export default UtterancesComments;

@@ -19,9 +19,6 @@ import './blog-post.scss';
 
 const { name, iconUrl, utteranc } = config;
 
-// Prevent webpack window problem
-const isBrowser = typeof window !== 'undefined';
-
 const BlogPost = ({ pageContext, location }) => {
   const { node, previous, next } = pageContext;
   const ref = useRef();
@@ -39,7 +36,7 @@ const BlogPost = ({ pageContext, location }) => {
       <span ref={ref} />
       <PageContainer id="header">
         <main className="md:col-span-2 lg:col-span-3">
-          <article id="article" className="bg-white p-4 md:p-8">
+          <article id="article" className="bg-white p-4 md:p-8 dark:bg-neutral-900 duration-200">
             <Header
               img={headerImage}
               title={title}
@@ -56,7 +53,7 @@ const BlogPost = ({ pageContext, location }) => {
             <hr className="my-4 md:my-8" />
             <AuthorRow />
           </article>
-          {isBrowser && <UtterancesComments id="utterance-container" {...utteranc} />}
+          <UtterancesComments id="utterance-container" {...utteranc} />
           <ShareBox url={location.href} hasCommentBox show={show} />
         </main>
         <aside className="hidden md:block">

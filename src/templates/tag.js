@@ -22,8 +22,8 @@ const TagPage = ({ data, pageContext, location }) => {
       <PageContainer id="header">
         <main className="md:col-span-2 lg:col-span-3">
           <div className="text-xl px-4 md:px-0 mb-4 md:mx-0">
-            <Tag name={tag} className="!text-teal-500" />
-            <span className="text-lg ml-2">
+            <Tag name={tag} className="!text-teal-500 dark:!text-teal-300" />
+            <span className="text-lg ml-2 dark:text-gray-100 duration-200">
               {`共有 ${edges.length} 篇文章`}
             </span>
           </div>

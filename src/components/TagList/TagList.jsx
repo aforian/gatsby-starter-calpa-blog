@@ -6,7 +6,9 @@ const TagItem = ({ name, isLast }) => {
   const href = `/tag/${name}`;
   return (
     <Link
-      className={`hover:text-gray-600 ${!isLast && 'after:content-["、"] after:inline-block'}`}
+      className={`
+        text-gray-400 hover:text-gray-600 dark:text-gray-100 hover:dark:text-gray-400 duration-200
+        ${!isLast && 'after:content-["、"] after:inline-block'}`}
       to={href}
       href={href}
     >

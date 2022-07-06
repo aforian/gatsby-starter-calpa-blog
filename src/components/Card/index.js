@@ -17,10 +17,22 @@ const Card = ({
 }) => (
   <div className="pb-4 last:pb-0 px-4 md:px-0">
     <div className="md:hover:shadow-xl md:hover:z-2 duration-200 ease-in-out">
-      <div className="relative z-1 flex bg-white border-l-4 border-teal-500">
+      <div
+        className={`
+          relative z-1 flex bg-white border-l-4 border-teal-500
+          dark:bg-neutral-900 duration-200
+        `}
+      >
         <div className="flex-1 p-4">
           <Link to={url} href={url}>
-            <h2 className="inline-block text-xl font-semibold md:text-2xl mb-1 text-teal-500 hover:text-teal-700">{title}</h2>
+            <h2
+              className={`
+                inline-block text-xl font-semibold md:text-2xl mb-1 text-teal-500 hover:text-teal-700
+                dark:text-teal-300 hover:dark:text-teal-500 duration-200
+              `}
+            >
+              {title}
+            </h2>
           </Link>
           <div className="flex mb-1 gap-3 flex-wrap">
             <IconBlock icon={IconName.Date}>
@@ -32,8 +44,8 @@ const Card = ({
               <TagList tags={tags} />
             </IconBlock>
           </div>
-          <p className="line-clamp-2 mb-4 min-h-[3em]">{description}</p>
-          <Link to={url} href={url} className="text-gray-400 hover:text-gray-700">
+          <p className="line-clamp-2 mb-4 min-h-[3em] duration-200 dark:text-gray-100">{description}</p>
+          <Link to={url} href={url} className="text-gray-400 hover:text-gray-600 dark:text-gray-100 hover:dark:text-gray-400 duration-200">
             繼續閱讀...
           </Link>
         </div>

@@ -7,7 +7,9 @@ import Divider from '../Divider';
 const Information = ({ totalCount }) => (
   <div className="hidden md:block mt-2">
     <Divider />
-    <p>{`共${totalCount}篇文章`}</p>
+    <span className="text-black dark:text-gray-100 duration-200">
+      {`共${totalCount}篇文章`}
+    </span>
     <Divider />
     <TagList />
   </div>

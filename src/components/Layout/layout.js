@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 import Transition from '../Transition';
 import Navbar from '../Navbar';
 import Head from './Head';
 import Footer from '../Footer';
+import { ThemeContext } from './themeContext';
+import { getInitDarkMode } from '../../utils/getInitDarkMode';
 import './index.scss';
 
 if (typeof window !== 'undefined') {
@@ -13,22 +15,30 @@ if (typeof window !== 'undefined') {
   require('smooth-scroll')('a', { offset: 60, speed: 200 });
 }
 
-const Layout = ({ children, location }) => (
-  <div className="layout min-h-[calc(100vh-52px)] bg-gray-100">
-    <Head />
-    <Navbar location={location} />
-    <Transition location={location}>
-      <div className="w-full mt-header">
-        {children}
-      </div>
-    </Transition>
-    <Footer />
-  </div>
-);
+const Layout = ({ children, location }) => {
+  const [dark, setDark] = useState(getInitDarkMode());
+  const themeContext = useMemo(() => [dark, setDark], [dark, setDark]);
 
-// Layout.propTypes = {
-//   children: PropTypes.object.isRequired,
-//   location: PropTypes.any
-// };
+  useEffect(() => {
+    window.localStorage.setItem('darkmode', dark);
+  }, [dark]);
+
+  return (
+    <ThemeContext.Provider value={themeContext}>
+      <div className={dark && 'dark'}>
+        <div className="layout min-h-[calc(100vh-52px)] bg-gray-100 dark:bg-black duration-200">
+          <Head />
+          <Navbar location={location} setDark={setDark} dark={dark} />
+          <Transition location={location}>
+            <div className="w-full mt-header">
+              {children}
+            </div>
+          </Transition>
+          <Footer />
+        </div>
+      </div>
+    </ThemeContext.Provider>
+  );
+};
 
 export default Layout;

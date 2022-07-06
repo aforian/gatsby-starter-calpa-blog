@@ -15,7 +15,10 @@ const {
 
 const IconLink = ({ href, icon, title }) => (
   <a
-    className="inline-block mr-2 last:mr-0 fa-lg hover:text-teal-600 duration-200"
+    className={`
+      inline-block mr-2 last:mr-0 fa-lg hover:text-teal-600 duration-200
+      hover:dark:text-teal-300
+    `}
     target="_blank"
     href={href}
     title={title}
@@ -40,11 +43,11 @@ const AuthorRow = () => (
         alt={author}
       />
     </div>
-    <div className="col-span-2 md:col-span-4 flex flex-col justify-center">
-      <Link to={about} className="text-lg font-bold hover:text-teal-600">
+    <div className="col-span-2 md:col-span-4 flex flex-col justify-center dark:text-gray-100">
+      <Link to={about} className="text-lg font-bold hover:text-teal-600 duration-200 hover:dark:text-teal-300">
         {author}
       </Link>
-      <p className="text-sm mb-2">{wordings.join('\n')}</p>
+      <p className="text-sm mb-2 duration-200">{wordings.join('\n')}</p>
       <div className="links">
         {authorsLinks.map(link => <IconLink key={link.href} {...link} />)}
       </div>
