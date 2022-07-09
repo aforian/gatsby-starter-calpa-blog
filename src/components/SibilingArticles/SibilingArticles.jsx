@@ -30,9 +30,9 @@ const SibilingItem = ({ node, type }) => {
   };
 
   return (
-    <div className={className[type]}>
+    <div className={`dark:text-gray-100 duration-200 ${className[type]}`}>
       <span className="text-sm">{typeText[type]}</span>
-      <Link to={slug} className="hover:text-teal-600">
+      <Link to={slug} className="hover:text-teal-600 hover:dark:text-teal-300">
         <h4 className="font-semibold">{title}</h4>
       </Link>
     </div>
@@ -52,8 +52,12 @@ const SibilingArticles = ({ previous, next }) => (
 );
 
 SibilingArticles.propTypes = {
-  previous: PostNodePropType.isRequired,
-  next: PostNodePropType.isRequired,
+  previous: PostNodePropType,
+  next: PostNodePropType,
+};
+SibilingArticles.defaultProps = {
+  previous: null,
+  next: null,
 };
 
 export default SibilingArticles;

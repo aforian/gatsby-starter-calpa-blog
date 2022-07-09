@@ -1,6 +1,11 @@
-@import '~prism-themes/themes/prism-one-light.css';
+@import './prism-theme';
 
 #post {
+  h1, h2, h3, h4, h5, h6, p, blockquote, del, strong {
+    color: black;
+    transition: color 200ms;
+    line-height: 1.8rem;
+  }
   h2 {
     font-size: 1.5rem; /* 24px */
     line-height: 2rem; /* 32px */
@@ -19,7 +24,7 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 
     a {
       height: 100%;
@@ -40,6 +45,7 @@
   }
   a {
     color: #0d9488;
+    transition: color 200ms;
 
     &:hover {
       color: #0f766e;
@@ -48,7 +54,6 @@
   }
   p {
     margin-bottom: 1rem;
-    line-height: 1.5rem;
   }
   blockquote {
     max-width: 100%;
@@ -68,6 +73,20 @@
 
     @media screen and (max-width: 767px) {
       margin: 1rem 0;
+    }
+  }
+
+  &.dark {
+    h1, h2, h3, h4, h5, h6, p, blockquote, del, strong {
+      color: #f3f4f6;
+    }
+    a {
+      color: #5eead4;
+  
+      &:hover {
+        color: #0d9488;
+        text-decoration: underline;
+      }
     }
   }
 }

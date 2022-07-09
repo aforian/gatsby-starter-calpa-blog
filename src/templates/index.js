@@ -13,8 +13,8 @@ const NavLink = ({
   disabled, url, text, className = '',
 }) => {
   const statusClassName = !disabled
-    ? 'text-teal-600 hover:text-teal-700 hover:bg-gray-50 cursor-pointer'
-    : 'text-gray-300 bg-gray-100 cursor-not-allowed';
+    ? 'text-teal-600 hover:text-teal-700 hover:bg-gray-50 cursor-pointer dark:text-teal-200'
+    : 'text-gray-300 bg-gray-100 cursor-not-allowed dark:text-gray-500 dark:bg-neutral-900';
 
   const onClick = e => {
     if (disabled) {
@@ -27,7 +27,7 @@ const NavLink = ({
       <div
         className={`
           inline-block w-24 p-2 text-center bg-white border border-gray-200 rounded duration-200
-          ${statusClassName}
+          dark:bg-neutral-900 dark:border-neutral-700 ${statusClassName}
         `}
       >
         {text}

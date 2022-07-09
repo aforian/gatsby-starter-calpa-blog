@@ -1,5 +1,5 @@
 /* eslint react/prop-types: 0 */
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 
 import PageContainer from '../components/PageContainer';
 import Sidebar from '../components/Sidebar';
@@ -16,14 +16,13 @@ import { config } from '../../data';
 
 // Styles
 import './blog-post.scss';
+import { ThemeContext } from '../components/Layout/themeContext';
 
 const { name, iconUrl, utteranc } = config;
 
-// Prevent webpack window problem
-const isBrowser = typeof window !== 'undefined';
-
 const BlogPost = ({ pageContext, location }) => {
   const { node, previous, next } = pageContext;
+  const [darkTheme] = useContext(ThemeContext);
   const ref = useRef();
   const show = useIntersectionObserver(ref);
   const {
@@ -39,7 +38,7 @@ const BlogPost = ({ pageContext, location }) => {
       <span ref={ref} />
       <PageContainer id="header">
         <main className="md:col-span-2 lg:col-span-3">
-          <article id="article" className="bg-white p-4 md:p-8">
+          <article id="article" className="bg-white p-4 md:p-8 dark:bg-neutral-900 duration-200">
             <Header
               img={headerImage}
               title={title}
@@ -48,7 +47,7 @@ const BlogPost = ({ pageContext, location }) => {
               date={date}
               tags={tags}
             />
-            <div id="post">
+            <div id="post" className={darkTheme && 'dark'}>
               <Content post={html} />
             </div>
             <hr className="my-4 md:my-8" />
@@ -56,7 +55,7 @@ const BlogPost = ({ pageContext, location }) => {
             <hr className="my-4 md:my-8" />
             <AuthorRow />
           </article>
-          {isBrowser && <UtterancesComments id="utterance-container" {...utteranc} />}
+          <UtterancesComments id="utterance-container" {...utteranc} />
           <ShareBox url={location.href} hasCommentBox show={show} />
         </main>
         <aside className="hidden md:block">

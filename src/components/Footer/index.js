@@ -5,7 +5,7 @@ import ExternalLink from '../ExternalLink';
 const Footer = () => (
   <footer className="footer py-6">
     <div className="container mx-auto">
-      <div className="w-full text-center text-sm">
+      <div className="w-full text-center text-sm dark:text-gray-100 duration-200">
         <p>
           {'Build with '}
           <ExternalLink href="https://www.gatsbyjs.org/" title="GatsbyJS" />
@@ -20,7 +20,7 @@ const Footer = () => (
           .
         </p>
         <p>
-          The original code is open source and available at&nbsp;
+          {'The original code is open source and available at '}
           <ExternalLink
             href="https://github.com/calpa/gatsby-starter-calpa-blog"
             title="calpa/gatsby-starter-calpa-blog"

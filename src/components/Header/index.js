@@ -14,9 +14,11 @@ const Header = ({
   authorName,
 }) => (
   <div id="article-header" className="w-full relative">
-    <h1 className="text-3xl font-extrabold mb-4">{title}</h1>
-    <div className="flex mb-1 flex-wrap md:flex-nowrap gap-3">
-      <div className="flex items-center text-gray-500 text-sm">
+    <h1 className="text-3xl font-extrabold mb-4 dark:text-gray-100 duration-200">
+      {title}
+    </h1>
+    <div className="flex flex-wrap md:flex-nowrap gap-3">
+      <div className="flex items-center text-gray-500 text-sm dark:text-gray-100 duration-200">
         {authorImage && (
           <img
             src={authorImage}
