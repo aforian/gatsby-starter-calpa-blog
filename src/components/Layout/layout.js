@@ -8,6 +8,7 @@ import Footer from '../Footer';
 import { ThemeContext } from './themeContext';
 import { getInitDarkMode } from '../../utils/getInitDarkMode';
 import './index.scss';
+import { isBrowser } from '../../api';
 
 if (typeof window !== 'undefined') {
   // Make scroll behavior of internal links smooth
@@ -16,11 +17,19 @@ if (typeof window !== 'undefined') {
 }
 
 const Layout = ({ children, location }) => {
-  const [dark, setDark] = useState(getInitDarkMode());
+  const [dark, setDark] = useState(false);
   const themeContext = useMemo(() => [dark, setDark], [dark, setDark]);
 
   useEffect(() => {
-    window.localStorage.setItem('darkmode', dark);
+    if (isBrowser) {
+      setDark(getInitDarkMode());
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isBrowser) {
+      window.localStorage.setItem('darkmode', dark);
+    }
   }, [dark]);
 
   return (
