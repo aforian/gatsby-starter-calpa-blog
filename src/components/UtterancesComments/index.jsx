@@ -1,14 +1,14 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
+import { useDarkMode } from '../../hooks/useDarkMode';
 import './index.scss';
-import { ThemeContext } from '../Layout/themeContext';
 
 const UtterancesComments = ({
   id, repo, issueTerm, themeLight, themeDark,
 }) => {
   const commentBox = useRef();
-  const [darkTheme] = useContext(ThemeContext);
+  const { dark: darkTheme } = useDarkMode();
   const theme = darkTheme ? themeDark : themeLight;
 
   useEffect(() => {

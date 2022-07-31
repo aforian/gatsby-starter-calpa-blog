@@ -1,5 +1,5 @@
 /* eslint react/prop-types: 0 */
-import React, { useContext, useRef } from 'react';
+import React, { useRef } from 'react';
 
 import PageContainer from '../components/PageContainer';
 import Sidebar from '../components/Sidebar';
@@ -16,13 +16,13 @@ import { config } from '../../data';
 
 // Styles
 import './blog-post.scss';
-import { ThemeContext } from '../components/Layout/themeContext';
+import { useDarkMode } from '../hooks/useDarkMode';
 
 const { name, iconUrl, utteranc } = config;
 
 const BlogPost = ({ pageContext, location }) => {
   const { node, previous, next } = pageContext;
-  const [darkTheme] = useContext(ThemeContext);
+  const { dark: darkTheme } = useDarkMode();
   const ref = useRef();
   const show = useIntersectionObserver(ref);
   const {

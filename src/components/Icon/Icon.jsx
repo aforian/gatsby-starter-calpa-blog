@@ -2,7 +2,17 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faCalendarDays, faTag, faChevronUp, faComment, faLaptopCode, faLink, faSun, faMoon,
+  faCalendarDays,
+  faTag,
+  faChevronUp,
+  faComment,
+  faLaptopCode,
+  faLink,
+  faSun,
+  faMoon,
+  faMagnifyingGlass,
+  faXmark,
+  faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub, faMediumM, faCodepen, faFacebookF,
@@ -21,6 +31,9 @@ const icons = {
   link: faLink,
   day: faSun,
   night: faMoon,
+  search: faMagnifyingGlass,
+  cancel: faXmark,
+  warning: faTriangleExclamation,
 };
 
 export const IconName = {
@@ -36,6 +49,9 @@ export const IconName = {
   Link: 'link',
   Day: 'day',
   Night: 'night',
+  Search: 'search',
+  Cancel: 'cancel',
+  Warning: 'warning',
 };
 
 const Icon = ({ icon, className }) => {

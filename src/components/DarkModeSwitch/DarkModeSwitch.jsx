@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Icon, { IconName } from '../Icon';
-import { ThemeContext } from '../Layout/themeContext';
+import { useDarkMode } from '../../hooks/useDarkMode';
 
 const DarkModeSwitch = () => {
-  const [dark, setDark] = useContext(ThemeContext);
+  const { dark, setDark } = useDarkMode();
   const themeClassName = dark
     ? 'left-0'
     : 'left-1/2';
