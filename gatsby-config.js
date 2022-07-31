@@ -1,4 +1,7 @@
 const tailwindcss = require('tailwindcss');
+require('dotenv').config();
+
+const algoliaQueries = require('./src/utils/algolia-queries');
 
 module.exports = {
   pathPrefix: '/',
@@ -21,6 +24,7 @@ module.exports = {
     'gatsby-plugin-fontawesome-css',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-webpack-bundle-analyser-v2',
+    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -89,6 +93,14 @@ module.exports = {
       },
     },
     // 'gatsby-plugin-offline', // put this after gatsby-plugin-manifest
+    {
+      resolve: 'gatsby-plugin-algolia',
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        queries: algoliaQueries,
+      },
+    },
     'gatsby-plugin-netlify', // make sure to put last in the array
   ],
 };
