@@ -104,18 +104,18 @@ module.exports = {
         name: "Alex Ian's Blog",
         short_name: 'Alex Ian',
         start_url: '/',
-        background_color: '#ededed',
-        theme_color: '#384f7c',
+        background_color: '#ffffff',
+        theme_color: '#14B8A6',
         display: 'standalone',
         icons: [
           {
-            src: '/favicons/android-chrome-192x192.png',
-            sizes: '192x192',
+            src: '/favicons/favicon-96x96.png',
+            sizes: '96x96',
             type: 'image/png',
           },
           {
-            src: '/favicons/android-chrome-512x512.png',
-            sizes: '512x512',
+            src: '/favicons/favicon-310x310.png',
+            sizes: '310x310',
             type: 'image/png',
           },
         ],
@@ -128,6 +128,8 @@ module.exports = {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         queries: algoliaQueries,
+        enablePartialUpdates: true,
+        matchFields: ['modified'],
       },
     },
     'gatsby-plugin-netlify', // make sure to put last in the array

@@ -10,10 +10,10 @@
   "License": "",
   "maxPostsInPage": 10,
   "meta": {
-    "favicon": "https://alex-ian.me/favicons/android-chrome-192x192.png",
+    "favicon": "https://alex-ian.me/favicons/favicon-96x96.png",
     "keyword": "alexian, blog, JavaScript",
     "description": "Alex Ian 的 Blog",
-    "theme_color": "#33a579",
+    "theme_color": "#14B8A6",
     "google_site_verification": "PqBxbkZVOntH4ADgZ8VxfiFDG3RBK-WrEf4iauFn63o"
   },
   "website": "https://portfolio.alex-ian.me/",
