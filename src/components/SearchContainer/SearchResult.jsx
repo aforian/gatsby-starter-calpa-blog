@@ -19,11 +19,21 @@ const Hit = ({ hit }) => {
 
   return (
     <div role="option" aria-selected="false">
-      <Link to={hit.slug} onClick={() => setShowSearch(false)}>
-        <h4 className="text-xl font-semibold dark:text-gray-100">
-          <Highlight attribute="title" hit={hit} tagname="mark" />
+      <Link to={hit.slug} onClick={() => setShowSearch(false)} className="group">
+        <h4
+          className={`
+            text-xl font-semibold text-teal-500 group-hover:text-teal-700
+            dark:text-gray-300 dark:group-hover:text-teal-500 duration-200
+          `}
+        >
+          <Highlight attribute="title" hit={hit} highlightedTagName="span" />
         </h4>
-        <Snippet className="dark:text-gray-100" attribute="excerpt" hit={hit} />
+        <Snippet
+          className="dark:text-gray-100"
+          attribute="excerpt"
+          hit={hit}
+          highlightedTagName="span"
+        />
       </Link>
     </div>
   );
@@ -47,7 +57,7 @@ const SearchResult = ({ className }) => {
   const isResultShow = !query || hitCount > 0;
 
   return (
-    <div className={`relative bg-white py-5 mt-4 rounded shadow-2xl dark:shadow-white/30 dark:bg-neutral-900 ${className} ${dark && 'dark'}`}>
+    <div className={`relative bg-white py-5 mt-4 rounded shadow-2xl dark:shadow-white/30 dark:bg-neutral-900 ${className}`}>
       <div className="px-5 h-[60vh] md:h-[40vh] overflow-auto">
         {isResultShow
           ? <Hits className="Hits" hitComponent={Hit} />
@@ -84,13 +94,6 @@ const StyledSearchResult = styled(SearchResult)`
         width: calc(100% + 4px);
         height: 4px;
         background-color: rgb(20,184,166);
-      }
-    }
-  }
-  &.dark {
-    .ais-Highlight, .ais-Snippet {
-      &-highlighted {
-        color: rgb(243 244 246);
       }
     }
   }

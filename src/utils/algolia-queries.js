@@ -26,6 +26,7 @@ const pageQuery = `{
         id
         frontmatter {
           title
+          date
         }
         fields {
           slug
@@ -41,9 +42,12 @@ function pageToAlgoliaRecord({
     id, frontmatter, fields, ...rest
   },
 }) {
+  const { date, ...restFrontmatter } = frontmatter;
+
   return {
     objectID: id,
-    ...frontmatter,
+    modified: date,
+    ...restFrontmatter,
     ...fields,
     ...rest,
   };
