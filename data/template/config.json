@@ -5,6 +5,7 @@
       "target": "/stats/"
     }
   ],
+  "title": "Alex's Blog",
   "author": "Alex Ian",
   "License": "",
   "maxPostsInPage": 10,
