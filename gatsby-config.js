@@ -26,10 +26,31 @@ module.exports = {
     'gatsby-plugin-webpack-bundle-analyser-v2',
     'gatsby-plugin-styled-components',
     {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        defaults: {
+          formats: ['webp'],
+          placeholder: 'blurred',
+          quality: 50,
+          breakpoints: [350, 750, 1080, 1366],
+          backgroundColor: 'transparent',
+        },
+      },
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-image',
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/content`,
         name: 'pages',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'staticImages',
+        path: `${__dirname}/static/images`,
       },
     },
     {
@@ -41,6 +62,14 @@ module.exports = {
             resolve: 'gatsby-remark-prismjs',
             options: {
               showLineNumbers: true,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1000,
+              wrapperStyle: () => 'width: 100%',
+              srcSetBreakpoints: [350, 750, 1000],
             },
           },
           {

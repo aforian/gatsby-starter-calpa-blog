@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import IconBlock from '../IconBlock';
 import TagList from '../TagList';
@@ -40,8 +41,8 @@ const Header = ({
     <hr className="my-4 md:my-8" />
     {img && (
       <div className="mb-4">
-        <img
-          src={img}
+        <GatsbyImage
+          image={getImage(img)}
           alt={title}
           className="w-full block"
         />
@@ -51,7 +52,7 @@ const Header = ({
 );
 
 Header.propTypes = {
-  img: PropTypes.string.isRequired,
+  img: PropTypes.object.isRequired,
   title: PropTypes.string,
   date: PropTypes.string,
   authorName: PropTypes.string,
