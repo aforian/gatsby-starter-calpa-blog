@@ -77,10 +77,12 @@ const Search = ({ indices }) => {
   );
 };
 Search.propTypes = {
-  indices: PropTypes.shape({
-    name: PropTypes.string,
-    title: PropTypes.string,
-  }).isRequired,
+  indices: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      title: PropTypes.string,
+    }),
+  ).isRequired,
 };
 
 export default Search;
