@@ -5,7 +5,7 @@ title: Debounce & Throttle - 那些前端開發應該要知道的小事(一)
 slug: /2019/07/06/debounce&throttle
 date: 2019-07-06T12:00:00Z
 description: 當開發的應用功能和架構越來越大、越來越複雜的情況下，降低瀏覽網站所消耗的效能就成為開發者的義務，而Debounce和Throttle概念便是降低互動事件頻繁觸發的解答。
-headerImage: https://i.imgur.com/1lJ7XQW.gif
+headerImage: ../../static/assets/debounce&throttle-1.jpg
 publish: true
 tags:
   - 那些前端開發應該要知道的小事
@@ -53,7 +53,7 @@ window.addEventListener('scroll', debounce(handleScroll));
 `Throttle` 是另一種減緩事件觸發方法，它與Debounce的差異是，為使用者觸發相同事件時提供間隔，控制特定時間內事件觸發的次數。
 以現實例子來說，就像日本庭院常見的那個盛水的竹子裝置（名為鹿威），流水一直下來，但竹子會等水盛滿（時間到），才會把水排出。
 
-![](https://i.imgur.com/1lJ7XQW.gif)
+![鹿威](/assets/debounce&throttle-2.gif)
 鹿威，圖片來源：https://www.pinterest.ca/pin/101260691599109638/
 
 簡單實現的程式碼如下：
@@ -89,8 +89,6 @@ function handleScroll() {
 ```
 
 Throttle實現方法是在函數域加入一個計時器並記錄最新一次執行的時間點，並把現在的時間點與記錄的時間點再比較，如果差距超過設定時限，便允許再次執行事件任務，並記下新的執行時間點。
-
-##
 
 ## 後記，接觸 Debounce & Throttle的時機
 說來慚愧，接觸到Debounce的時間點，已經是我成為前端開發者的第三年，在文章開首的故事，可以說是自己開發歷程的體現。在接觸的專案越來越大的情況下，任何會影響效能的部分都要顧慮到，這也是我會開始這個系列的原因，謝謝大家的觀看。

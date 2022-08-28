@@ -5,7 +5,7 @@ title: 相等比較 - 那些前端開發應該要知道的小事(四)
 slug: /2019/11/25/comparisons
 date: 2019-11-25T16:00:00Z
 description: 比較是程式用來判斷條件的重要步驟，而在JavaScrip中的等值判斷非常刺激，這次就來靠近一步看看JavaScript的相等比較吧
-headerImage: https://i.imgur.com/KXhcpAk.png
+headerImage: ../../static/assets/comparisons-1.png
 publish: true
 tags:
   - 那些前端開發應該要知道的小事
@@ -14,13 +14,13 @@ tags:
 ## 前言
 這次小事要提及的是關於js中的相等比較，比較是程式用來判斷條件的重要步驟，而在JavaScrip中的等值判斷非常~~有趣~~刺激，使用過JavaScript的開發者都感受過其**抽象相等符**「`==`」的洗禮，大多避免使用「`==`」而改用**嚴謹相等符**「`===`」進行開發。但在開發習慣日漸嚴謹的時代，仍然有`===`也有解決不了的事，這次就來靠近一步看看JavaScript的相等比較吧。
 
-![在JavaScript遇到相等比較問題，我一律建議](https://i.imgur.com/JbiumEf.jpg)
+![在JavaScript遇到相等比較問題，我一律建議](../../static/assets/comparisons-2.jpg)
 
 （誤）
 
 ## JavaScript的相等比較
 
-在JavaScript中，相等比較主要用於比較基本型別的值是否相等，最常使用的相等比較符號：抽象相等比較符「`==`」和嚴格相等比較符「`===`」。
+在JavaScript中，相等比較主要用於比較基本型別的值是否相等，最常使用的相等比較符號：抽象相等比較符「`==`」**和嚴格相等比較符**「`===`」。
 JavaScript是出名的弱型別語言，即其變數的資料型別易於進行轉換，雖然這並非絕對的弱點，但在等值比較時常常會因此出錯，而**抽象相等符**「`==`」便是其受害者之一。
 
 ## 抽象相等符「`==`」
@@ -89,7 +89,7 @@ Object.is(0, -0) // true
 
 目前流行的程式碼分析工具Eslint, 都提供檢查程式碼是否要全面使用`===`代替`==`的規則，在**React**的開發包中便預設加入該規則。
 
-![eqeqeq](https://i.imgur.com/43Hi6x5.png)
+![eqeqeq](../../static/assets/comparisons-3.png)
 
 ## 總結
 - `==` 會自動轉換型別進行比較，結果較不直觀。
@@ -97,7 +97,7 @@ Object.is(0, -0) // true
 - `Object.is()` 是ES6加入的「等值比較符」，連`NaN`與`+0`,`-0`都能準確比較，但寫法不直觀，尚未流行。
 
 ### 三種相等比較符的結果表：
-![三種相等比較符的結果表](https://i.imgur.com/Ey8Nh0U.png)
+![三種相等比較符的結果表](../../static/assets/comparisons-4.png)
 
 ## 參考
 

@@ -5,7 +5,7 @@ title: addEventListener的第三個參數 - 那些前端開發應該要知道的
 slug: /2019/07/14/addeventlistenerthirdarguments
 date: 2019-07-14T16:00:00Z
 description:
-headerImage: https://i.imgur.com/CxRReF1.png
+headerImage: ../../static/assets/addeventlistenerthirdarguments-1.png
 publish: true
 tags:
   - 那些前端開發應該要知道的小事
@@ -41,7 +41,7 @@ blocks.forEach(block => {
 
 以上程式碼中，當capture為ture時，印出的值會為：
 
-![capture result](https://i.imgur.com/phBsNEQ.png)
+![capture result](../../static/assets/addeventlistenerthirdarguments-2.png)
 
 你可以試試把capture的值更改，看看結果有什麼不同。
 
@@ -86,15 +86,15 @@ window.addEventListener('scroll', handleScroll, {
 ```
 
 當運行以上程式碼時，會報出以下錯誤：
-![](https://i.imgur.com/ij1yVCE.png)
+![error response](../../static/assets/addeventlistenerthirdarguments-3.png)
 
 ## 使用環境與限制
 雖然以上的選項都非常方便，但最重要還是在瀏覽器的相容性能否滿足大部分使用者。可惜的是，目前最新的ie版本也並不支援，不過還是可以使用[polyfill](https://github.com/github/eventlistener-polyfill)來進行向下的相容。
 
-![passive 相容性](https://i.imgur.com/qfwjOlN.png)
+![passive 相容性](../../static/assets/addeventlistenerthirdarguments-4.png)
 
-![once 相容性](https://i.imgur.com/ybxIovJ.png)
+![once 相容性](../../static/assets/addeventlistenerthirdarguments-5.png)
 
-![capture 相容性](https://i.imgur.com/xtwm3F3.png)
+![capture 相容性](../../static/assets/addeventlistenerthirdarguments-6.png)
 
 以上就是關於addEventListener的第三個參數的介紹，希望大家能夠好好利用這個實用的參數進行開發。
