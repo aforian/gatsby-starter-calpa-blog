@@ -1,5 +1,7 @@
 /* eslint react/prop-types: 0 */
 import React, { useRef } from 'react';
+import { getSrc } from 'gatsby-plugin-image';
+import { graphql } from 'gatsby';
 
 import PageContainer from '../components/PageContainer';
 import Sidebar from '../components/Sidebar';
@@ -20,7 +22,7 @@ import { useDarkMode } from '../hooks/useDarkMode';
 
 const { name, iconUrl, utteranc } = config;
 
-const BlogPost = ({ pageContext, location }) => {
+const BlogPost = ({ data, pageContext, location }) => {
   const { node, previous, next } = pageContext;
   const { dark: darkTheme } = useDarkMode();
   const ref = useRef();
@@ -36,18 +38,19 @@ const BlogPost = ({ pageContext, location }) => {
   return (
     <>
       <span ref={ref} />
+      {console.log(data.markdownRemark.frontmatter.headerImage)}
       <PageContainer id="header">
         <main className="md:col-span-2 lg:col-span-3">
           <article id="article" className="bg-white p-4 md:p-8 dark:bg-neutral-900 duration-200">
             <Header
-              img={headerImage}
+              img={data.markdownRemark.frontmatter.headerImage}
               title={title}
               authorName={name}
               authorImage={iconUrl}
               date={date}
               tags={tags}
             />
-            <div id="post" className={darkTheme && 'dark'}>
+            <div id="post" className={darkTheme ? 'dark' : ''}>
               <Content post={html} />
             </div>
             <hr className="my-4 md:my-8" />
@@ -68,10 +71,30 @@ const BlogPost = ({ pageContext, location }) => {
         siteTitleAlt="AlexIan's Blog"
         isPost
         description={excerpt}
-        image={headerImage}
+        image={getSrc(headerImage)}
       />
     </>
   );
 };
+
+export const pageQuery = graphql`
+  query postQuery($id: String!) {
+    markdownRemark(
+      id: { eq: $id }
+    ) {
+      frontmatter {
+        headerImage {
+          childImageSharp {
+            gatsbyImageData(
+              width: 1000
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default BlogPost;

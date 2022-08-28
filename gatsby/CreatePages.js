@@ -31,7 +31,15 @@ module.exports = async ({ actions, graphql }) => {
               date
               tags
               description
-              headerImage
+              headerImage {
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 300
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
+              }
             }
           }
         }
