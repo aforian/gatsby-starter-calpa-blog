@@ -38,7 +38,6 @@ const Search = ({ indices }) => {
 
   useEffect(() => {
     if (showSearch) {
-      console.log(inputRef?.current);
       inputRef?.current?.focus();
     }
   }, [showSearch, inputRef.current]);

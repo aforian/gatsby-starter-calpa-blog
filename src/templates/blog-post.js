@@ -38,7 +38,6 @@ const BlogPost = ({ data, pageContext, location }) => {
   return (
     <>
       <span ref={ref} />
-      {console.log(data.markdownRemark.frontmatter.headerImage)}
       <PageContainer id="header">
         <main className="md:col-span-2 lg:col-span-3">
           <article id="article" className="bg-white p-4 md:p-8 dark:bg-neutral-900 duration-200">
