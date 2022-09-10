@@ -1,8 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import { useDarkMode } from '../../hooks/useDarkMode';
 import './index.scss';
+import useMutationObservable from '../../hooks/useMutationObservable';
+
+const UTTERANCES_URL = 'https://utteranc.es';
 
 const UtterancesComments = ({
   id, repo, issueTerm, themeLight, themeDark,
@@ -10,6 +13,22 @@ const UtterancesComments = ({
   const commentBox = useRef();
   const { dark: darkTheme } = useDarkMode();
   const theme = darkTheme ? themeDark : themeLight;
+
+  const setTheme = useCallback(iframeEl => {
+    iframeEl?.contentWindow?.postMessage({
+      type: 'set-theme',
+      theme,
+    }, UTTERANCES_URL);
+  }, [theme]);
+
+  const onLoadIframe = useCallback(mutations => {
+    mutations.forEach(mutation => {
+      const iframe = [...(mutation?.target?.childNodes ?? [])]
+        .find(node => node.nodeName === 'IFRAME');
+
+      setTheme(iframe);
+    });
+  }, [setTheme]);
 
   useEffect(() => {
     const scriptEl = document.createElement('script');
@@ -29,15 +48,12 @@ const UtterancesComments = ({
     };
   }, []);
 
+  useMutationObservable(commentBox.current, onLoadIframe);
+
   useEffect(() => {
     const iframe = commentBox?.current?.querySelector('iframe');
 
-    if (iframe) {
-      iframe.contentWindow?.postMessage({
-        type: 'set-theme',
-        theme,
-      }, 'https://utteranc.es');
-    }
+    setTheme(iframe);
   }, [theme]);
 
   return (
