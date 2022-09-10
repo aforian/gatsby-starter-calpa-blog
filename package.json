@@ -49,6 +49,7 @@
     "gitalk": "^1.7.2",
     "han-css": "^3.3.0",
     "highlight.js": "^11.5.1",
+    "lodash-es": "^4.17.21",
     "lozad": "^1.16.0",
     "md5": "^2.3.0",
     "prism-themes": "^1.9.0",
