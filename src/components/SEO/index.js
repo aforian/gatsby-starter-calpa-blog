@@ -66,7 +66,9 @@ const SEO = ({
 
     {/* Schema.org tags */}
     <script type="application/ld+json">
-      {JSON.stringify(schemaOrgJSONLD(url, title, siteTitleAlt, isPost))}
+      {JSON.stringify(schemaOrgJSONLD({
+        url, title, siteTitleAlt, isPost,
+      }))}
     </script>
 
     {/* OpenGraph tags */}
