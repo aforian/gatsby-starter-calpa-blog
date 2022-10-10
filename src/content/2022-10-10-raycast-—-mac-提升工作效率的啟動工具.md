@@ -21,15 +21,15 @@ Raycast 作為啟動工具，可以完美取代 Mac 原生的 Spotlight，幾乎
 
 1. Quicklinks：透過 Quicklinks 可以建立類似 chrome 書籤的連結；更進一步的，Quicklinks 可以留空關鍵字延後填入，最多可留空三個空位。比如我在工作上要前往不同測試機，就可以留空測試機的號碼。
     
-    ![留空 port 前往指定 port 的 localhost 頁面](/assets/raycast-01.gif)
+    ![留空 port 前往指定 port 的 localhost 頁面](/assets/raycasts-02.gif)
     
 2. Snippets：和 Mac 自己的快速輸入非常類似，記錄一些常用的文字片段，更進一步的，Snippets 可以傳入額外的內容，比如當前日期、鼠標位置、剪貼簿內容等進階應用。
     
-    ![快速鍵入，並將鼠標移至指定位置](/assets/raycast-02.gif)
+    ![快速鍵入，並將鼠標移至指定位置](/assets/raycasts-03.gif)
     
 3. Commands：Raycast 提供的快速指令功能，像是配置視窗的 window management，調整音量等等實用的指令；如果你是一位開發者，還可以建立屬於自己的 Commands。
     
-    ![預設視窗最大化指令](/assets/raycast-03.gif)
+    ![預設視窗最大化指令](/assets/raycasts-04.gif)
     
 
 ## 2. 團隊分享資源
