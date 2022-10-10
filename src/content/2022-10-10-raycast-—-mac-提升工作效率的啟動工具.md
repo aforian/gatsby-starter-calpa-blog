@@ -1,13 +1,16 @@
 ---
-slug: ""
+id: 2022-10-10
+slug: /2022/10/04/svelte
 title: Raycast — Mac 提升工作效率的啟動工具
 date: 2022-10-10T09:56:19.758Z
-description: Mac 的啟動工具能否更進一步呢？有的，答案是 Raycast 。
+description: Mac 的使用者，應該對 Spotlight 這個系統預設的啟動工具不陌生，Command + 空白鍵
+  的快速搜尋工具，讓使用者可以快速找到電腦中的檔案、應用程式，也可以做簡單的數學運算、貨幣轉換等，非常的方便。但啟動工具能否有更進一步呢？有的，答案是
+  Raycast 。
 tags:
   - raycast
   - toolRecommend
   - productivity
-headerImage: https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5df98264-9b17-4595-9244-dfe415e77677/2022-10-10_16.38.29.gif
+headerImage: ../../static/assets/raycast-01.png
 templateKey: blog-post
 ---
 Mac 的使用者，應該對 Spotlight 這個系統預設的啟動工具不陌生，Command + 空白鍵 的快速搜尋工具，讓使用者可以快速找到電腦中的檔案、應用程式，也可以做簡單的數學運算、貨幣轉換等，非常的方便。但啟動工具能否有更進一步呢？有的，答案是 [Raycast](https://www.raycast.com/) 。
@@ -18,15 +21,15 @@ Raycast 作為啟動工具，可以完美取代 Mac 原生的 Spotlight，幾乎
 
 1. Quicklinks：透過 Quicklinks 可以建立類似 chrome 書籤的連結；更進一步的是，可以留空關鍵字填入，比如我在工作上要前往不同測試機，就可以留空測試機的號碼
     
-    ![留空 port 前往指定 port 的 localhost 頁面](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5df98264-9b17-4595-9244-dfe415e77677/2022-10-10_16.38.29.gif)
+    ![留空 port 前往指定 port 的 localhost 頁面](/assets/raycast-01.gif)
     
 2. Snippets：和 Mac 自己的快速輸入非常類似，記錄一些常用的文字片段，更進一步的是，可以加入當前日期、鼠標位置等進階應用
     
-    ![快速鍵入，並將鼠標移至指定位置](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/24013720-d9bd-4e9d-9d3f-37bbb66b1ad1/2022-10-10_16.40.15.gif)
+    ![快速鍵入，並將鼠標移至指定位置](/assets/raycast-02.gif)
     
 3. Commands：raycast 提供的快速指令功能，像是配置視窗的 window management，調整音量等等實用的指令；如果你是一位開發者，還可以建立屬於自己的 Commands。
     
-    ![預設視窗最大化指令](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/78816486-7c59-482d-be2c-bb9ae6208893/2022-10-10_16.44.00.gif)
+    ![預設視窗最大化指令](/assets/raycast-03.gif)
     
 
 ## 2. 團隊分享資源
