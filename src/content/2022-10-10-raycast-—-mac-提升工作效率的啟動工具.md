@@ -11,6 +11,7 @@ tags:
   - productivity
 headerImage: ../../static/assets/raycast-01.png
 templateKey: blog-post
+publish: true
 ---
 Mac 的使用者，應該對 Spotlight 這個系統預設的啟動工具不陌生，Command + 空白鍵 的快速搜尋工具，讓使用者可以快速找到電腦中的檔案、應用程式，也可以做簡單的數學運算、貨幣轉換等，非常的方便。但啟動工具能否有更進一步呢？有的，答案是 [Raycast](https://www.raycast.com/) 。
 
