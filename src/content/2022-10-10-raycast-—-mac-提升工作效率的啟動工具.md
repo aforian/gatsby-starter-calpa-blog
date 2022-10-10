@@ -1,6 +1,6 @@
 ---
 id: 2022-10-10
-slug: /2022/10/04/svelte
+slug: /2022/10/10/raycast
 title: Raycast — Mac 提升工作效率的啟動工具
 date: 2022-10-10T09:56:19.758Z
 description: Mac 的使用者，應該對 Spotlight 這個系統預設的啟動工具不陌生，Command + 空白鍵
