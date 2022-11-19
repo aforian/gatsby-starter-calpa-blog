@@ -12,8 +12,6 @@ templateKey: blog-post
 ---
 > 你不看我怎麼知道我看你？
 
-![mutationO﻿bserver](../../static/assets/mutationObserver__banner.png)
-
 網頁前端開發與日俱進，不斷有新的 web API 出現，為前端開發帶來更多不同的可能，今天要為大家介紹的是 **MutationObserver** （[MDN](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/MutationObserver)）。
 
 MutationObserver 可以在不相依其他監聽事件的情況下，獨立觀察元素內的節點、屬性及文字內容的變化。它有一個前身：Mutation Event，但由於效能等因素被棄用，到現在以觀察者模式（Observer pattern）重新被實踐，接下來我們來看看要怎麼的使用 MutationObserver 吧！
