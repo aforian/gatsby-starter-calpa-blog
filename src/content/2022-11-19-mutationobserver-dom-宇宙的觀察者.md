@@ -1,5 +1,5 @@
 ---
-slug: 2022-11-19-mutationobserver
+slug: /2022/11/19/mutationobserver
 title: MutationObserver - DOM 宇宙的觀察者
 date: 2022-11-19T04:22:55.740Z
 description: 網頁前端開發與日俱進，不斷有新的 web API 出現，為前端開發帶來更多不同的可能，今天要為大家介紹的是 MutationObserver。
@@ -9,6 +9,7 @@ tags:
   - observer pattern
 headerImage: ../../static/assets/mutationObserver__banner.png
 templateKey: blog-post
+publish: true
 ---
 > 你不看我怎麼知道我看你？
 
