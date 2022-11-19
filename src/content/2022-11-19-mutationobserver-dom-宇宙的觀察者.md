@@ -7,7 +7,7 @@ tags:
   - JavaScript
   - MutationObserver
   - observer pattern
-headerImage: ../../static/assets/mutationObserver__banner.png
+headerImage: ../../static/assets/mutationobserver__banner.png
 templateKey: blog-post
 publish: true
 ---
@@ -87,13 +87,13 @@ observer.observe(document.body, {
 
 使用 mutationObserver 前：
 
-![只有目前顯示的影片有效，延遲載入新增的內容不會被影響](/static/assets/mutationObserver__demo-after.gif)
+![只有目前顯示的影片有效，延遲載入新增的內容不會被影響](/static/assets/mutationObserver__demo-before.gif)
 
 這時候便可以使用 `MutationObserver` 偵測頁面的內容是否有變動，並在變動時對新增的內容（這次例子是影片縮圖）進行操作：
 
 使用 mutationObserver 後：
 
-![延遲載入的影片也有綠色點點了](/static/assets/mutationObserver__demo-before.gif)
+![延遲載入的影片也有綠色點點了](/static/assets/mutationobserver__demo-after.gif)
 
 範例程式碼：
 
@@ -158,7 +158,7 @@ observer.observe(document.body, {
 
 而在瀏覽器相容性方面，連被停止支援（放逐）的 IE 11 也適用，所以可以放心使用：
 
-![mutationO﻿bserver](../../static/assets/mutationObserver__caniuse.png)
+![mutationO﻿bserver](../../static/assets/mutationobserver__caniuse.png)
 
 經過以上介紹，希望能讓大家能多認識 **MutationObserver** 這個 API ，並活用於前端開發上喔。
 
