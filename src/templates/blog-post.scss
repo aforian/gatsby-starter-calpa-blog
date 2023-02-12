@@ -75,9 +75,23 @@
       margin: 1rem 0;
     }
   }
+  ul {
+    list-style: disc;
+  }
+  ol {
+    list-style: decimal;
+  }
+  ul, ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
 
   &.dark {
-    h1, h2, h3, h4, h5, h6, p, blockquote, del, strong {
+    h1, h2, h3, h4, h5, h6, p, blockquote, del, strong, ul, ol {
       color: #f3f4f6;
     }
     a {
