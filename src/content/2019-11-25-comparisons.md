@@ -2,7 +2,7 @@
 templateKey: blog-post
 id: 2019-10-15
 title: 相等比較 - 那些前端開發應該要知道的小事(四)
-slug: /2019/11/25/comparisons
+slug: 2019-11-25-comparisons
 date: 2019-11-25T16:00:00Z
 description: 比較是程式用來判斷條件的重要步驟，而在JavaScrip中的等值判斷非常刺激，這次就來靠近一步看看JavaScript的相等比較吧
 headerImage: ../../static/assets/comparisons-1.png

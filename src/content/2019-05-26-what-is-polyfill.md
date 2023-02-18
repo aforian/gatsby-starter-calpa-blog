@@ -2,7 +2,7 @@
 templateKey: blog-post
 id: 2019-05-26
 title: polyfill是什麼？
-slug: /2019/05/26/what-is-polyfill/
+slug: 2019-05-26-what-is-polyfill
 date: 2019-05-26
 description: polyfill是什麼
 headerImage: ../../static/assets/polyfill-1.png

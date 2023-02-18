@@ -2,7 +2,7 @@
 templateKey: blog-post
 id: 2019-07-14
 title: addEventListener的第三個參數 - 那些前端開發應該要知道的小事(二)
-slug: /2019/07/14/addeventlistenerthirdarguments
+slug: 2019-07-14-addeventlistenerthirdarguments
 date: 2019-07-14T16:00:00Z
 description:
 headerImage: ../../static/assets/addeventlistenerthirdarguments-1.png

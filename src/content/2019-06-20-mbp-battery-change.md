@@ -2,7 +2,7 @@
 templateKey: blog-post
 id: 2019-06-20-1
 title: macbook-pro(retina) late2012 換電池記錄
-slug: /2019/06/20/mbp-battery-change
+slug: 2019-06-20-mbp-battery-change
 date: 2019-06-20T19:30:11.125Z
 description: macbook-pro(retina) late2012 換電池記錄
 headerImage: ../../static/assets/mbp-battery-change-1.jpg
