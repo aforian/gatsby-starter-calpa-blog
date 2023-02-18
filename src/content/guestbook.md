@@ -2,7 +2,7 @@
 templateKey: blog-post
 id: https://alex-ian.me/guestbook/
 title: 留言簿
-slug: /guestbook
+slug: guestbook
 date: 2019-01-11T16:32:00Z
 description: ""
 publish: true

@@ -8,6 +8,7 @@ import Card from '../components/Card';
 import Sidebar from '../components/Sidebar';
 import ShareBox from '../components/ShareBox';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { buildSlugPrefix } from '../utils/buildSlugPrefix';
 
 const NavLink = ({
   disabled, url, text, className = '',
@@ -48,7 +49,7 @@ const Page = ({ pageContext, location }) => {
     group, index, first, last, pathPrefix,
   } = pageContext;
 
-  const previousUrl = index - 1 === 1 ? '' : `/${pathPrefix}/${index - 1}`;
+  const previousUrl = index - 1 === 1 ? '/' : `/${pathPrefix}/${index - 1}`;
   const nextUrl = `/${pathPrefix}/${index + 1}`;
   const ref = useRef();
   const show = useIntersectionObserver(ref);
@@ -61,7 +62,7 @@ const Page = ({ pageContext, location }) => {
           {group.map(({ node }) => (
             <Card
               {...node.frontmatter}
-              url={node.frontmatter.slug ? node.frontmatter.slug : node.fields.slug}
+              url={buildSlugPrefix(node.frontmatter?.slug ?? node.fields.slug)}
               key={node.fields.slug}
             />
           ))}

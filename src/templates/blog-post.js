@@ -20,7 +20,9 @@ import { config } from '../../data';
 import './blog-post.scss';
 import { useDarkMode } from '../hooks/useDarkMode';
 
-const { name, iconUrl, utteranc } = config;
+const {
+  name, iconUrl, utteranc,
+} = config;
 
 const BlogPost = ({ data, pageContext, location }) => {
   const { node, previous, next } = pageContext;

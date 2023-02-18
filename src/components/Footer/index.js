@@ -1,6 +1,9 @@
 import React from 'react';
 
 import ExternalLink from '../ExternalLink';
+import { config } from '../../../data';
+
+const { url, title } = config;
 
 const Footer = () => (
   <footer className="footer py-6">
@@ -28,7 +31,7 @@ const Footer = () => (
         </p>
         <p>
           {'Copyright '}
-          <ExternalLink href="https://alex-ian.me/" title="&copy;AlexIan's Blog" />
+          <ExternalLink href={url} title={`&copy;${title}`} />
           {` ${new Date().getFullYear()}.`}
         </p>
       </div>
