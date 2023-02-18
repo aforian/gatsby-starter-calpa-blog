@@ -34,8 +34,8 @@
   },
   "redirectors": [
     {
-      "toPath": "/2018/05/22/about-alexian/",
-      "fromPath": "/about/"
+      "toPath": "/2019-05-22-about-alexian",
+      "fromPath": "/about"
     }
   ],
   "friends": [
