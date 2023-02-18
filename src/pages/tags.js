@@ -5,6 +5,9 @@ import Sidebar from '../components/Sidebar';
 import Tag from '../components/Tag';
 import SEO from '../components/SEO';
 import { useQueryTags } from '../hooks/useQueryTags';
+import { config } from '../../data';
+
+const { title, url } = config;
 
 const TagPage = () => {
   const tags = useQueryTags();
@@ -27,8 +30,8 @@ const TagPage = () => {
       </PageContainer>
       <SEO
         title="標籤"
-        url="/tags/"
-        siteTitleAlt="Alex Ian's Blog"
+        url={`${url}/tags`}
+        siteTitleAlt={title}
         isPost={false}
         description="Tags Page"
         image="https://i.imgur.com/M795H8A.jpg"

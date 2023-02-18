@@ -9,6 +9,7 @@ import Sidebar from '../components/Sidebar';
 import Tag from '../components/Tag';
 import ShareBox from '../components/ShareBox';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { buildSlugPrefix } from '../utils/buildSlugPrefix';
 
 const TagPage = ({ data, pageContext, location }) => {
   const { edges } = data.allMarkdownRemark;
@@ -28,7 +29,11 @@ const TagPage = ({ data, pageContext, location }) => {
             </span>
           </div>
           {edges.map(({ node }) => (
-            <Card {...node.frontmatter} key={node.id} />
+            <Card
+              {...node.frontmatter}
+              url={buildSlugPrefix(node.frontmatter.url)}
+              key={node.id}
+            />
           ))}
         </main>
         <aside className="order-first md:order-1">

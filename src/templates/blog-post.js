@@ -13,6 +13,7 @@ import ShareBox from '../components/ShareBox';
 import AuthorRow from '../components/AuthorRow/AuthorRow';
 import SibilingArticles from '../components/SibilingArticles';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { buildSlugPrefix } from '../utils/buildSlugPrefix';
 
 import { config } from '../../data';
 
@@ -20,7 +21,9 @@ import { config } from '../../data';
 import './blog-post.scss';
 import { useDarkMode } from '../hooks/useDarkMode';
 
-const { name, iconUrl, utteranc } = config;
+const {
+  name, iconUrl, utteranc, url,
+} = config;
 
 const BlogPost = ({ data, pageContext, location }) => {
   const { node, previous, next } = pageContext;
@@ -66,11 +69,11 @@ const BlogPost = ({ data, pageContext, location }) => {
       </PageContainer>
       <SEO
         title={title}
-        url={slug}
+        url={`${url}${buildSlugPrefix(slug)}`}
         siteTitleAlt="AlexIan's Blog"
         isPost
         description={excerpt}
-        image={getSrc(headerImage)}
+        image={`${url}${getSrc(headerImage)}`}
       />
     </>
   );

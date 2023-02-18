@@ -5,6 +5,9 @@ import { gotoPage } from '../../apis/url';
 import { useShowSearch } from '../../hooks/useShowSearch';
 import DarkModeSwitch from '../DarkModeSwitch';
 import Icon, { IconName } from '../Icon';
+import { config } from '../../../data';
+
+const { title } = config;
 
 const SearchButton = () => {
   const { setShowSearch } = useShowSearch();
@@ -37,7 +40,7 @@ const Navbar = () => (
           gotoPage('/');
         }}
       >
-        {'Alex Ian\'s Blog'}
+        {title}
       </button>
       <menu className="flex gap-3">
         <SearchButton />

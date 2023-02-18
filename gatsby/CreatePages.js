@@ -82,10 +82,7 @@ module.exports = async ({ actions, graphql }) => {
       }
 
       // 自訂網址
-      let $path = fields.slug;
-      if (slug) {
-        $path = slug;
-      }
+      const $path = slug ?? fields.slug;
 
       const component = templateKey || 'blog-post';
       const previous = edges[index - 1]?.node || null;
