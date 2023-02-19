@@ -2,8 +2,10 @@ const path = require('path');
 const createPaginatedPages = require('gatsby-paginate');
 const { config } = require('../data');
 
+const { redirectors, maxPostsInPage } = config;
+
 module.exports = async ({ actions, graphql }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
 
   await graphql(`
     {
@@ -58,7 +60,7 @@ module.exports = async ({ actions, graphql }) => {
       edges,
       createPage,
       pageTemplate: 'src/templates/index.js',
-      pageLength: config.maxPostsInPage,
+      pageLength: maxPostsInPage,
       context: {
         totalCount: edges.length,
       },
@@ -110,6 +112,14 @@ module.exports = async ({ actions, graphql }) => {
         context: {
           tag,
         },
+      });
+    });
+
+    // 重導向
+    redirectors.forEach(({ fromPath, toPath }) => {
+      createRedirect({
+        fromPath,
+        toPath,
       });
     });
   });
