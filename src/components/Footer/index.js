@@ -31,7 +31,7 @@ const Footer = () => (
         </p>
         <p>
           {'Copyright '}
-          <ExternalLink href={url} title={`&copy;${title}`} />
+          <ExternalLink href={url} title={`©${title}`} />
           {` ${new Date().getFullYear()}.`}
         </p>
       </div>
