@@ -1,15 +1,19 @@
 const tailwindcss = require('tailwindcss');
+const { config } = require('./data');
+
 require('dotenv').config();
 
 const algoliaQueries = require('./src/utils/algolia-queries');
 
+const { url, title, author } = config;
+
 module.exports = {
   pathPrefix: '/',
   siteMetadata: {
-    title: 'Alex Ian\' Blog',
-    description: 'Alex Ian\' Blog ',
-    siteUrl: 'https://alex-ian.me',
-    author: 'Alex Ian',
+    title,
+    description: title,
+    siteUrl: url,
+    author,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -101,8 +105,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "Alex Ian's Blog",
-        short_name: 'Alex Ian',
+        name: title,
+        short_name: author,
         start_url: '/',
         background_color: '#ededed',
         theme_color: '#384f7c',
