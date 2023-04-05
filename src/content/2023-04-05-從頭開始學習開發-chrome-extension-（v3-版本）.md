@@ -61,7 +61,7 @@ Chrome extension 經歷過 v1, v2 後，來到了 v3，雖然曾小量接觸 v2 
 
 由於我司在 Pull Request 需要兩個 aprove 作為 merge 的條件，所以有一個在 Slack 請別人看 PR 的訊息流程，通常會大致描述 PR 的目前，以及附上 Jira 卡和 PR 的連結：
 
-![](../../static/assets/learn-chrome-extensions_01.png)
+![訊息範例](../../static/assets/learn-chrome-extensions_01.png)
 
 但複製 PR 連結和卡片連結的步驟太麻煩了，於是打算建立一個 Chrome extension 來實現這件事。大致的需求和部件如下：
 
@@ -99,12 +99,15 @@ Chrome extension 經歷過 v1, v2 後，來到了 v3，雖然曾小量接觸 v2 
 1. 打開 Chrome，點擊工具列上的擴充功能圖示 → 前往管理擴充功能頁面
 
    ![](../../static/assets/learn-chrome-extensions_02.png)
+
 2. 右上角啟用 **開發人員模式** 後，會顯示操作列，再點擊 **載入未封裝項目**，選擇剛建立的專案目錄
 
    ![](../../static/assets/learn-chrome-extensions_03.png)
+
 3. 可以看到我們剛剛建立的擴充功能
 
    ![](../../static/assets/learn-chrome-extensions_04.png)
+
 
 登愣！你已經成功能建立好第一個有樣子的 Chrome extension。~~我們可以收工了。~~ 不過我們尚未實作做任何功能，所以目前這個擴充功能只是一具空殻，接下來我們會使用一步步實現功能。
 
