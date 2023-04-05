@@ -9,7 +9,7 @@ tags:
   - JavaScript
   - 前端開發
   - ChromeExtension
-headerImage: static/assets/learn-chrome-extensions_00.png
+headerImage: ../../static/assets/learn-chrome-extensions_00.png
 templateKey: blog-post
 ---
 Chrome extension 經歷過 v1, v2 後，來到了 v3，雖然曾小量接觸 v2 的版本，但 Google 對大版號的更新一向不手軟，既然如此我就從頭來開始學習開發一個 v3 的。
@@ -61,7 +61,7 @@ Chrome extension 經歷過 v1, v2 後，來到了 v3，雖然曾小量接觸 v2 
 
 由於我司在 Pull Request 需要兩個 aprove 作為 merge 的條件，所以有一個在 Slack 請別人看 PR 的訊息流程，通常會大致描述 PR 的目前，以及附上 Jira 卡和 PR 的連結：
 
-![](assets/learn-chrome-extensions_01.png)
+![](../../static/assets/learn-chrome-extensions_01.png)
 
 但複製 PR 連結和卡片連結的步驟太麻煩了，於是打算建立一個 Chrome extension 來實現這件事。大致的需求和部件如下：
 
@@ -98,13 +98,13 @@ Chrome extension 經歷過 v1, v2 後，來到了 v3，雖然曾小量接觸 v2 
 
 1. 打開 Chrome，點擊工具列上的擴充功能圖示 → 前往管理擴充功能頁面
 
-   ![](assets/learn-chrome-extensions_02.png)
+   ![](../../static/assets/learn-chrome-extensions_02.png)
 2. 右上角啟用 **開發人員模式** 後，會顯示操作列，再點擊 **載入未封裝項目**，選擇剛建立的專案目錄
 
-   ![](assets/learn-chrome-extensions_03.png)
+   ![](../../static/assets/learn-chrome-extensions_03.png)
 3. 可以看到我們剛剛建立的擴充功能
 
-   ![截圖 2023-01-25 下午8.23.25.png](assets/learn-chrome-extensions_04.png)
+   ![](../../static/assets/learn-chrome-extensions_04.png)
 
 登愣！你已經成功能建立好第一個有樣子的 Chrome extension。~~我們可以收工了。~~ 不過我們尚未實作做任何功能，所以目前這個擴充功能只是一具空殻，接下來我們會使用一步步實現功能。
 
@@ -193,9 +193,9 @@ Chrome extension 經歷過 v1, v2 後，來到了 v3，雖然曾小量接觸 v2 
    ```
 3. 到 Chrome 點擊工具列上的擴充功能圖示 → 找到我們的擴充功能，點擊右側的圖釘讓圖示固定到工具列上；在工具列點擊圖示，便會顯示剛剛加入的 popup，輸入內容後重新打開，可以看到模板有被記錄下來。
 
-   ![截圖 2023-02-03 上午12.09.59.png](assets/learn-chrome-extensions_05.png)
+   ![](../../static/assets/learn-chrome-extensions_05.png)
 
-   ![2023-02-03 00.23.46.gif](assets/learn-chrome-extensions_06.gif)
+   ![](assets/learn-chrome-extensions_06.gif)
 
 ### 三、在 PR 頁面加入複製按鈕
 
@@ -353,9 +353,9 @@ async function copyMessageToClipboard() {
 
 前面所述已經把最基本的功能建立好，但當你滿心歡喜完成功能，想要交給你的好同事試用，但他安裝後卻發現沒有預設的模板，這件事太讓人沮喪了吧。
 
-![截圖 2023-04-05 上午1.10.59.png](assets/learn-chrome-extensions_08.png)
+![](../../static/assets/learn-chrome-extensions_08.png)
 
-![2023-04-05 01.08.04.gif](assets/learn-chrome-extensions_09.gif)
+![](assets/learn-chrome-extensions_09.gif)
 
 為了在同事面前保存顏面，我們需要在安裝時加入預設的模板，這時可以用上 background 以及 [Chrome.runtime.onInstalled](https://developer.chrome.com/docs/extensions/reference/runtime/#event-onInstalled) 來實現：
 
@@ -389,7 +389,7 @@ chrome.runtime.onInstalled.addListener(async () => {
 
 再重新安裝一次，可以在 popup 中看到預設的模板內容：
 
-![](assets/learn-chrome-extensions_10.png)
+![](../../static/assets/learn-chrome-extensions_10.png)
 
 ## 完成！
 
