@@ -3,6 +3,10 @@ backend:
   # Branch to update (optional; defaults to master)
   branch: master
 
+# Use when local development
+local_backend:
+  url: http://localhost:8000/api/v1
+
 publish_mode: editorial_workflow
 media_folder: static/assets
 public_folder: ../../static/assets

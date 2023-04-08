@@ -16,6 +16,7 @@ module.exports = {
     author,
   },
   plugins: [
+    'gatsby-plugin-netlify-cms',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-sass',
