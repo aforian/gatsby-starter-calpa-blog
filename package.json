@@ -26,6 +26,7 @@
     "gatsby-plugin-catch-links": "^4.14.0",
     "gatsby-plugin-feed": "^4.14.0",
     "gatsby-plugin-fontawesome-css": "^1.2.0",
+    "gatsby-plugin-google-gtag": "4.25.0",
     "gatsby-plugin-image": "^2.21.0",
     "gatsby-plugin-layout": "^3.14.0",
     "gatsby-plugin-manifest": "^4.14.0",
@@ -78,6 +79,7 @@
   "scripts": {
     "start": "yarn develop",
     "build": "gatsby build --prefix-paths",
+    "serve": "gatsby serve",
     "develop": "gatsby develop",
     "develop:remote": "gatsby develop -p 8080 -H 0.0.0.0",
     "deploy": "yarn build && gh-pages -d public",
