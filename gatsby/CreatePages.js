@@ -34,6 +34,7 @@ module.exports = async ({ actions, graphql }) => {
               tags
               description
               headerImage {
+                publicURL
                 childImageSharp {
                   gatsbyImageData(
                     width: 300
