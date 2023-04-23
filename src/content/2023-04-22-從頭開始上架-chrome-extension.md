@@ -68,7 +68,7 @@ Chrome 對於打包的 extension，`manifest.json` 有欄位的要求， 在打�
 
 完整 `manifest.json` 的資訊後，就可以使用 finder 對專案資料夾按`右鍵 > 壓縮「{資料夾_名稱}」` 打包成壓縮檔了！接著我們往下一步走
 
-![static/assets/publish-chrome-extension_01.png](/assets/publish-chrome-extension_01.gif)
+![static../../static/assets/publish-chrome-extension_01.png](/assets/publish-chrome-extension_01.gif)
 
 ## 二、**註冊為 Chrome 線上應用程式商店開發人員**
 

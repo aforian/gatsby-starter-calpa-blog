@@ -53,7 +53,7 @@ window.addEventListener('scroll', debounce(handleScroll));
 `Throttle` 是另一種減緩事件觸發方法，它與Debounce的差異是，為使用者觸發相同事件時提供間隔，控制特定時間內事件觸發的次數。
 以現實例子來說，就像日本庭院常見的那個盛水的竹子裝置（名為鹿威），流水一直下來，但竹子會等水盛滿（時間到），才會把水排出。
 
-![鹿威](/assets/debounce&throttle-2.gif)
+![鹿威](../../static/assets/debounce&throttle-2.gif)
 鹿威，圖片來源：https://www.pinterest.ca/pin/101260691599109638/
 
 簡單實現的程式碼如下：

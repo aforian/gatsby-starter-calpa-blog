@@ -30,7 +30,7 @@ setTimeout(() => {
 
 接下來我們試著在 Medium 的文章中使用複製包含連結/格式的內容，複製好後執行我們前一個步驟輸入的程式碼（會需要允許存取 `clipboard-read` 權限），執行後要再點擊網頁可以看到你在剪貼簿的內容：
 
-![複製內容的真面目 ClipboardItem](/assets/clipboard-01.gif "複製內容的真面目 ClipboardItem")
+![複製內容的真面目 ClipboardItem](../../static/assets/clipboard-01.gif "複製內容的真面目 ClipboardItem")
 
 複製的內容會是一個包含 `ClipboardItem` 實例的陣列，而 `ClipboardItem` 實例又可以帶有多個**媒體類別** (**\*\*MIME type\*\***)的內容，如 `text/plain` 、`text/html` 、`image/png` 等。像前面範例所複製的內容，就包含 `text/plain`、`text/html` 兩個媒體類別，分別作用於不同的貼上情境。
 
