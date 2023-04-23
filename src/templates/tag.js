@@ -71,6 +71,7 @@ export const pageQuery = graphql`
             date
             tags
             headerImage {
+              publicURL
               childImageSharp {
                 gatsbyImageData(
                   width: 300
