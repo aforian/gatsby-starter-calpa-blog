@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import IconBlock from '../IconBlock';
 import TagList from '../TagList';
 import { IconName } from '../Icon';
+import Image from '../Image';
 
 const Card = ({
   title,
@@ -52,11 +52,10 @@ const Card = ({
         {headerImage && (
           <div className="hidden md:block w-[150px] min-w[150px] lg:w-[200px] lg:min-w-[200px] py-4 pr-4">
             <Link to={url} href={url} className="w-full h-full flex items-center justify-center">
-              <GatsbyImage
+              <Image
                 className="block w-full aspect-video object-cover object-center bg-gray-200"
-                image={getImage(headerImage)}
+                image={headerImage}
                 alt={title}
-                placeholder="blurred"
               />
             </Link>
           </div>

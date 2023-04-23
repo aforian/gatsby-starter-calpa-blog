@@ -86,6 +86,7 @@ export const pageQuery = graphql`
     ) {
       frontmatter {
         headerImage {
+          publicURL
           childImageSharp {
             gatsbyImageData(
               width: 1000
