@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactGA from 'react-ga';
 
 import { gotoPage } from '../../apis/url';
 import { useShowSearch } from '../../hooks/useShowSearch';
@@ -33,10 +32,6 @@ const Navbar = () => (
           dark:bg-neutral-900 dark:text-gray-100 hover:dark:bg-neutral-800 hover:dark:text-teal-300
         `}
         onClick={() => {
-          ReactGA.event({
-            category: 'User',
-            action: 'Click navbar logo',
-          });
           gotoPage('/');
         }}
       >

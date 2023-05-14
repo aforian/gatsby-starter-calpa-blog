@@ -1,4 +1,4 @@
-#post {
+#post, .frame-content {
   /**
   * One Dark theme for prism.js
   * Based on Atom's One Dark theme: https://github.com/atom/atom/tree/master/packages/one-dark-syntax
@@ -52,6 +52,7 @@
     --text-shadow: 0 1px rgba(0, 0, 0, 0.3);
   }
 
+  code,
   code[class*="language-"],
   pre[class*="language-"] {
     background: var(--syntax-bg);
@@ -75,6 +76,7 @@
   }
 
   /* Selection */
+  code::-moz-selection,
   code[class*="language-"]::-moz-selection,
   code[class*="language-"] *::-moz-selection,
   pre[class*="language-"] *::-moz-selection {
@@ -83,6 +85,7 @@
     text-shadow: none;
   }
 
+  code::selection,
   code[class*="language-"]::selection,
   code[class*="language-"] *::selection,
   pre[class*="language-"] *::selection {
@@ -100,10 +103,13 @@
   }
 
   /* Inline code */
-  :not(pre) > code[class*="language-"] {
-    padding: 0.2em 0.3em;
-    border-radius: 0.3em;
-    white-space: normal;
+  :not(pre) > {
+    code,
+    code[class*="language-"] {
+      padding: 0.2em 0.3em;
+      border-radius: 0.3em;
+      white-space: normal;
+    }
   }
 
   /* Print */

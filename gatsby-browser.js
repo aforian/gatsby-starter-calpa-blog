@@ -1,10 +1,6 @@
-/* eslint-disable no-unused-vars */
-import ReactGA from 'react-ga';
 import { config } from './data';
 
-const {
-  url, gaTrackId, gaOptimizeId,
-} = config;
+const { url } = config;
 
 const isLocalDevelopment = () => window && window.location && window.location.origin !== url;
 
