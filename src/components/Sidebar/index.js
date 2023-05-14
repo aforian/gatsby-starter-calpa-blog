@@ -39,9 +39,7 @@ IconLink.propTypes = {
 const Sidebar = ({ className }) => {
   const { all } = useStaticQuery(graphql`
     query SidebarQuery {
-      all: allMarkdownRemark(
-        filter: { frontmatter: { publish: { eq: true } } }
-      ) {
+      all: allMarkdownRemark {
         totalCount
       }
     }
