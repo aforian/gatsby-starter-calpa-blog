@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReactGA from 'react-ga';
 
 import Icon, { IconName } from '../Icon';
 
@@ -19,13 +18,7 @@ const RoundIconAnchor = ({ children, ...restProps }) => (
 );
 
 const CommentButton = () => (
-  <RoundIconAnchor
-    href="#utterance-container"
-    onClick={() => ReactGA.event({
-      category: 'User',
-      action: 'Goto Comment Box',
-    })}
-  >
+  <RoundIconAnchor href="#utterance-container">
     <Icon icon={IconName.Comment} />
   </RoundIconAnchor>
 );
@@ -41,10 +34,6 @@ const ShareBox = ({ url, hasCommentBox, show }) => (
     <div className="container mx-auto lg:max-w-screen-lg flex flex-col justify-between items-center">
       <RoundIconAnchor
         href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
-        onClick={() => ReactGA.event({
-          category: 'Share',
-          action: 'Facebook Share',
-        })}
       >
         <Icon icon={IconName.Facebook} />
       </RoundIconAnchor>
@@ -52,12 +41,6 @@ const ShareBox = ({ url, hasCommentBox, show }) => (
       <RoundIconAnchor
         href="#header"
         title="to header"
-        onClick={() => {
-          ReactGA.event({
-            category: 'User',
-            action: 'Scroll to Top',
-          });
-        }}
       >
         <Icon icon={IconName.Up} />
       </RoundIconAnchor>
