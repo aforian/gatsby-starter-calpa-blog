@@ -1,0 +1,33 @@
+@import '../templates/prism-theme';
+@import '../templates/blog-post';
+
+* {
+  box-sizing: border-box;
+}
+
+.frame-content {
+  padding-right: 10px;
+  @include article-style;
+
+  word-break: break-all;
+  text-align: justify;
+  text-align-last: left;
+}
+
+img {
+  width: 500px;
+  text-align: center;
+  max-width: 100%;
+  margin: 15px 0;
+}
+
+pre code {
+  display: block;
+  background: none;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  max-width: 100%;
+  min-width: 100px;
+  padding: 10px;
+}
