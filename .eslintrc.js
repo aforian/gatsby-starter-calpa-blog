@@ -35,6 +35,7 @@ const eslintrc = {
     'react/jsx-props-no-spreading': 'off',
     'import/prefer-default-export': 'off',
     'consistent-return': 'off',
+    'scss/at-import-partial-extension': 'off',
   },
   env: {
     browser: true,
