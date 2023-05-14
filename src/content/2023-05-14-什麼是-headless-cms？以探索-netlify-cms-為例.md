@@ -4,11 +4,13 @@ slug: 2023-05-14-headless-cms-netlify-cms
 date: 2023-05-14T04:09:16.867Z
 description: Headless CMS （Headless Content Management
   System）是指只提供後台進行內容編輯的系統和介面，而其生成內容以會結構化的方式儲存
-headerImage: ../../static/assets/260px-025pikachu.png
+tags:
+  - 前端開發
+  - NetlifyCMS
+  - Gatsby.js
+headerImage: ../../static/assets/headless-cms-netlify-cms_header.png
 templateKey: blog-post
 ---
-# 什麼是 Headless CMS？以探索 Netlify CMS 為例
-
 小弟的部落格使用 Gatsby.js 框架來架設，作為一個靜態網站生成器（Static Site Generator，簡稱 SSG），主要聚焦於網站前台的設計，以及有助於提升 SEO；而相對地，後台操作介面則不是那麼重要，文章的格式使用 markdown，換言之我可以透過各種文字編輯軟體，諸如 Notion、hackMD 甚至 VScode 做內容建置，最後使用 git commit 推送來觸發 CI/CD 完成在 Netlify 的部署和更新。雖然聽起來簡單暴力，但如果只想稍微調整文案內容（例如改個錯字）；或是在文章更換圖片，雖然先複製圖片路徑，再從 markdown 貼上，步驟就稍嫌繁瑣了。為了解決這些繁瑣的問題，Netlify 提供了 Netlify CMS 這種 Headless CMS 的解決方法。
 
 ## 什麼是 Headless CMS？
