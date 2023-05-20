@@ -9,7 +9,7 @@ tags:
   - 前端開發
   - NetlifyCMS
   - Gatsby.js
-headerImage: ../../static/assets/260px-025pikachu.png
+headerImage: ../../static/assets/gatsby-gif_banner.png
 templateKey: blog-post
 ---
 之前曾在 [Gatsby 部落格更新記錄 1.0](https://alex-ian.me/2022-11-27-blog-update-log) 提及了 Gatsby.js 可以使用 `gatsby-transformer-remark` 和 `gatsby-remark-images` 套件實現延遲載入圖片功能，可以該 png 和 jpg 等靜態圖片，在 markdown 檔案中使用相對路徑引用圖片達成延遲載入的功能，但對於 gif 這種非靜態圖片檔案則無法使用：
