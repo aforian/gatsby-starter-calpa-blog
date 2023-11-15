@@ -45,7 +45,7 @@ Modern Web Conference （MWC） 作為每年度經典的網頁開發者盛會，
 3. 詢問時要按部就班，如果遇到大型的問題要處理，要把大問題切成一個個小任務，GPT 才能精準的回覆（付費的 GPT-4 效果會好點）
 
    * 假如你遇到不知怎麼拆解的小問題，可以再丟給 chatGPT 請它拆（遞迴的概念）
-4. 如果上下文
+4. 如果上下文過多，會導致 GPT 記憶負載，建議不同領域的問題要開啟新的對話進行詢問
 
 除了基本的使用方式外，活動中還有其他的講座，介紹其它一些關於 ChatGPT 與 大型語言模型（LLM）的開發者應用，例如可以根據 changes 寫 git commit message 的 **[CodeGPT](https://github.com/appleboy/CodeGPT)** 、或是為使用者 prompt 進行加工優化、整合的工具 [\*\*Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/overview/)\*\* 、以及透過 **[LangChain](https://github.com/langchain-ai/langchain)** 和 **[Flowise](https://github.com/FlowiseAI/Flowise#flowise---build-llm-apps-easily)** 建立屬於自己的語言模型和應用，AI 在開發者工具中已是百花齊放的狀態了
 
