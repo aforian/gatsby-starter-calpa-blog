@@ -2,7 +2,8 @@ import { config } from './data';
 
 const { url } = config;
 
-const isLocalDevelopment = () => window && window.location && window.location.origin !== url;
+const isLocalDevelopment = () =>
+  window && window.location && window.location.origin !== url;
 
 if (isLocalDevelopment() === false) {
   console.log('Welcome to online environment.');

@@ -48,10 +48,7 @@
   "title": "AlexIan's blog",
   "githubUsername": "aforian",
   "website": "https://portfolio.alex-ian.me/",
-  "wordings": [
-    "ReactJS, VueJS",
-    "畫畫/寫作/前端開發"
-  ],
+  "wordings": ["ReactJS, VueJS", "畫畫/寫作/前端開發"],
   "email": "alexian853@gmail.com",
   "zhihuUsername": "piao-xue-wu-ying",
   "stats": {

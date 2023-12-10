@@ -1,5 +1,5 @@
 /* eslint react/prop-types: 0 */
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 
@@ -10,9 +10,7 @@ import ShareBox from '../components/ShareBox';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { buildSlugPrefix } from '../utils/buildSlugPrefix';
 
-const NavLink = ({
-  disabled, url, text, className = '',
-}) => {
+const NavLink = ({ disabled, url, text, className = '' }) => {
   const statusClassName = !disabled
     ? 'text-teal-600 hover:text-teal-700 hover:bg-gray-50 cursor-pointer dark:text-teal-200'
     : 'text-gray-300 bg-gray-100 cursor-not-allowed dark:text-gray-500 dark:bg-neutral-900';
@@ -45,9 +43,7 @@ NavLink.propTypes = {
 };
 
 const Page = ({ pageContext, location }) => {
-  const {
-    group, index, first, last, pathPrefix,
-  } = pageContext;
+  const { group, index, first, last, pathPrefix } = pageContext;
 
   const previousUrl = index - 1 === 1 ? '/' : `/${pathPrefix}/${index - 1}`;
   const nextUrl = `/${pathPrefix}/${index + 1}`;
@@ -68,8 +64,22 @@ const Page = ({ pageContext, location }) => {
           ))}
           {first !== last && (
             <div className="flex justify-between mb-3 mx-4 md:mx-0">
-              {!first && <NavLink disabled={first} url={previousUrl} text="Previous" className="ml-0 mr-auto" />}
-              {!last && <NavLink disabled={last} url={nextUrl} text="Next" className="mr-0 ml-auto" />}
+              {!first && (
+                <NavLink
+                  disabled={first}
+                  url={previousUrl}
+                  text="Previous"
+                  className="ml-0 mr-auto"
+                />
+              )}
+              {!last && (
+                <NavLink
+                  disabled={last}
+                  url={nextUrl}
+                  text="Next"
+                  className="mr-0 ml-auto"
+                />
+              )}
             </div>
           )}
         </main>

@@ -1,4 +1,3 @@
-import React from 'react';
 import Helmet from 'react-helmet';
 
 import PropTypes from 'prop-types';
@@ -22,41 +21,39 @@ const schemaOrgJSONLD = ({
   },
   isPost
     ? {
-      '@context': 'http://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          item: {
-            '@id': url,
-            name: title,
-            image,
+        '@context': 'http://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            item: {
+              '@id': url,
+              name: title,
+              image,
+            },
           },
-        },
-      ],
-    }
+        ],
+      }
     : '',
   isPost
     ? {
-      '@context': 'http://schema.org',
-      '@type': 'BlogPosting',
-      url,
-      name: title,
-      alternateName: siteTitleAlt || '',
-      headline: title,
-      image: {
-        '@type': 'ImageObject',
-        url: image,
-      },
-      description,
-    }
+        '@context': 'http://schema.org',
+        '@type': 'BlogPosting',
+        url,
+        name: title,
+        alternateName: siteTitleAlt || '',
+        headline: title,
+        image: {
+          '@type': 'ImageObject',
+          url: image,
+        },
+        description,
+      }
     : '',
 ];
 
-const SEO = ({
-  url, title, description, image, siteTitleAlt, isPost,
-}) => (
+const SEO = ({ url, title, description, image, siteTitleAlt, isPost }) => (
   <Helmet>
     <title>{title}</title>
 
@@ -66,9 +63,14 @@ const SEO = ({
 
     {/* Schema.org tags */}
     <script type="application/ld+json">
-      {JSON.stringify(schemaOrgJSONLD({
-        url, title, siteTitleAlt, isPost,
-      }))}
+      {JSON.stringify(
+        schemaOrgJSONLD({
+          url,
+          title,
+          siteTitleAlt,
+          isPost,
+        }),
+      )}
     </script>
 
     {/* OpenGraph tags */}

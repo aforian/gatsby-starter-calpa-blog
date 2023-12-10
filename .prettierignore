@@ -1,1 +1,8 @@
 **/dist/*.min.js
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+**/.cache
+**/public
+**/src/content

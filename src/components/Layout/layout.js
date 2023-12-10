@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 import Transition from '../Transition';
 import Navbar from '../Navbar';
@@ -40,6 +39,7 @@ const Layout = ({ children, location }) => {
         }
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -55,9 +55,7 @@ const Layout = ({ children, location }) => {
         <Head />
         <Navbar />
         <Transition location={location}>
-          <div className="w-full mt-header">
-            {children}
-          </div>
+          <div className="w-full mt-header">{children}</div>
         </Transition>
         <Footer />
       </div>

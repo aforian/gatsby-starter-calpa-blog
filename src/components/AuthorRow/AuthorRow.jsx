@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
@@ -6,12 +5,7 @@ import Icon from '../Icon';
 import { config } from '../../../data';
 import { authorsLinks } from '../../apis/authorLinks';
 
-const {
-  wordings = [],
-  iconUrl,
-  about,
-  author,
-} = config;
+const { wordings = [], iconUrl, about, author } = config;
 
 const IconLink = ({ href, icon, title }) => (
   <a
@@ -19,6 +13,7 @@ const IconLink = ({ href, icon, title }) => (
       inline-block mr-2 last:mr-0 fa-lg hover:text-teal-600 duration-200
       hover:dark:text-teal-300
     `}
+    aria-label="Icon Link"
     target="_blank"
     href={href}
     title={title}
@@ -37,19 +32,20 @@ IconLink.propTypes = {
 const AuthorRow = () => (
   <div className="grid grid-cols-3 md:grid-cols-5 gap-4 md:gap-8">
     <div className="apect-rect">
-      <img
-        src={iconUrl}
-        className="w-full"
-        alt={author}
-      />
+      <img src={iconUrl} className="w-full" alt={author} />
     </div>
     <div className="col-span-2 md:col-span-4 flex flex-col justify-center dark:text-gray-100">
-      <Link to={about} className="text-lg font-bold hover:text-teal-600 duration-200 hover:dark:text-teal-300">
+      <Link
+        to={about}
+        className="text-lg font-bold hover:text-teal-600 duration-200 hover:dark:text-teal-300"
+      >
         {author}
       </Link>
       <p className="text-sm mb-2 duration-200">{wordings.join('\n')}</p>
       <div className="links">
-        {authorsLinks.map(link => <IconLink key={link.href} {...link} />)}
+        {authorsLinks.map(link => (
+          <IconLink key={link.href} {...link} />
+        ))}
       </div>
     </div>
   </div>

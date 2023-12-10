@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import Icon, { IconName } from '../Icon';
@@ -38,10 +37,7 @@ const ShareBox = ({ url, hasCommentBox, show }) => (
         <Icon icon={IconName.Facebook} />
       </RoundIconAnchor>
       {hasCommentBox && <CommentButton />}
-      <RoundIconAnchor
-        href="#header"
-        title="to header"
-      >
+      <RoundIconAnchor href="#header" title="to header">
         <Icon icon={IconName.Up} />
       </RoundIconAnchor>
     </div>

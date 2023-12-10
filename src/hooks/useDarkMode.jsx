@@ -1,6 +1,4 @@
-import React, {
-  useContext, useState, createContext, useMemo,
-} from 'react';
+import { useContext, useState, createContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 const DarkModeContext = createContext(null);

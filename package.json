@@ -1,8 +1,27 @@
 {
-  "name": "blog",
-  "description": "Alex's Blog",
+  "name": "alex-ian-blog",
   "version": "1.0.0",
+  "main": "n/a",
   "author": "Calpa Liu <calpaliu@gmail.com>, Alex Ian <alexian@gmail.com>",
+  "license": "MIT",
+  "description": "Alex Ian's Blog",
+  "scripts": {
+    "start": "gatsby develop",
+    "start:remote": "gatsby develop -p 8080 -H 0.0.0.0",
+    "build": "gatsby build --prefix-paths",
+    "serve": "gatsby serve",
+    "deploy": "yarn build && gh-pages -d public",
+    "lint": "eslint --fix ./",
+    "lint-style": "stylelint src/**/*.scss",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "functions": "netlify-lambda serve functions",
+    "reset": "rimraf public/ .cache/",
+    "pre-commit": "lint-staged",
+    "prettier:fix": "prettier --write ./"
+  },
+  "keywords": [
+    "gatsby"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
@@ -18,7 +37,6 @@
     "dayjs": "^1.11.2",
     "dotenv": "^16.0.1",
     "escape-string-regexp": "^5.0.0",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
     "gatsby": "^4.14.1",
     "gatsby-link": "^4.14.1",
     "gatsby-paginate": "^1.1.1",
@@ -58,6 +76,7 @@
     "netlify-cms-app": "^2.15.72",
     "prism-themes": "^1.9.0",
     "prismjs": "^1.28.0",
+    "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-ga": "^3.3.0",
@@ -71,35 +90,22 @@
     "tailwindcss": "^3.0.24",
     "webpack": "^5.72.1"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "main": "n/a",
-  "scripts": {
-    "start": "yarn develop",
-    "build": "gatsby build --prefix-paths",
-    "serve": "gatsby serve",
-    "develop": "gatsby develop",
-    "develop:remote": "gatsby develop -p 8080 -H 0.0.0.0",
-    "deploy": "yarn build && gh-pages -d public",
-    "format": "eslint --fix --ignore-path .gitignore .",
-    "format-style": "stylelint src/**/*.scss",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "functions": "netlify-lambda serve functions",
-    "reset": "rimraf pubilc/ .cache/",
-    "commit": "npx git-cz",
-    "revert": "node ./scripts/revertConfig.js",
-    "pre-commit": "lint-staged"
-  },
   "devDependencies": {
     "@babel/core": "^7.18.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "eslint": "^8.16.0",
+    "@babel/eslint-parser": "^7.23.3",
+    "@babel/plugin-transform-runtime": "^7.23.4",
+    "@babel/preset-env": "^7.23.5",
+    "@babel/preset-react": "^7.23.3",
+    "babel-eslint": "^10.1.0",
+    "eslint": "8.55.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-webpack": "^0.13.2",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "gh-pages": "^4.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^12.4.1",
@@ -112,7 +118,10 @@
     "yarn-upgrade-all": "^0.7.1"
   },
   "lint-staged": {
-    "**/*.js": "eslint --fix",
+    "src/**/*.{js,jsx}": [
+      "prettier --write",
+      "eslint --cache"
+    ],
     "**/*.css": "stylelint",
     "**/*.scss": "stylelint"
   }

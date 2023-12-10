@@ -1,13 +1,15 @@
 import { navigate } from 'gatsby';
 import dayjs from 'dayjs';
 
-const getUrl = ({ createdDate, url }) => `/${dayjs(createdDate).format('YYYY/MM/DD')}/${url}`;
+const getUrl = ({ createdDate, url }) =>
+  `/${dayjs(createdDate).format('YYYY/MM/DD')}/${url}`;
 
 const gotoPage = async url => {
   await navigate(url);
 };
 
-const parseMarkdownUrl = (date, rawUrl) => `/${date}/${rawUrl.match(/_posts[/](.*).md/)[1]}/`;
+const parseMarkdownUrl = (date, rawUrl) =>
+  `/${date}/${rawUrl.match(/_posts[/](.*).md/)[1]}/`;
 
 const parseUrl = (date, rawUrl) => {
   if (rawUrl === 'about') {

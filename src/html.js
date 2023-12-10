@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 const HTML = ({
@@ -24,6 +23,7 @@ const HTML = ({
       <div
         key="body"
         id="___gatsby"
+        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: body }}
       />
       {postBodyComponents}
