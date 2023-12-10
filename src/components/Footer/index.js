@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { version } from 'react';
 import ExternalLink from '../ExternalLink';
 import { config } from '../../../data';
 
@@ -15,12 +14,10 @@ const Footer = () => (
           {' and '}
           <ExternalLink
             href="https://reactjs.org/"
-            title={`React ${React.version}`}
+            title={`React ${version}`}
           />
-          .
-          {' Hosted on '}
-          <ExternalLink href="https://www.netlify.com/" title="Netlify" />
-          .
+          .{' Hosted on '}
+          <ExternalLink href="https://www.netlify.com/" title="Netlify" />.
         </p>
         <p>
           {'The original code is open source and available at '}

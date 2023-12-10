@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 const Dropdown = ({ title, list }) => (
@@ -9,15 +8,13 @@ const Dropdown = ({ title, list }) => (
       data-toggle="dropdown"
       aria-haspopup="true"
       aria-expanded="false"
-    >{title}
+    >
+      {title}
     </button>
     <div className="dropdown-menu">
       {list.map(item => (
-        <a
-          className="dropdown-item"
-          href={item.href}
-          key={item.title}
-        >{item.title}
+        <a className="dropdown-item" href={item.href} key={item.title}>
+          {item.title}
         </a>
       ))}
     </div>

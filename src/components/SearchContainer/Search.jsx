@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, {
-  createRef, useMemo, useEffect,
-} from 'react';
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+import { createRef, useMemo, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { InstantSearch } from 'react-instantsearch-hooks-web';
 import algoliasearch from 'algoliasearch/lite';
@@ -18,10 +17,11 @@ const Search = ({ indices }) => {
   const rootRef = createRef();
   const inputRef = createRef(null);
   const searchClient = useMemo(
-    () => algoliasearch(
-      process.env.GATSBY_ALGOLIA_APP_ID,
-      process.env.GATSBY_ALGOLIA_SEARCH_KEY,
-    ),
+    () =>
+      algoliasearch(
+        process.env.GATSBY_ALGOLIA_APP_ID,
+        process.env.GATSBY_ALGOLIA_SEARCH_KEY,
+      ),
     [],
   );
   const { showSearch, setShowSearch } = useShowSearch();
@@ -40,17 +40,20 @@ const Search = ({ indices }) => {
     if (showSearch) {
       inputRef?.current?.focus();
     }
-  }, [showSearch, inputRef.current]);
+  }, [showSearch, inputRef]);
 
   return (
     <div
       id="search-container"
+      role="textbox"
+      tabIndex="0"
       className={`
         fixed top-0 left-0 w-full h-full z-[9999] p-4
         flex justify-center items-center 
         ${showSearch ? 'block' : 'hidden'}
       `}
       ref={rootRef}
+      aria-label="Search Container"
       onClick={() => setShowSearch(false)}
       onKeyDown={e => {
         if (e.key === 'Escape') {
@@ -64,10 +67,7 @@ const Search = ({ indices }) => {
         onClick={e => e.stopPropagation()}
         onKeyDown={() => {}}
       >
-        <InstantSearch
-          searchClient={searchClient}
-          indexName={indices[0].name}
-        >
+        <InstantSearch searchClient={searchClient} indexName={indices[0].name}>
           <SearchBox inputRef={inputRef} />
           <SearchResult />
         </InstantSearch>

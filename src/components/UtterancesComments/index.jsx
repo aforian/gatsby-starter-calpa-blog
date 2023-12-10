@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import { useDarkMode } from '../../hooks/useDarkMode';
@@ -7,30 +7,39 @@ import useMutationObservable from '../../hooks/useMutationObservable';
 
 const UTTERANCES_URL = 'https://utteranc.es';
 
-const UtterancesComments = ({
-  id, repo, issueTerm, themeLight, themeDark,
-}) => {
+const UtterancesComments = ({ id, repo, issueTerm, themeLight, themeDark }) => {
   const commentBox = useRef();
   const { dark: darkTheme } = useDarkMode();
   const theme = darkTheme ? themeDark : themeLight;
 
-  const setTheme = useCallback(iframeEl => {
-    iframeEl?.contentWindow?.postMessage({
-      type: 'set-theme',
-      theme,
-    }, UTTERANCES_URL);
-  }, [theme]);
+  const setTheme = useCallback(
+    iframeEl => {
+      iframeEl?.contentWindow?.postMessage(
+        {
+          type: 'set-theme',
+          theme,
+        },
+        UTTERANCES_URL,
+      );
+    },
+    [theme],
+  );
 
-  const onLoadIframe = useCallback(mutations => {
-    mutations.forEach(mutation => {
-      const iframe = [...(mutation?.target?.childNodes ?? [])]
-        .find(node => node.nodeName === 'IFRAME');
+  const onLoadIframe = useCallback(
+    mutations => {
+      mutations.forEach(mutation => {
+        const iframe = [...(mutation?.target?.childNodes ?? [])].find(
+          node => node.nodeName === 'IFRAME',
+        );
 
-      setTheme(iframe);
-    });
-  }, [setTheme]);
+        setTheme(iframe);
+      });
+    },
+    [setTheme],
+  );
 
   useEffect(() => {
+    const commentBoxCur = commentBox.current;
     const scriptEl = document.createElement('script');
     scriptEl.setAttribute('src', 'https://utteranc.es/client.js');
     scriptEl.setAttribute('crossorigin', 'anonymous');
@@ -42,10 +51,11 @@ const UtterancesComments = ({
     commentBox.current.appendChild(scriptEl);
 
     return () => {
-      if (commentBox?.current?.innerHTML) {
-        commentBox.current.innerHTML = '';
+      if (commentBoxCur.innerHTML) {
+        commentBoxCur.innerHTML = '';
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useMutationObservable(commentBox.current, onLoadIframe);
@@ -54,6 +64,7 @@ const UtterancesComments = ({
     const iframe = commentBox?.current?.querySelector('iframe');
 
     setTheme(iframe);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theme]);
 
   return (

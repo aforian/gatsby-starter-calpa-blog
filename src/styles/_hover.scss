@@ -1,4 +1,4 @@
-@import "colors";
+@import 'colors';
 
 // Inspired by Landing Page Design for product - Abhinandu V Nair (https://codepen.io/abhinanduN/pen/wYzepG)
 %hover {
@@ -6,7 +6,7 @@
 
   &:after {
     background: none repeat scroll 0 0 transparent;
-    content: "";
+    content: '';
     display: block;
     height: 0.1rem;
     background-color: #0f457f;

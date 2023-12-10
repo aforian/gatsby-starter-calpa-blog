@@ -34,9 +34,11 @@ export const useQueryTags = () => {
     return result;
   }, [data]);
 
-  return useMemo(() => (
-    Object.entries(tagsCount)
-      .map(([name, count]) => ({ name, count }))
-      .sort((a, b) => b.count - a.count)
-  ), [tagsCount]);
+  return useMemo(
+    () =>
+      Object.entries(tagsCount)
+        .map(([name, count]) => ({ name, count }))
+        .sort((a, b) => b.count - a.count),
+    [tagsCount],
+  );
 };

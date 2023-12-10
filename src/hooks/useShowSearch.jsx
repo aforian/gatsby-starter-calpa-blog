@@ -1,13 +1,14 @@
-import React, {
-  useContext, useState, createContext, useMemo,
-} from 'react';
+import { useContext, useState, createContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 const ShowSearchContext = createContext();
 
 export const ShowSearchProvider = ({ children }) => {
   const [showSearch, setShowSearch] = useState(false);
-  const searchContext = useMemo(() => ({ showSearch, setShowSearch }), [showSearch, setShowSearch]);
+  const searchContext = useMemo(
+    () => ({ showSearch, setShowSearch }),
+    [showSearch, setShowSearch],
+  );
 
   return (
     <ShowSearchContext.Provider value={searchContext}>

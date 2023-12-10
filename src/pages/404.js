@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-import React from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Icon, { IconName } from '../components/Icon';

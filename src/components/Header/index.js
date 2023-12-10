@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import IconBlock from '../IconBlock';
@@ -6,14 +5,7 @@ import TagList from '../TagList';
 import { IconName } from '../Icon';
 import Image from '../Image';
 
-const Header = ({
-  img,
-  title,
-  date,
-  tags = [],
-  authorImage,
-  authorName,
-}) => (
+const Header = ({ img, title, date, tags = [], authorImage, authorName }) => (
   <div id="article-header" className="w-full relative">
     <h1 className="text-3xl font-extrabold mb-4 dark:text-gray-100 duration-200">
       {title}
@@ -30,9 +22,7 @@ const Header = ({
         <span>{authorName}</span>
       </div>
       <IconBlock icon={IconName.Date}>
-        <div>
-          {date.split('T')[0]}
-        </div>
+        <div>{date.split('T')[0]}</div>
       </IconBlock>
       <IconBlock icon={IconName.Tag}>
         <TagList tags={tags} />
@@ -41,11 +31,7 @@ const Header = ({
     <hr className="my-4 md:my-8" />
     {img && (
       <div className="mb-4">
-        <Image
-          image={img}
-          alt={title}
-          className="w-full block"
-        />
+        <Image image={img} alt={title} className="w-full block" />
       </div>
     )}
   </div>

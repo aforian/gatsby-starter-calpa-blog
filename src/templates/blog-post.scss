@@ -1,7 +1,16 @@
 @import './prism-theme';
 
 @mixin article-style {
-  h1, h2, h3, h4, h5, h6, p, blockquote, del, strong {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  del,
+  strong {
     color: black;
     transition: color 200ms;
     line-height: 1.8rem;
@@ -22,7 +31,12 @@
   iframe {
     margin-bottom: 1rem;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-weight: bold;
     margin-bottom: 1rem;
 
@@ -65,7 +79,7 @@
     padding-left: 0.9em;
     padding-right: 0.9em;
   }
-  pre[class*=language-] {
+  pre[class*='language-'] {
     margin-bottom: 1rem;
   }
   hr {
@@ -81,7 +95,8 @@
   ol {
     list-style: decimal;
   }
-  ul, ol {
+  ul,
+  ol {
     margin-bottom: 1rem;
     padding-left: 1.5rem;
 
@@ -91,12 +106,23 @@
   }
 
   &.dark {
-    h1, h2, h3, h4, h5, h6, p, blockquote, del, strong, ul, ol {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    del,
+    strong,
+    ul,
+    ol {
       color: #f3f4f6;
     }
     a {
       color: #5eead4;
-  
+
       &:hover {
         color: #0d9488;
         text-decoration: underline;

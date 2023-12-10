@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+
 import {
   TransitionGroup,
   Transition as ReactTransition,
@@ -39,10 +39,12 @@ class Transition extends React.PureComponent {
             { enter: transitionDelay, exit: transitionDelay } // duration of transition
           }
         >
-          {// Styles depends on the status of page(entering, exiting, entered) in the DOM
-          status => (
-            <div style={{ ...getTransitionStyles[status] }}>{children}</div>
-          )}
+          {
+            // Styles depends on the status of page(entering, exiting, entered) in the DOM
+            status => (
+              <div style={{ ...getTransitionStyles[status] }}>{children}</div>
+            )
+          }
         </ReactTransition>
       </TransitionGroup>
     );

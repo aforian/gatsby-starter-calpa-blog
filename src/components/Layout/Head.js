@@ -1,4 +1,3 @@
-import React from 'react';
 import { Helmet } from 'react-helmet';
 import { config } from '../../../data';
 
@@ -22,8 +21,8 @@ const Head = () => (
     <link
       rel="shortcut icon"
       href={
-        config.meta.favicon
-        || 'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png'
+        config.meta.favicon ||
+        'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png'
       }
     />
     <link

@@ -5,9 +5,7 @@ require('dotenv').config();
 
 const algoliaQueries = require('./src/utils/algolia-queries');
 
-const {
-  url, title, author, gaTrackId,
-} = config;
+const { url, title, author, gaTrackId } = config;
 
 module.exports = {
   pathPrefix: '/',
@@ -42,9 +40,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        postCssPlugins: [
-          tailwindcss,
-        ],
+        postCssPlugins: [tailwindcss],
       },
     },
     'gatsby-plugin-fontawesome-css',
@@ -131,7 +127,8 @@ module.exports = {
       options: {
         dsn: 'https://8a4706349eb5491a84671b2dd55f3dfa@sentry.io/1878116',
         environment: process.env.NODE_ENV,
-        enabled: (() => ['production', 'stage'].indexOf(process.env.NODE_ENV) !== -1)(),
+        enabled: (() =>
+          ['production', 'stage'].indexOf(process.env.NODE_ENV) !== -1)(),
       },
     },
     {

@@ -1,5 +1,4 @@
-/* eslint react/prop-types: 0 */
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { getSrc } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
 
@@ -21,29 +20,26 @@ import { config } from '../../data';
 import './blog-post.scss';
 import { useDarkMode } from '../hooks/useDarkMode';
 
-const {
-  name, iconUrl, utteranc, url,
-} = config;
+const { name, iconUrl, utteranc, url } = config;
 
 const BlogPost = ({ data, pageContext, location }) => {
   const { node, previous, next } = pageContext;
   const { dark: darkTheme } = useDarkMode();
   const ref = useRef();
   const show = useIntersectionObserver(ref);
-  const {
-    html, frontmatter, fields, excerpt,
-  } = node;
+  const { html, frontmatter, fields, excerpt } = node;
   const { slug } = fields;
-  const {
-    date, headerImage, title, tags,
-  } = frontmatter;
+  const { date, headerImage, title, tags } = frontmatter;
 
   return (
     <>
       <span ref={ref} />
       <PageContainer id="header">
         <main className="md:col-span-2 lg:col-span-3">
-          <article id="article" className="bg-white p-4 md:p-8 dark:bg-neutral-900 duration-200">
+          <article
+            id="article"
+            className="bg-white p-4 md:p-8 dark:bg-neutral-900 duration-200"
+          >
             <Header
               img={data.markdownRemark.frontmatter.headerImage}
               title={title}
@@ -81,9 +77,7 @@ const BlogPost = ({ data, pageContext, location }) => {
 
 export const pageQuery = graphql`
   query postQuery($id: String!) {
-    markdownRemark(
-      id: { eq: $id }
-    ) {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
         headerImage {
           publicURL
