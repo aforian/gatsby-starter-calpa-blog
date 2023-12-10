@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { gotoPage } from '../../apis/url';
 import { useShowSearch } from '../../hooks/useShowSearch';
 import DarkModeSwitch from '../DarkModeSwitch';
@@ -15,6 +13,7 @@ const SearchButton = () => {
     <button
       className="hover:text-teal-600 duration-200 dark:text-gray-100 hover:dark:text-teal-300"
       type="button"
+      aria-label="Search"
       onClick={() => setShowSearch(true)}
     >
       <Icon icon={IconName.Search} />

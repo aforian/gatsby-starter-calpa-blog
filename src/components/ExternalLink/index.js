@@ -1,10 +1,6 @@
-import React from 'react';
-
 import PropTypes from 'prop-types';
 
-const ExternalLink = ({
-  href, title, target, className, rel,
-}) => (
+const ExternalLink = ({ href, title, target, className, rel }) => (
   <a
     href={href}
     rel={rel}

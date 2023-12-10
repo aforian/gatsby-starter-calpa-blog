@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
@@ -18,8 +17,12 @@ const Hit = ({ hit }) => {
   const { setShowSearch } = useShowSearch();
 
   return (
-    <div role="option" aria-selected="false">
-      <Link to={hit.slug} onClick={() => setShowSearch(false)} className="group">
+    <div role="option" aria-selected="false" aria-label="Hit Link">
+      <Link
+        to={hit.slug}
+        onClick={() => setShowSearch(false)}
+        className="group"
+      >
         <h4
           className={`
             text-xl font-semibold text-teal-500 group-hover:text-teal-700
@@ -44,7 +47,10 @@ Hit.propTypes = {
 
 const NotFound = () => (
   <div className="h-full text-center flex flex-col justify-center">
-    <Icon className="text-5xl text-teal-500 mb-3 dark:text-teal-300" icon={IconName.Warning} />
+    <Icon
+      className="text-5xl text-teal-500 mb-3 dark:text-teal-300"
+      icon={IconName.Warning}
+    />
     <span className="dark:text-gray-100">找不到任何結果，換個關鍵字試試？</span>
   </div>
 );
@@ -57,11 +63,15 @@ const SearchResult = ({ className }) => {
   const isResultShow = !query || hitCount > 0;
 
   return (
-    <div className={`relative bg-white py-5 mt-4 rounded shadow-2xl dark:shadow-white/30 dark:bg-neutral-900 ${className}`}>
+    <div
+      className={`relative bg-white py-5 mt-4 rounded shadow-2xl dark:shadow-white/30 dark:bg-neutral-900 ${className}`}
+    >
       <div className="px-5 h-[60vh] md:h-[40vh] overflow-auto">
-        {isResultShow
-          ? <Hits className="Hits" hitComponent={Hit} />
-          : <NotFound />}
+        {isResultShow ? (
+          <Hits className="Hits" hitComponent={Hit} />
+        ) : (
+          <NotFound />
+        )}
       </div>
       <div className="px-5 mt-3 flex justify-between items-end">
         <div className="text-sm dark:text-gray-100">
@@ -80,7 +90,8 @@ SearchResult.defaultProps = {
 };
 
 const StyledSearchResult = styled(SearchResult)`
-  .ais-Highlight, .ais-Snippet {
+  .ais-Highlight,
+  .ais-Snippet {
     &-highlighted {
       position: relative;
       background-color: transparent;
@@ -93,7 +104,7 @@ const StyledSearchResult = styled(SearchResult)`
         left: -2px;
         width: calc(100% + 4px);
         height: 4px;
-        background-color: rgb(20,184,166);
+        background-color: rgb(20, 184, 166);
       }
     }
   }
@@ -104,8 +115,8 @@ const StyledSearchResult = styled(SearchResult)`
     }
     li.ais-Hits-item {
       margin-bottom: 1em;
-      padding: .5rem;
-      border-left: .25rem solid rgb(20,184,166);
+      padding: 0.5rem;
+      border-left: 0.25rem solid rgb(20, 184, 166);
       a {
         color: ${({ theme }) => theme.foreground};
         h4 {
@@ -118,7 +129,7 @@ const StyledSearchResult = styled(SearchResult)`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: .25rem;
+    gap: 0.25rem;
     font-size: 80%;
     svg {
       width: 150px;

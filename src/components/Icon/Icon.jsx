@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -15,7 +15,10 @@ import {
   faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons';
 import {
-  faGithub, faMediumM, faCodepen, faFacebookF,
+  faGithub,
+  faMediumM,
+  faCodepen,
+  faFacebookF,
 } from '@fortawesome/free-brands-svg-icons';
 
 const icons = {
@@ -61,9 +64,7 @@ const Icon = ({ icon, className }) => {
     }
   }, [icon]);
 
-  return (
-    <FontAwesomeIcon icon={icons[icon]} className={className} />
-  );
+  return <FontAwesomeIcon icon={icons[icon]} className={className} />;
 };
 
 Icon.propTypes = {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
@@ -7,14 +6,7 @@ import TagList from '../TagList';
 import { IconName } from '../Icon';
 import Image from '../Image';
 
-const Card = ({
-  title,
-  date,
-  url,
-  headerImage,
-  description,
-  tags = [],
-}) => (
+const Card = ({ title, date, url, headerImage, description, tags = [] }) => (
   <div className="pb-4 last:pb-0 px-4 md:px-0">
     <div className="md:hover:shadow-xl md:hover:z-2 duration-200 ease-in-out">
       <div
@@ -36,22 +28,30 @@ const Card = ({
           </Link>
           <div className="flex mb-1 gap-3 flex-wrap">
             <IconBlock icon={IconName.Date}>
-              <div>
-                {date.split('T')[0]}
-              </div>
+              <div>{date.split('T')[0]}</div>
             </IconBlock>
             <IconBlock icon={IconName.Tag}>
               <TagList tags={tags} />
             </IconBlock>
           </div>
-          <p className="line-clamp-2 mb-4 min-h-[3em] duration-200 dark:text-gray-100">{description}</p>
-          <Link to={url} href={url} className="text-gray-400 hover:text-gray-600 dark:text-gray-100 hover:dark:text-gray-400 duration-200">
+          <p className="line-clamp-2 mb-4 min-h-[3em] duration-200 dark:text-gray-100">
+            {description}
+          </p>
+          <Link
+            to={url}
+            href={url}
+            className="text-gray-400 hover:text-gray-600 dark:text-gray-100 hover:dark:text-gray-400 duration-200"
+          >
             繼續閱讀...
           </Link>
         </div>
         {headerImage && (
           <div className="hidden md:block w-[150px] min-w[150px] lg:w-[200px] lg:min-w-[200px] py-4 pr-4">
-            <Link to={url} href={url} className="w-full h-full flex items-center justify-center">
+            <Link
+              to={url}
+              href={url}
+              className="w-full h-full flex items-center justify-center"
+            >
               <Image
                 className="block w-full aspect-video object-cover object-center bg-gray-200"
                 image={headerImage}

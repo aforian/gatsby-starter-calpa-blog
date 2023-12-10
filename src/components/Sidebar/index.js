@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 
@@ -8,12 +7,7 @@ import Icon from '../Icon';
 import { config } from '../../../data';
 import { authorsLinks } from '../../apis/authorLinks';
 
-const {
-  wordings = [],
-  iconUrl,
-  about,
-  author,
-} = config;
+const { wordings = [], iconUrl, about, author } = config;
 
 const IconLink = ({ href, icon, title }) => (
   <a
@@ -21,6 +15,7 @@ const IconLink = ({ href, icon, title }) => (
       inline-block mr-2 last:mr-0 hover:text-teal-600
       dark:text-gray-100 hover:dark:text-teal-300 duration-200
     `}
+    aria-label="Link"
     target="_blank"
     href={href}
     title={title}
@@ -55,7 +50,11 @@ const Sidebar = ({ className }) => {
       `}
     >
       <div className="flex justify-center">
-        <Link to={about} href={about} className="block hover:text-teal-600 aspect-rect">
+        <Link
+          to={about}
+          href={about}
+          className="block hover:text-teal-600 aspect-rect"
+        >
           <img
             src={iconUrl}
             className="block md:w-24 hover:opacity-90 duration-200"
@@ -71,8 +70,12 @@ const Sidebar = ({ className }) => {
         >
           <div className="font-bold text-xl mb-2">{author}</div>
         </Link>
-        <p className="whitespace-pre mb-1 duration-200 dark:text-gray-100">{wordings.join('\n')}</p>
-        {authorsLinks.map(link => <IconLink key={link.href} {...link} />)}
+        <p className="whitespace-pre mb-1 duration-200 dark:text-gray-100">
+          {wordings.join('\n')}
+        </p>
+        {authorsLinks.map(link => (
+          <IconLink key={link.href} {...link} />
+        ))}
         <Information totalCount={all.totalCount} />
       </div>
     </menu>

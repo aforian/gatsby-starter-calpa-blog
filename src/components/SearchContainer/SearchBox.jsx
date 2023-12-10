@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useSearchBox } from 'react-instantsearch-hooks-web';
 
@@ -6,15 +6,13 @@ import Icon, { IconName } from '../Icon';
 import { useShowSearch } from '../../hooks/useShowSearch';
 
 const SearchBox = ({ className, inputRef }) => {
-  const {
-    refine, query,
-  } = useSearchBox();
+  const { refine, query } = useSearchBox();
   const { setShowSearch } = useShowSearch();
   const [value, setValue] = useState(query);
 
   useEffect(() => {
     refine(value);
-  }, [value]);
+  }, [value, refine]);
 
   return (
     <form className={className} onSubmit={e => e.preventDefault()}>
@@ -32,11 +30,16 @@ const SearchBox = ({ className, inputRef }) => {
           value={value}
           ref={inputRef}
         />
-        <button type="button" className="absolute top-1/2 left-5 -translate-y-1/2 dark:text-gray-100">
+        <button
+          type="button"
+          aria-label="Search"
+          className="absolute top-1/2 left-5 -translate-y-1/2 dark:text-gray-100"
+        >
           <Icon icon={IconName.Search} />
         </button>
         <button
           type="button"
+          aria-label="Cancel"
           className="absolute top-1/2 right-3 p-2 -translate-y-1/2 duration-200 hover:text-teal-500 dark:text-gray-100"
           onClick={e => {
             e.preventDefault();

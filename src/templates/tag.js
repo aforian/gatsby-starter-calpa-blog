@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { graphql } from 'gatsby';
 
 import PageContainer from '../components/PageContainer';

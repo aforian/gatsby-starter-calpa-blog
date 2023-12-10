@@ -6,7 +6,8 @@ const { maxPostsInPage } = config;
 // Prevent webpack window problem
 const isBrowser = () => typeof window !== 'undefined';
 
-const getPageNumber = () => (isBrowser() ? +window.location.pathname.match(/page[/](\d)/)[1] : -1);
+const getPageNumber = () =>
+  isBrowser() ? +window.location.pathname.match(/page[/](\d)/)[1] : -1;
 
 const getCurrentPage = () => {
   if (isBrowser() === true) {
@@ -25,7 +26,8 @@ const getPath = () => (isBrowser() ? window.location.pathname : '');
 const getMaxPages = amount => Math.ceil(amount / maxPostsInPage);
 
 // Array.fill() is added by trial and error
-const getPages = amount => new Array(amount).fill().map((_, index) => `/page/${index + 1}`);
+const getPages = amount =>
+  new Array(amount).fill().map((_, index) => `/page/${index + 1}`);
 
 const overflow = () => getCurrentPage() === getMaxPages();
 

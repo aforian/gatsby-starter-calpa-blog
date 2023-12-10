@@ -1,4 +1,6 @@
-const { registerLocalFs } = require('netlify-cms-proxy-server/dist/middlewares');
+const {
+  registerLocalFs,
+} = require('netlify-cms-proxy-server/dist/middlewares');
 
 exports.onCreateDevServer = async ({ app }) => {
   await registerLocalFs(app);

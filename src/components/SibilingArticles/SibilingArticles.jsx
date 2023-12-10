@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { buildSlugPrefix } from '../../utils/buildSlugPrefix';
@@ -13,13 +12,9 @@ const PostNodePropType = PropTypes.shape({
 });
 
 const SibilingItem = ({ node, type }) => {
-  const {
-    frontmatter, fields,
-  } = node;
+  const { frontmatter, fields } = node;
   const { slug } = fields;
-  const {
-    title,
-  } = frontmatter;
+  const { title } = frontmatter;
 
   const className = {
     previous: 'text-left ml-0 mr-auto',
@@ -33,7 +28,10 @@ const SibilingItem = ({ node, type }) => {
   return (
     <div className={`dark:text-gray-100 duration-200 ${className[type]}`}>
       <span className="text-sm">{typeText[type]}</span>
-      <Link to={buildSlugPrefix(slug)} className="hover:text-teal-600 hover:dark:text-teal-300">
+      <Link
+        to={buildSlugPrefix(slug)}
+        className="hover:text-teal-600 hover:dark:text-teal-300"
+      >
         <h4 className="font-semibold">{title}</h4>
       </Link>
     </div>
