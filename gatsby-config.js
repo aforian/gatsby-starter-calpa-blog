@@ -15,6 +15,7 @@ module.exports = {
     siteUrl: url,
     author,
   },
+  trailingSlash: 'never',
   plugins: [
     {
       resolve: 'gatsby-plugin-google-gtag',
