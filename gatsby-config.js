@@ -115,6 +115,19 @@ module.exports = {
     },
     {
       resolve: 'gatsby-plugin-sitemap',
+      options: {
+        output: '/sitemap',
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: url,
+        sitemap: `${url}/sitemap/sitemap-index.xml`,
+        policy: [{
+          userAgent: '*', allow: '/'
+        }],
+      },
     },
     {
       resolve: 'gatsby-plugin-sentry',
@@ -149,16 +162,6 @@ module.exports = {
             type: 'image/png',
           },
         ],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        host: url,
-        sitemap: `${url}/sitemap-index.xml`,
-        policy: [{
-          userAgent: '*', allow: '/'
-        }],
       },
     },
     // 'gatsby-plugin-offline', // put this after gatsby-plugin-manifest
