@@ -151,6 +151,16 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: url,
+        sitemap: `${url}/sitemap-index.xml`,
+        policy: [{
+          userAgent: '*', allow: '/'
+        }],
+      },
+    },
     // 'gatsby-plugin-offline', // put this after gatsby-plugin-manifest
     {
       resolve: 'gatsby-plugin-algolia',

@@ -56,6 +56,7 @@
     "gatsby-plugin-nprogress": "^5.12.0",
     "gatsby-plugin-offline": "^6.12.3",
     "gatsby-plugin-react-helmet": "^6.12.0",
+    "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sass": "^6.12.3",
     "gatsby-plugin-sentry": "^1.0.1",
     "gatsby-plugin-sharp": "^5.12.3",
