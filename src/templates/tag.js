@@ -9,6 +9,7 @@ import Tag from '../components/Tag';
 import ShareBox from '../components/ShareBox';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { buildSlugPrefix } from '../utils/buildSlugPrefix';
+import { config } from '../../data';
 
 const TagPage = ({ data, pageContext, location }) => {
   const { edges } = data.allMarkdownRemark;
@@ -43,7 +44,7 @@ const TagPage = ({ data, pageContext, location }) => {
       <SEO
         title={tag}
         url={`/tag/${tag}`}
-        siteTitleAlt="Calpa's Blog"
+        siteTitleAlt={config.title}
         isPost={false}
         description={tag}
         image="https://i.imgur.com/M795H8A.jpg"
