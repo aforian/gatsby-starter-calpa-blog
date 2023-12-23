@@ -11,47 +11,48 @@ const schemaOrgJSONLD = ({
   isPost,
   image,
   description,
-}) => [
-  {
-    '@context': 'http://schema.org',
-    '@type': 'WebSite',
-    url,
-    name: title,
-    alternateName: siteTitleAlt || '',
-  },
-  isPost
-    ? {
-        '@context': 'http://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            item: {
-              '@id': url,
-              name: title,
-              image,
+}) =>
+  [
+    {
+      '@context': 'http://schema.org',
+      '@type': 'WebSite',
+      url,
+      name: title,
+      alternateName: siteTitleAlt || '',
+    },
+    isPost
+      ? {
+          '@context': 'http://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              item: {
+                '@id': url,
+                name: title,
+                image,
+              },
             },
+          ],
+        }
+      : '',
+    isPost
+      ? {
+          '@context': 'http://schema.org',
+          '@type': 'BlogPosting',
+          url,
+          name: title,
+          alternateName: siteTitleAlt || '',
+          headline: title,
+          image: {
+            '@type': 'ImageObject',
+            url: image,
           },
-        ],
-      }
-    : '',
-  isPost
-    ? {
-        '@context': 'http://schema.org',
-        '@type': 'BlogPosting',
-        url,
-        name: title,
-        alternateName: siteTitleAlt || '',
-        headline: title,
-        image: {
-          '@type': 'ImageObject',
-          url: image,
-        },
-        description,
-      }
-    : '',
-];
+          description,
+        }
+      : '',
+  ].filter(Boolean);
 
 const SEO = ({ url, title, description, image, siteTitleAlt, isPost }) => (
   <Helmet>
