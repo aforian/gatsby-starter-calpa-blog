@@ -42,7 +42,7 @@ NavLink.propTypes = {
 };
 
 const Page = ({ pageContext, location }) => {
-  const { group, index, first, last, pathPrefix } = pageContext;
+  const { group, index, first, last, pageCount, pathPrefix } = pageContext;
 
   const previousUrl = index - 1 === 1 ? '/' : `/${pathPrefix}/${index - 1}`;
   const nextUrl = `/${pathPrefix}/${index + 1}`;
@@ -61,7 +61,7 @@ const Page = ({ pageContext, location }) => {
               key={node.fields.slug}
             />
           ))}
-          {first !== last && (
+          {pageCount > 1 && (
             <div className="flex justify-between mb-3 mx-4 md:mx-0">
               {!first && (
                 <NavLink
