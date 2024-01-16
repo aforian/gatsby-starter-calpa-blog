@@ -12,6 +12,8 @@ tags:
 headerImage: ../../static/assets/google-search-console-00-header.jpg
 templateKey: blog-post
 ---
+> 我的 SEO 也太爛
+
 # 前言
 
 之前一直忽略我個人部落格的流量，直到最近用瀏覽器的無痕模式試著用 Google 搜尋與我的新文章高度相關，而且相對指定的關鍵字，優先出現搜尋排名前列的結果，都是我在 Medium 平台發佈的頁面，而不是個人部落格的版本，部分個人部落格中的頁面沒有出現在任何搜尋結果當中；為了追根究底（成為流量的走狗），我用上了 [Google Search Console](https://search.google.com/search-console) 來排查（拯救）我的部落格文章在 Google 搜尋引擎中的狀況。
@@ -60,8 +62,6 @@ Sitemap 是記錄你網站中各項網址或資源的文件，通常使用 XML �
 在 Google Search Console 的導覽列搜尋欄中輸入你的新文章網址後，會顯示該網頁在 Google 搜索引擎的狀態，假如顯示「網址不在 Google 服務中」，你可以嘗試根據其列出的原因進行修正，在修正後可點擊「要求建立索引」，讓 Google 為網址排入索引的隊列。至於什麼時候正式執行，則是端看 Google 了。
 
 ![手動檢查網址與索引資訊](../../static/assets/google-search-console-03.png "手動檢查網址與索引資訊")
-
-
 
 # 檢視整體的索引狀態
 
