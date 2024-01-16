@@ -14,11 +14,11 @@ templateKey: blog-post
 ---
 > 我的 SEO 也太爛
 
-# 前言
+## 前言
 
 之前一直忽略我個人部落格的流量，直到最近用瀏覽器的無痕模式試著用 Google 搜尋與我的新文章高度相關，而且相對指定的關鍵字，優先出現搜尋排名前列的結果，都是我在 Medium 平台發佈的頁面，而不是個人部落格的版本，部分個人部落格中的頁面沒有出現在任何搜尋結果當中；為了追根究底（成為流量的走狗），我用上了 [Google Search Console](https://search.google.com/search-console) 來排查（拯救）我的部落格文章在 Google 搜尋引擎中的狀況。
 
-# **Google Search Console**
+## **Google Search Console**
 
 **[Google Search Console](https://search.google.com/search-console/about)** 是 Google 提供的免費服務，讓網站擁有者可以檢視自己網站中各頁面在 Google 搜尋引擎的表現、成效、是否有載入到 Google 搜尋引撆等資訊。
 
@@ -26,7 +26,7 @@ templateKey: blog-post
 
 要使用 Google Search Console 的服務，首先要驗證你就是網域的擁有者，一般的方式是要你在網址下放置特定的 txt 檔進行驗證；若你的網域是使用 Godaddy 等代理商管理 DNS，更有類似 OAuth 的方式進行快速驗證。驗證成功後，可以進入檢視該網域下的資訊狀況。
 
-# 使用 Sitemap 快速建立索引
+## 使用 Sitemap 快速建立索引
 
 Sitemap 是記錄你網站中各項網址或資源的文件，通常使用 XML 格式，透過在你的網站放置 Sitemap，並在 Google Search Console 介面中提交，Google 便會參考 Sitemap 中的內容去做爬蟲，以增加你的網頁被索引的機會。更詳細的 Sitemap 內容可以參考[這裡](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap?hl=zh-tw#sitemapformat)
 
@@ -55,7 +55,7 @@ Sitemap 是記錄你網站中各項網址或資源的文件，通常使用 XML �
 
 ![提交 Sitemap 後探索到的項目](../../static/assets/google-search-console-02.png "提交 Sitemap 後探索到的項目")
 
-# 手動加入索引
+## 手動加入索引
 
 假設你在部落格新增了一篇新文章，但 Google 未有即時抓取你的 Sitemap 進行更新，這時你可以嘗試手動建立索引。
 
@@ -63,7 +63,7 @@ Sitemap 是記錄你網站中各項網址或資源的文件，通常使用 XML �
 
 ![手動檢查網址與索引資訊](../../static/assets/google-search-console-03.png "手動檢查網址與索引資訊")
 
-# 檢視整體的索引狀態
+## 檢視整體的索引狀態
 
 在 Google Search Console 點擊側選單的 **產生索引 → 網頁**，可以看到你整個網站頁面的索引狀態，除了可以看到成效外，也更易於找出需要改善的問題。
 
@@ -77,7 +77,7 @@ Sitemap 是記錄你網站中各項網址或資源的文件，通常使用 XML �
 
 ![恢復了不少能正常的索引的頁面](../../static/assets/google-search-console-06.png "恢復了不少能正常的索引的頁面")
 
-# 使用 robots.txt 告知爬蟲入屋守則
+## 使用 robots.txt 告知爬蟲入屋守則
 
 除了以上項目，你還可以在網站主目錄建立 **robots.txt** 來告訴網頁爬蟲哪些頁面是可以爬取的，哪些則不可以，例如你可以在其中註記 Sitemap，以下是一個 **robots.txt** 的範例：
 
@@ -104,7 +104,7 @@ Host: https://alex-ian.me
 },
 ```
 
-# 結語
+## 結語
 
 以上是一些關於 Google Search Console 與提升網站能見度（甚至不能稱上 SEO）的一些基礎知識，以及我在 Gatsby.js 網站遇到的雷點記錄，對於相關的底層知識較少，藉著文章記錄實作方式，也希望可以幫助到使用 Gatsby.js 架設網站的朋友們，我們下次見～
 
