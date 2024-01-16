@@ -110,6 +110,7 @@ Host: https://alex-ian.me
 
 ### 參考資料
 
+* b﻿anner from [Jake Hills](https://unsplash.com/photos/person-wearing-green-pants-bt-Sc22W-BE)
 * [How to remove trailing slashes in gatsby project?](https://stackoverflow.com/questions/65826047/how-to-remove-trailing-slashes-in-gatsby-project)
 * [建立並提交 Sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap?hl=zh-tw)
 * [如何編寫及提交 robots.txt 檔案](https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt?hl=zh-tw)
