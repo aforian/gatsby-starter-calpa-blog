@@ -117,6 +117,8 @@ const AlertIcon = () => {
 
 [範例 CodeSandbox](https://codesandbox.io/p/sandbox/compound-component-example-forked-2ghg8w?file=%2Fsrc%2Fcomponents%2FCompoundAlert%2Findex.tsx%3A1%2C1-62%2C1)
 
+[範例 Repo](https://github.com/aforian/compound-component-demo)
+
 # 使用 Compound Component **複合元件模式**的優缺點？
 
 作為一個設計模式，總不可能在所以場景下都適用，必須在適合的場景下使用，才能發揮其優勢，以下是複合元件模式的一些優缺點：
@@ -151,7 +153,7 @@ const AlertIcon = () => {
 </CompoundAlert>
 ```
 
-## 缺點、過度靈活性，需要使用教學
+### 缺點、過度靈活性，需要使用教學
 
 水能載舟，亦能覆舟。複合元件提供了非常高的使用彈性，但也由於複合元件並沒有強制範定子元件的排序與使用方式，因此入門開發者會對它的使用方式感到困惑，或是不瞭解其原理而傳入錯誤的 props 或資訊。因此建立複合元件後，最好搭配元件開發輔助工具例如 [Storybook](https://storybook.js.org/) ，以便於與 UI 或協同開發者訂定該元件使用或樣式的共識。
 
@@ -163,3 +165,4 @@ const AlertIcon = () => {
 
 * Photo by [Mourizal Zativa](https://unsplash.com/@mourimoto?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/blue-red-yellow-and-green-lego-blocks-gNMVpAPe3PE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 * [MUI toggle button](https://mui.com/material-ui/react-toggle-button/)
+* [範例 Repo](https://github.com/aforian/compound-component-demo)
