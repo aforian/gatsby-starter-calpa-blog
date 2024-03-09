@@ -411,6 +411,7 @@ const height2 = !hasContent ? DEFAULT_HEIGHT : !hasContent;  // false
 
 ### 參考資料：
 
-* [](https://sourceacademy.org/sicpjs/1.3.3)<https://sourceacademy.org/sicpjs>
+* [https://zh.wikipedia.org/wiki/语法糖](https://zh.wikipedia.org/wiki/%E8%AF%AD%E6%B3%95%E7%B3%96)
+* [](https://sourceacademy.org/sicpjs/1.3.3)<https://sourceacademy.org/sicpjs> 
 * <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements>
 * <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators>
